@@ -431,7 +431,8 @@
       ],
       "addon": null,
       "references": [
-        "skills/godot-brainstorming/references/example-chest.md"
+        "skills/godot-brainstorming/references/example-chest.md",
+        "skills/godot-brainstorming/references/node-selection.md"
       ],
       "source": "skills/godot-brainstorming/SKILL.md"
     },
@@ -608,6 +609,7 @@
       ],
       "addon": null,
       "references": [
+        "skills/inventory-system/references/core-classes.md",
         "skills/inventory-system/references/equipment.md",
         "skills/inventory-system/references/serialization.md",
         "skills/inventory-system/references/ui-binding.md"
