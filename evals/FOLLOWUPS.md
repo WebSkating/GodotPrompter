@@ -25,7 +25,23 @@ Mean **Δ +0.17**, $14.86, 0 errors/timeouts.
 With-arm side-channels: 86–149 s, 7–10 turns, $0.50–0.76/run. Ceilings: 300 s, 12 turns.
 Negatives must stay at Δ 0 — a drop means mentor mode is lecturing people who did not ask.
 
-## Skill follow-ups (found by the eval — skill not yet changed)
+## Status after the first fix pass (2026-09-19, not yet re-run)
+
+Root causes measured against the baseline evidence before editing:
+
+| # | Root cause | Change |
+|---|---|---|
+| 1 | The tween is in `hud-system`'s own health-bar recipe — mentor mode delivered a production recipe verbatim. `heal()`/`died` appear in no skill (invented). | Mentor card: "Scope: exactly what was asked" — strip domain-recipe extras |
+| 2 | Concept beat ~1.3–1.4 k chars in all three runs, yet 1/3 passed: grader is noisy. Prompt is "intermediate, *but signals confuse me*". | **Open — author decision** (see below) |
+| 3 | `player-controller`'s dash recipe had **no cooldown or air limit** (and GDScript/C# disagreed). The run delivered it, then offered the cooldown as Beat 5. | Recipe rewritten with cooldown + one air dash; mentor forbids deferring part of the ask |
+| 4 | Confirmed in baseline: 7/15 with-arm answers spent a preamble or paragraph on the unwritable state file. | §3: one line at the end, no retry, no separate message |
+| 5 | Not reproducible — every baseline answer names the domain skill it loaded. Pilot-only. | No change |
+
+Open question for #2: `level` is the user's Godot baseline, but the prompt names the concept that
+confuses them. Either the skill gives the named concept beginner depth (and grader (3) changes),
+or the grader stays and §4 needs enforcing harder.
+
+## Skill follow-ups (as found by the baseline eval)
 
 1. **Scope rule not holding.** Case 02 failed `no-scope-creep` 3/3: every with-arm run added a
    tweened bar animation; runs 1–2 also added `heal()` and a `died` signal. Base model stayed in
