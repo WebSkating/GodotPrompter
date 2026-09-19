@@ -72,7 +72,7 @@ Applies to subagents writing Godot code too.
 
 | Situation | Start with |
 |---|---|
-| New system, or the requirements are unclear | `godot-brainstorming` — design first, then build |
+| New system, or the requirements are unclear | `godot-grill` — settle decisions, then design and build |
 | Known change, explicit ask, bug fix | the domain skill below — build |
 
 **Then report before you build:** name the pattern you picked, the alternative you rejected, and why. Skills carry trade-offs — surface them. The choice is the developer's.
@@ -116,8 +116,7 @@ Full index: invoke `godot-prompter:using-godot-prompter`.
 GodotPrompter handles the full development workflow. No other plugins required.
 
 ### 1. Design Phase
-Load `godot-prompter:godot-brainstorming` — it guides you through:
-- Asking clarifying questions about the game/system
+Load `godot-prompter:godot-grill` first when design decisions are open — it settles them in rounds and records them. Then `godot-prompter:godot-brainstorming` guides you through:
 - Proposing architectural approaches with trade-offs
 - Designing scene trees, signal maps, and data flow
 - Creating an implementation plan with ordered tasks
@@ -164,6 +163,7 @@ Skills use Claude Code tool names as the canonical reference. Non-Claude platfor
 - `using-godot-prompter` — This skill (bootstrap)
 - `godot-project-setup` — Scaffold new projects
 - `godot-brainstorming` — Godot-specific design exploration
+- `godot-grill` — Settle open design decisions in rounds, scope first, and record them
 - `godot-code-review` — GDScript/C# review against Godot best practices
 - `godot-debugging` — Godot-specific debugging techniques
 - `godot-testing` — TDD with GUT and gdUnit4

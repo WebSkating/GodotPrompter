@@ -7,7 +7,7 @@ description: Use when designing a new Godot feature or system — guides scene t
 
 A structured design process for Godot 4.3+ features and systems — from blank slate to a clear scene tree, signal map, and data flow before you write a single line of implementation code.
 
-> **Related skills:** **scene-organization** for scene tree composition patterns, **component-system** for component-based architecture, **event-bus** for signal-based communication design.
+> **Related skills:** **godot-grill** for settling open design decisions first, **scene-organization** for scene tree composition patterns, **component-system** for component-based architecture, **event-bus** for signal-based communication design.
 
 ---
 
@@ -15,12 +15,8 @@ A structured design process for Godot 4.3+ features and systems — from blank s
 
 Do NOT jump straight to designing. Follow these steps:
 
-### Step 1: Understand the request
-Ask **one clarifying question at a time** to understand what the user wants to build. Focus on:
-- What kind of game/system is this? (genre, perspective, scope)
-- What are the core mechanics? (movement, combat, progression)
-- What already exists? (existing code, scenes, assets)
-- What are the constraints? (platform, performance, team size)
+### Step 1: Settle the decisions
+If the request has open design decisions (scope, dimension, authority, data home, …), invoke `godot-prompter:godot-grill` and let it run to its end. Skip it when a record in `docs/godot-prompter/decisions/` already covers this feature, or the user has stated the decisions. Either way, check what already exists (code, scenes, assets). Carry the record into Step 2 — approaches must respect its settled rows.
 
 ### Step 2: Propose 2-3 approaches
 Once you understand the request, propose architectural options with trade-offs. For example:

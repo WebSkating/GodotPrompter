@@ -425,6 +425,7 @@
       "title": "Godot Brainstorming",
       "description": "Use when designing a new Godot feature or system — guides scene tree planning, node type selection, and architectural decisions",
       "relatedSkills": [
+        "godot-grill",
         "scene-organization",
         "component-system",
         "event-bus"
