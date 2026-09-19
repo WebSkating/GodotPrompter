@@ -25,9 +25,31 @@ Mean **Δ +0.17**, $14.86, 0 errors/timeouts.
 With-arm side-channels: 86–149 s, 7–10 turns, $0.50–0.76/run. Ceilings: 300 s, 12 turns.
 Negatives must stay at Δ 0 — a drop means mentor mode is lecturing people who did not ask.
 
-## Status after the first fix pass (2026-09-19, not yet re-run)
+## After the fix pass — 2026-09-19 (`results/2026-09-19T18-36-24-452Z`)
 
-Root causes measured against the baseline evidence before editing:
+Mean **Δ +0.23** (was +0.17), $14.92, 0 errors/timeouts.
+
+| Case | With | Without | Δ | Note |
+|---|---|---|---|---|
+| 01-teach-double-dash | 0.98 | 0.42 | +0.56 | `dash-correct` 3/3 (was 2/3) |
+| 02-guide-health-bar | 0.96 | 0.79 | +0.17 | `no-scope-creep` 2/3 (was 0/3) |
+| 03-understand-signals | 0.85 | 0.67 | +0.19 | grader (3) misworded — see below |
+| 04-learning-3d-pickup | 1.00 | 0.63 | +0.38 | |
+| 05-csharp-learner-save | 1.00 | 0.70 | +0.30 | |
+| 06-neg-just-code | 1.00 | 1.00 | 0.00 | |
+| 07-neg-experienced-quick | 1.00 | 1.00 | 0.00 | |
+
+- State-file note: 11/15 answers now mention it, all as one line in the last 3% of the answer.
+- Case 03 failed `signal-concept` 3/3 on answers that met every criterion: the first rewrite of (3)
+  was a "fail if" inside "Pass only if ALL hold" and did not say non-obvious wiring is allowed.
+  Reworded as a positive condition; case-03-only re-run (`results/2026-09-19T19-25-10-086Z`):
+  with-arm **1.00, `signal-concept` 3/3**. Its without arm lost judge calls to a session limit,
+  so that run's Δ (+0.58) is invalid — take case 03's Δ from the next full run.
+- Single-run dips, likely noise: 01 `beat-why` 2/3, 03 `beat-one-next` 2/3. Watch next run.
+- Without-arm scores moved by up to 0.14 between runs (01: 0.56 → 0.42), so compare with-arm
+  scores as well as Δ.
+
+### Root causes (measured before editing)
 
 | # | Root cause | Change |
 |---|---|---|
