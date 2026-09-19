@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Godot 4.x](https://img.shields.io/badge/Godot-4.3+-blue.svg)](https://godotengine.org)
-[![Skills: 55](https://img.shields.io/badge/Skills-55-green.svg)](#available-skills)
+[![Skills: 56](https://img.shields.io/badge/Skills-56-green.svg)](#available-skills)
 
 Agentic skills framework for Godot 4.x game development. Gives AI coding agents domain-specific expertise for GDScript and C# projects.
 
@@ -12,7 +12,7 @@ Inspired by and built on top of the [Superpowers](https://github.com/obra/superp
 
 GodotPrompter is a plugin that provides **skills** — structured domain knowledge that AI agents load on demand. When you ask your agent to "add a state machine" or "set up multiplayer", it loads the relevant GodotPrompter skill and follows Godot-specific best practices instead of relying on generic knowledge.
 
-**55 skills** covering project setup, architecture, gameplay systems, input handling, physics, 2D/3D systems, animation, shaders, audio, UI, multiplayer, localization, procedural generation, XR/VR, native extensions, multithreading, mobile shipping, optimization, GDScript / C# patterns, a teaching mode, and third-party addons (LimboAI, Beehave, Popochiu, Dialogue Manager, Phantom Camera). All targeting Godot 4.3+ with both GDScript and C# examples — newer features from Godot 4.5, 4.6, and 4.7 (variadic functions, abstract classes, stencil buffers, AreaLight3D, VirtualJoystick, OpenXR Spatial Entities, and more) are included as annotated additive sections.
+**56 skills** covering project setup, architecture, gameplay systems, input handling, physics, 2D/3D systems, animation, shaders, audio, UI, multiplayer, localization, procedural generation, XR/VR, native extensions, multithreading, mobile shipping, optimization, GDScript / C# patterns, a teaching mode, and third-party addons (LimboAI, Beehave, Popochiu, Dialogue Manager, Phantom Camera). All targeting Godot 4.3+ with both GDScript and C# examples — newer features from Godot 4.5, 4.6, and 4.7 (variadic functions, abstract classes, stencil buffers, AreaLight3D, VirtualJoystick, OpenXR Spatial Entities, and more) are included as annotated additive sections.
 
 **v1.7.0 introduces a 16 KB token budget** for `SKILL.md` files (validator-enforced) and the new **`gdscript-advanced`** skill for production-grade GDScript depth (performance idioms, metaprogramming, `@tool` lifecycle, profiler-driven idioms).
 
@@ -147,8 +147,7 @@ Your preference is remembered per project in `~/.godot-prompter/state/` — noth
 your game repository. Say "just give me the code" to turn it off.
 
 ### 1. Design Phase
-Ask the agent to brainstorm a feature. It loads `godot-brainstorming` and walks you through:
-- Clarifying questions about your game/system
+Ask the agent to brainstorm a feature. When design decisions are open it loads `godot-grill` first, which asks them in numbered rounds with a recommended answer each and records your choices. Then `godot-brainstorming` walks you through:
 - Architectural approaches with trade-offs
 - Scene tree design, signal maps, and data flow
 - An implementation plan with ordered tasks
@@ -209,13 +208,14 @@ The generated machine-readable skill catalog lives in [`skills/index.json`](skil
 
 ## Available Skills
 
-### Core / Process (7 skills)
+### Core / Process (8 skills)
 
 | Skill | Description |
 |-------|-------------|
 | `using-godot-prompter` | Bootstrap — skill catalog, workflow guide, platform setup |
 | `godot-project-setup` | Scaffold directory structure, autoloads, .gitignore, input maps |
 | `godot-brainstorming` | Scene tree planning, node selection, architectural decisions |
+| `godot-grill` | Settle open design decisions in rounds — scope first, each question with a recommended answer, recorded |
 | `godot-code-review` | Review checklist — best practices, anti-patterns, Godot pitfalls |
 | `godot-debugging` | Remote debugger, print techniques, signal tracing, error patterns |
 | `godot-testing` | TDD with GUT and gdUnit4 — test structure, mocking, CI |
