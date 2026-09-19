@@ -3,7 +3,7 @@
 Suite: 7 cases (5 should-fire, 2 should-NOT-fire) testing the `godot-mentor` skill.
 
 ```
-claude plugin eval . --ablation with-without --judge-model sonnet --no-publish
+claude plugin eval . --case "0*" --ablation with-without --judge-model sonnet --no-publish
 ```
 
 ~50 min, ~$15 per full run (runs: 3). Judge must stay sonnet (agent runs on Opus — never self-judge).
