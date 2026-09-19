@@ -32,14 +32,10 @@ Root causes measured against the baseline evidence before editing:
 | # | Root cause | Change |
 |---|---|---|
 | 1 | The tween is in `hud-system`'s own health-bar recipe — mentor mode delivered a production recipe verbatim. `heal()`/`died` appear in no skill (invented). | Mentor card: "Scope: exactly what was asked" — strip domain-recipe extras |
-| 2 | Concept beat ~1.3–1.4 k chars in all three runs, yet 1/3 passed: grader is noisy. Prompt is "intermediate, *but signals confuse me*". | **Open — author decision** (see below) |
+| 2 | Concept beat ~1.3–1.4 k chars in all three runs, yet 1/3 passed: grader is noisy. Prompt is "intermediate, *but signals confuse me*". | Author decision: `level` is a baseline, not a ceiling — the named concept gets beginner depth (§4). Grader (3) changed accordingly, so **case 03 is not comparable to the baseline** |
 | 3 | `player-controller`'s dash recipe had **no cooldown or air limit** (and GDScript/C# disagreed). The run delivered it, then offered the cooldown as Beat 5. | Recipe rewritten with cooldown + one air dash; mentor forbids deferring part of the ask |
 | 4 | Confirmed in baseline: 7/15 with-arm answers spent a preamble or paragraph on the unwritable state file. | §3: one line at the end, no retry, no separate message |
 | 5 | Not reproducible — every baseline answer names the domain skill it loaded. Pilot-only. | No change |
-
-Open question for #2: `level` is the user's Godot baseline, but the prompt names the concept that
-confuses them. Either the skill gives the named concept beginner depth (and grader (3) changes),
-or the grader stays and §4 needs enforcing harder.
 
 ## Skill follow-ups (as found by the baseline eval)
 

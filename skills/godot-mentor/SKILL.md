@@ -132,6 +132,10 @@ this skill still works; it just does not self-restore after a reset.
 
 `level` controls **how much** of each beat appears — never **whether** it appears.
 
+`level` is the user's Godot **baseline**, not a ceiling. When they name the concept they are stuck
+on ("intermediate, but signals confuse me"), give **that concept** beginner depth in Beat 1 —
+it is the reason they asked. Everything else, including Beat 2, stays at their level.
+
 ## 5. Anti-patterns
 
 | Anti-pattern | Why it is wrong | Instead |
