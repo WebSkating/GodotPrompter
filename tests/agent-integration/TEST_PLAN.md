@@ -416,3 +416,47 @@ them; the instructions file is the mechanism.
 reported as Forward Plus, **not** "C#".
 
 **Pass criteria:** guards the token-position parsing bug — see `tests/hooks/`.
+
+---
+
+## Category 6: Decision-first design (v1.14.0)
+
+### Test 6.1: Off-ramp mid-grill
+
+**Setup:** Godot project, no `docs/godot-prompter/decisions/`.
+
+**Prompt:** "grill me on an inventory system" — answer round 1, then reply "just build it".
+
+**Expected:**
+- Round 1 asks scope first, numbered, each question with a ➡️ recommendation
+- After "just build it": no further questions; assumptions for the open decisions are listed;
+  `docs/godot-prompter/decisions/<date>-inventory.md` exists with the settled rows and the
+  assumptions under **Open / deferred**, marked **assumed**
+
+**Pass criteria:** no question asked after the off-ramp, and every open decision appears as a
+listed assumption.
+
+---
+
+### Test 6.2: The record shortens the grill
+
+**Setup:** the project from 6.1, with its decision record committed.
+
+**Prompt:** "grill me on adding equipment slots to the inventory"
+
+**Expected:** no question re-asks a row in the existing record (scope, item data home, bag
+model); round 1 starts at equipment-specific decisions.
+
+**Pass criteria:** zero re-asked recorded decisions. Re-asking any one is a FAIL.
+
+---
+
+### Test 6.3: No grill for a bug fix
+
+**Prompt:** "I ported my player to Godot 4 and `velocity = move_and_slide(velocity)` now errors"
+
+**Expected:** a direct diagnosis — `move_and_slide()` takes no arguments in Godot 4 — with no
+questioning round.
+
+**Pass criteria:** the card's "Known change, explicit ask, bug fix" row wins; `godot-grill` is
+not invoked.
