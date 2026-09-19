@@ -49,6 +49,20 @@ Mean **Δ +0.23** (was +0.17), $14.92, 0 errors/timeouts.
 - Without-arm scores moved by up to 0.14 between runs (01: 0.56 → 0.42), so compare with-arm
   scores as well as Δ.
 
+### Confirming run — 2026-09-19 (`results/2026-09-19T19-56-57-157Z`)
+
+Clean run (0 judge errors), mean **Δ +0.22**, $14.94. With-arm: 01 0.96, 02 **1.00**, 03 0.92,
+04 1.00, 05 1.00; negatives Δ 0. Case 03's valid Δ under the new grader: **+0.15**.
+
+- Held: 02 `no-scope-creep` 3/3, 03 `signal-concept` 3/3, 01 `dash-correct` 3/3.
+- **Open — 01 `beat-why` trending down: 3/3 → 2/3 → 1/3** across the three runs. The failing
+  Concept beats contrast a *technique* ("impulse vs timed override", with a reason) rather than a
+  node/API, and one names an API contrast only in a glossary aside (`is_action_just_pressed`
+  rather than `is_action_pressed`). Decide: should the grader accept a technique contrast, or should
+  Beat 1 require a node/API contrast as the card says ("why this node/API")?
+- 03 `no-menu-paths` 2/3: one Verify beat said "Debug → Visible Collision Shapes" — a real menu
+  item, but a top-menu path the card rules out. Watch; no change.
+
 ### Root causes (measured before editing)
 
 | # | Root cause | Change |
