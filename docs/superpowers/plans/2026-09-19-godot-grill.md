@@ -12,7 +12,7 @@
 
 ## Global Constraints
 
-- `SKILL.md` under 16 KB (validator error at ≥ 16 KB); the drafted skill is ~6 KB.
+- `SKILL.md` under 16 KB (validator error at ≥ 16 KB); the drafted skill is ~7 KB.
 - SessionStart card (`SESSION-CARD` region) ≤ 3 KB (3072 bytes); currently 2889. The gate-row edit must keep it under.
 - Never paste the `SESSION-CARD` / `MENTOR-CARD` marker strings into a fenced example (`card-marker-duplicate`).
 - `skills/index.json` is generated — run `npm run build:skill-index` after adding the skill or changing a Related-skills line; never hand-edit it.
@@ -44,8 +44,8 @@
 
 **Files:**
 - Create: `evals/grill-01-new-system/prompt.md` and `graders/{trigger-grill,scope-first,numbered-recommended,no-fact-questions,no-code-yet}.md`
-- Create: `evals/grill-02-skip-questions/prompt.md` and `graders/{no-questions,assumptions-stated}.md`
-- Create: `evals/grill-03-neg-bugfix/prompt.md` and `graders/{no-questions,fixes-bug}.md`
+- Create: `evals/grill-02-skip-questions/prompt.md` and `graders/{trigger-grill,no-questions,assumptions-stated}.md`
+- Create: `evals/grill-03-neg-bugfix/prompt.md` and `graders/{trigger-grill,no-questions,fixes-bug}.md`
 - Create: `evals/GRILL.md`
 - Modify: `evals/FOLLOWUPS.md` (run command)
 
@@ -152,6 +152,8 @@ focus: last_message
 Pass if the answer explicitly lists the design assumptions it made on the user's behalf (e.g. save format, what gets saved, number of slots, where files live), as a list or table the user can scan and overrule. Fail if the assumptions are only implicit in the code.
 ```
 
+Also copy `graders/trigger-grill.md` from grill-01 into this case unchanged. The grill **may** fire here (§4 handles an off-ramp in the first message); what matters is that it asks nothing.
+
 - [ ] **Step 3: Write case grill-03 (must not fire)**
 
 `evals/grill-03-neg-bugfix/prompt.md`:
@@ -163,7 +165,7 @@ timeout_seconds: 300
 allowed_tools: [Skill, Read, Glob, Grep]
 runs: 3
 ---
-My CharacterBody2D falls through the floor after I call move_and_slide(velocity). I'm on Godot 4.3. What's wrong?
+I ported my player from Godot 3 to Godot 4.3 and `velocity = move_and_slide(velocity)` now errors. What's wrong?
 ```
 
 `graders/no-questions.md`:
@@ -187,6 +189,8 @@ focus: last_message
 Pass if the answer identifies that Godot 4's move_and_slide() takes no arguments (velocity is a property set before the call) and shows the corrected call. Fail otherwise.
 ```
 
+Also copy `graders/trigger-grill.md` from grill-01 into this case unchanged. A `tool_used: Skill` grader is a with-arm-only **indicator** and never scored; on this case the desired reading is `Skill called 0x` (it prints as ✗ — the same as `trigger-mentor` on the mentor negatives 06/07). Any call count above 0 means the description over-triggers.
+
 - [ ] **Step 4: Point the mentor run command at mentor cases only**
 
 In `evals/FOLLOWUPS.md`, replace the run command block with:
@@ -200,7 +204,7 @@ claude plugin eval . --case "0*" --ablation with-without --judge-model sonnet --
 - [ ] **Step 5: Run the grill cases to confirm red**
 
 Run: `claude plugin eval . --case "grill-*" --ablation with-without --judge-model sonnet --no-publish`
-Expected (≈ 18 runs, ≈ $5, ≈ 15 min): `grill-01` with-arm fails `trigger-grill` (Skill called 0x — the skill does not exist yet) and most likely `numbered-recommended`; `grill-02`/`grill-03` may already pass (they guard against over-triggering, so they must stay green after Task 2).
+Expected (≈ 18 runs, ≈ $5, ≈ 15 min; exit code 1 is normal — the default `--threshold 1.0` fails any case below a perfect score): `grill-01` with-arm fails `trigger-grill` (Skill called 0x — the skill does not exist yet) and most likely `numbered-recommended`; `grill-02`/`grill-03` may already pass (they guard against over-triggering, so they must stay green after Task 2).
 
 - [ ] **Step 6: Record the baseline in `evals/GRILL.md`**
 
@@ -248,7 +252,7 @@ git commit -m "test(evals): add godot-grill eval cases (red baseline)"
 ````markdown
 ---
 name: godot-grill
-description: Use when a new Godot system or feature has open design decisions — interrogates them in batched rounds, scope first, each question with a recommended answer, and records the answers before any design or code. Triggers on "grill me", "ask me first", "question me on the design", "help me decide", "what do I need to decide".
+description: Use when a new Godot system or feature has open design decisions — interrogates them in batched rounds, scope first, each question with a recommended answer, and records the answers before any design or code. Triggers on "grill me", "ask me first", "question me on the design", "what do I need to decide before building". Not for choosing between nodes or APIs, and not for bug fixes.
 ---
 
 # Godot Grill
@@ -265,6 +269,10 @@ Ask only what **only the user knows**: intent, constraints, priorities, taste.
 Node types, API signatures, and version differences are **facts**. Look them up
 (`godot-brainstorming/references/node-selection.md`, the domain skills), decide, and record the
 choice. Never spend a question on one.
+
+Architecture choices — data home, state representation, save format — are decided **from** the
+user's answers, not asked as technology picks. Ask the constraint behind them ("will designers
+edit items in the Inspector?"), then map the answer to Resource `.tres` yourself.
 
 | Question | Verdict |
 |---|---|
@@ -295,7 +303,8 @@ Four roots have no prerequisites:
 | Authority + Entity model | state representation (enum FSM / node FSM / AnimationTree / none); persistence boundary |
 | Data home + Persistence | save format (ConfigFile / JSON / Resource serialization) |
 
-The tree is a **seed, not a script**. Answers grow it — "networked" creates branches a
+The right-hand column names what an answer lets **you** decide; ask the user the constraint
+behind it, never the technology. The tree is a **seed, not a script**. Answers grow it — "networked" creates branches a
 single-player answer never does. Skip any root the request or the project already answers
 (`project.godot`, existing scripts). Most sessions visit few nodes.
 
@@ -328,16 +337,21 @@ questions" / "stop grilling", in any round, including the first message. Then st
 **list every assumption you are now making** for the open decisions, where the user can scan
 and overrule them.
 
-Write the record (§5), confirm shared understanding in one message, and hand off:
+**On the off-ramp there are no confirmation or approval gates:** list the assumptions, write the
+record, and build — with the matching domain skill, or `godot-brainstorming` from Step 2 without
+its per-section check-ins.
+
+**When the frontier empties**, write the record (§5), confirm shared understanding in one
+message, and wait. Then hand off:
 
 - it needs a scene tree, signal map, or plan → `godot-brainstorming`, from Step 2
 - it is a single known change → the matching domain skill
 
-Do not start implementation before the user confirms — unless they took the off-ramp.
-
 ## 5. The decision record
 
-Write to `docs/godot-prompter/decisions/YYYY-MM-DD-<topic>.md` in the user's project:
+Write to `docs/godot-prompter/decisions/YYYY-MM-DD-<topic>.md` in the user's project — or the
+decisions folder the project's agent instructions name. The path must stay stable: the next grill
+reads it back.
 
 ```markdown
 # <Topic> — decisions
@@ -375,7 +389,7 @@ message instead.
 - [ ] Whole frontier per round; waited after each
 - [ ] Off-ramp taken → assumptions listed
 - [ ] Record written (or in the final message when files cannot be written)
-- [ ] User confirmed before design or code (unless off-ramp)
+- [ ] Frontier emptied → user confirmed before design or code; off-ramp → no gates, built on the listed assumptions
 ````
 
 - [ ] **Step 2: Regenerate the skill index**
@@ -386,7 +400,7 @@ Expected: `wrote skills/index.json`; `git diff --stat skills/index.json` shows o
 - [ ] **Step 3: Validate**
 
 Run: `node scripts/validate-skills.mjs 2>&1 | grep -E "godot-grill|error\(s\)"`
-Expected: `0 error(s)`, no `godot-grill` lines (the two fenced blocks are `text`/`markdown`, so C# parity does not apply). Then `wc -c skills/godot-grill/SKILL.md` — expect ~6 KB, far under 16 KB.
+Expected: `0 error(s)`, no `godot-grill` lines (the two fenced blocks are `text`/`markdown`, so C# parity does not apply). Then `wc -c skills/godot-grill/SKILL.md` — expect ~7 KB, far under 16 KB.
 
 Run: `npm test 2>&1 | grep -E "^ℹ fail"`
 Expected: three lines, each `ℹ fail 0`.
@@ -463,7 +477,7 @@ In `skills/godot-brainstorming/SKILL.md`, replace the whole `### Step 1: Underst
 
 ```text
 ### Step 1: Settle the decisions
-If the request has open design decisions (scope, dimension, authority, data home, …), invoke `godot-prompter:godot-grill` and let it run to its end. Skip it when a record in `docs/godot-prompter/decisions/` already covers this feature, or the user has stated the decisions. Carry the record into Step 2 — approaches must respect its settled rows.
+If the request has open design decisions (scope, dimension, authority, data home, …), invoke `godot-prompter:godot-grill` and let it run to its end. Skip it when a record in `docs/godot-prompter/decisions/` already covers this feature, or the user has stated the decisions. Either way, check what already exists (code, scenes, assets). Carry the record into Step 2 — approaches must respect its settled rows.
 ```
 
 And change the Related skills line to:
@@ -489,7 +503,7 @@ git commit -m "feat(card): route new-or-unclear work through godot-grill"
 ### Task 4: README and CHANGELOG
 
 **Files:**
-- Modify: `README.md` (badge line 5, summary line 15, Core/Process heading line 212 and table)
+- Modify: `README.md` (badge line 5, summary line 15, Design Phase ~line 149, Core/Process heading line 212 and table)
 - Modify: `CHANGELOG.md` (`## [Unreleased]` → `### Added`)
 
 - [ ] **Step 1: Update README counts and table**
@@ -502,7 +516,22 @@ git commit -m "feat(card): route new-or-unclear work through godot-grill"
 | `godot-grill` | Settle open design decisions in rounds — scope first, each question with a recommended answer, recorded |
 ```
 
-Verify: `grep -c "56" README.md` increases by 3, and `grep -n "55 skills\|Skills-55" README.md` prints nothing.
+Verify: `grep -c "56" README.md` prints `2` (lines 5 and 15 — `grep -c` counts lines), and `grep -n "55 skills\|Skills-55" README.md` prints nothing.
+
+- `### 1. Design Phase` (README.md ~line 149): replace
+
+```text
+Ask the agent to brainstorm a feature. It loads `godot-brainstorming` and walks you through:
+- Clarifying questions about your game/system
+```
+
+with
+
+```text
+Ask the agent to brainstorm a feature. When design decisions are open it loads `godot-grill` first, which asks them in numbered rounds with a recommended answer each and records your choices. Then `godot-brainstorming` walks you through:
+```
+
+(the three remaining bullets stay).
 
 - [ ] **Step 2: Add the CHANGELOG entry**
 
@@ -570,7 +599,7 @@ model); round 1 starts at equipment-specific decisions.
 
 ### Test 6.3: No grill for a bug fix
 
-**Prompt:** "my CharacterBody2D falls through the floor after move_and_slide(velocity)"
+**Prompt:** "I ported my player to Godot 4 and `velocity = move_and_slide(velocity)` now errors"
 
 **Expected:** a direct diagnosis — `move_and_slide()` takes no arguments in Godot 4 — with no
 questioning round.
@@ -596,11 +625,16 @@ git commit -m "test(agent-integration): add godot-grill off-ramp, record, and bu
 - [ ] **Step 1: Re-run the grill cases**
 
 Run: `claude plugin eval . --case "grill-*" --ablation with-without --judge-model sonnet --no-publish`
-Expected: `grill-01` with-arm passes `trigger-grill` in 3/3 runs, and `scope-first`, `numbered-recommended`, `no-fact-questions`, `no-code-yet` in ≥ 2/3; `grill-02` and `grill-03` with-arm scores are no lower than in the red run (the skill must not add questions where the user declined them).
+Expected: `grill-01` with-arm passes `trigger-grill` in 3/3 runs, and `scope-first`, `numbered-recommended`, `no-fact-questions`, `no-code-yet` in ≥ 2/3; `grill-02` and `grill-03` with-arm scores are within 0.15 of the red run (scores swing by up to 0.14 between n=3 runs — see `evals/FOLLOWUPS.md`), and `no-questions` passes 3/3 on both. grill-03's `trigger-grill` indicator reads `Skill called 0x` in every run. Exit code 1 is normal (default `--threshold 1.0`).
 
-If `grill-03` with-arm drops, the description is over-triggering: tighten the frontmatter `description` (it must name *open design decisions*, not "any feature") and re-run before continuing.
+If `grill-03` calls the skill, or its `no-questions` drops, the description is over-triggering: tighten the frontmatter `description` (it must name *open design decisions*, not "any feature") and re-run before continuing.
 
-- [ ] **Step 2: Record green results**
+- [ ] **Step 2: Mentor regression run**
+
+The grill description competes with mentor prompts such as case 02 ("Guide me through adding a health bar"). Run: `claude plugin eval . --case "0*" --ablation with-without --judge-model sonnet --no-publish` (≈ 50 min, ≈ $15 — run it alone, not alongside another eval: they share one rate limit).
+Expected: each case's with-arm score within 0.15 of the latest table in `evals/FOLLOWUPS.md`, and negatives 06/07 at Δ 0. If a mentor case drops and its answer opens with numbered design questions, the grill is stealing it — tighten the description and re-run both suites.
+
+- [ ] **Step 3: Record green results**
 
 Append to `evals/GRILL.md`:
 
@@ -614,9 +648,9 @@ Append to `evals/GRILL.md`:
 | grill-03-neg-bugfix | | | | |
 ```
 
-Fill it from the run summary, noting any grader below 3/3 by name.
+Fill it from the run summary, noting any grader below 3/3 by name. Add one line with the mentor regression result (mean Δ and any case outside tolerance).
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 4: Commit**
 
 ```bash
 git add evals/GRILL.md
@@ -624,6 +658,12 @@ git commit -m "test(evals): record godot-grill green run"
 ```
 
 ---
+
+## Deviations from the spec
+
+- Card change is **+7 bytes** (2889 → 2896), not byte-neutral as the spec says — still well under 3072.
+- The decision-record path is fixed as the spec says, but a project's agent instructions may name another folder. A plain override, not the Plan Storage lookup order, because the next grill must find the records again.
+- Evals and `skills/index.json` did not exist when the spec was written; Tasks 1, 2, 3, 6 add them.
 
 ## Out of scope (from the spec, plus one found while planning)
 
