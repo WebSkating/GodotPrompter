@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "generatedBy": "scripts/generate-skill-index.mjs",
   "summary": {
-    "skillCount": 55,
+    "skillCount": 56,
     "agentCount": 9
   },
   "skills": [
@@ -466,6 +466,19 @@
         "skills/godot-debugging/references/systematic-method.md"
       ],
       "source": "skills/godot-debugging/SKILL.md"
+    },
+    {
+      "name": "godot-grill",
+      "title": "Godot Grill",
+      "description": "Use when a new Godot system or feature has open design decisions — interrogates them in batched rounds, scope first, each question with a recommended answer, and records the answers before any design or code. Triggers on \"grill me\", \"ask me first\", \"question me on the design\", \"what do I need to decide before building\". Not for choosing between nodes or APIs, and not for bug fixes.",
+      "relatedSkills": [
+        "godot-brainstorming",
+        "scene-organization",
+        "godot-mentor"
+      ],
+      "addon": null,
+      "references": [],
+      "source": "skills/godot-grill/SKILL.md"
     },
     {
       "name": "godot-mentor",
