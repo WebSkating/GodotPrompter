@@ -15,3 +15,25 @@ claude plugin eval . --case "grill-*" --ablation with-without --judge-model sonn
 | grill-03-neg-bugfix | 1.00 | 1.00 | 0.00 | trigger-grill 0/3 (Skill called 0x) — desired direction, must not fire |
 
 grill-02 re-measured in `results/2026-09-19T21-26-50-189Z` after its prompt was narrowed to a design and its timeout raised to 600 s — the first run timed out 4/6 and graded interim messages.
+
+## Green — with the skill (`results/2026-09-19T21-46-25-912Z`, grill-01 re-measured in `results/2026-09-19T22-07-19-458Z`)
+
+| Case | With | Without | Δ | Notes |
+|---|---|---|---|---|
+| grill-01-new-system | 1.00 | 0.33 | +0.67 | all five graders 3/3 (no-code-yet, no-fact-questions, numbered-recommended, scope-first, trigger-grill "Skill called 1x") |
+| grill-02-skip-questions | 0.78 | 1.00 | -0.22 | assumptions-stated 3/3; no-questions 2/3 (one with-run FAIL FAIL FAIL); trigger-grill 0/3 (Skill called 0x) |
+| grill-03-neg-bugfix | 1.00 | 1.00 | 0.00 | fixes-bug 3/3; no-questions 3/3; trigger-grill 0/3 (Skill called 0x) — desired direction, does not fire |
+
+grill-01 was re-measured after its `no-fact-questions` grader was reworded: the first green run
+(`results/2026-09-19T21-46-25-912Z`) scored it 0/3 for asking the tree's Dimension and Language
+roots, which the spec makes the user's to state, not the assistant's. Under the corrected wording
+(distinguishing the four root decisions and feature choices, always the user's, from implementation
+choices like a node/class/API/storage tech, which the assistant should decide) the re-run scored
+`no-fact-questions` 3/3 and every grader 3/3.
+
+Ruling: grill-02's -0.22 is not a grill regression — `trigger-grill` reads "Skill called 0x" in all
+three with-arm runs, so the skill never fired; the score drop is one with-arm run asking a question
+on its own (base-model variance), not the skill's doing.
+
+Mentor regression (`results/2026-09-20T09-53-37-633Z`): mean Δ +0.21, 0 errors/timeouts, $14.83; no
+case outside ±0.15 of the FOLLOWUPS confirming-run table; negatives 06/07 held at Δ 0.
