@@ -69,10 +69,16 @@ Clean run (0 judge errors), mean **Δ +0.21**, $14.83. With-arm: 01 0.94, 02 1.0
 0.96, 05 1.00; negatives Δ 0. Run after the `godot-grill` card wiring landed, to confirm mentor
 mode was undisturbed by the new routing.
 
-- **Still open — 01 `beat-why` trending down**: 3/3 → 2/3 → 1/3, and this run failed `beat-why`
-  3/3 judge votes again in one with-arm run. The technique-vs-node/API question from the
-  confirming run is unresolved: should the grader accept a technique contrast, or should Beat 1
-  require a node/API contrast as the card says ("why this node/API")?
+- **Resolved — 01 `beat-why` had gone 3/3 → 2/3 → 1/3 → 0/3** across the branch's four mentor
+  runs (verified per-run: `15-56` 3/3, `18-36` 2/3, `19-56` 1/3, `09-53` **0/3** — this run failed
+  it in all three with-arm runs, each unanimous). The grader was wrong, not the skill: case 01's
+  prompt fixes the node (`CharacterBody2D`), so a dash introduces no new node, resource, or API
+  for a correct answer to contrast, and the skill's own worked Beat 1 example (a jump counter vs.
+  a `can_double_jump` bool) is itself a technique contrast, not a node/API one. The grader now
+  accepts a named-alternative contrast that carries a reason, whether the alternative is a
+  node/resource/API or an approach/technique. The next full mentor run re-measures `beat-why`;
+  until then, case 01's `beat-why` figures from before this reword are not comparable to figures
+  after it.
 
 ### Root causes (measured before editing)
 
@@ -105,12 +111,18 @@ mode was undisturbed by the new routing.
    despite §1's wrapping rule. That answer also claimed sibling `_ready()` order is bottom-to-top
    (wrong — siblings are ready in tree order; children before parents).
 
-## Known eval limitations
+## Known grader caveats
 
-- `no-scope-creep` on 03 can split votes (noisy).
+- `no-menu-paths` only catches top-menu paths (`Project → Project Settings`); panel→tab forms such
+  as `Project Settings → Autoload` are allowed by author decision.
 - Graders read `last_message`; if the answer is split across messages (follow-up 4) the run scores
   low even though the user saw the lesson. Do NOT switch to `trace` — regexes would match the
   SKILL.md text itself.
-- `no-menu-paths` only catches top-menu paths (`Project → Project Settings`); panel→tab forms such
-  as `Project Settings → Autoload` are allowed by author decision.
+- `no-scope-creep` on case 03 can split votes (noisy).
+- `beat-why` (case 01) was reworded to accept a technique contrast, not only a node/resource/API
+  one — see the Post-grill regression run entry above. Figures from before the reword are not
+  comparable to figures after it.
+
+## Known eval limitations
+
 - `evals/results/` holds run output and is gitignored; record baselines in this file.

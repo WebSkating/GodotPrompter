@@ -14,6 +14,10 @@ claude plugin eval . --case "grill-*" --ablation with-without --judge-model sonn
 | grill-02-skip-questions | 1.00 | 0.56 | +0.44 | trigger-grill 0/3 (Skill called 0x); numbers are from the re-measured run `results/2026-09-19T21-26-50-189Z`, not this heading's run — see below |
 | grill-03-neg-bugfix | 1.00 | 1.00 | 0.00 | trigger-grill 0/3 (Skill called 0x) — desired direction, must not fire |
 
+grill-01's row was graded under the pre-reword `no-fact-questions` (it failed asking the tree's
+Dimension and Language roots) and is not directly comparable to the Green row's `no-fact-questions`
+figure below — the Δ itself is unaffected, since both arms of a run share a grader.
+
 grill-02 re-measured in `results/2026-09-19T21-26-50-189Z` after its prompt was narrowed to a design and its timeout raised to 600 s — the first run (`results/2026-09-19T20-45-02-487Z`) timed out 4/6 and graded interim messages, scoring grill-02 1.00 / 0.67 / +0.33 there.
 
 ## Green — with the skill (`results/2026-09-19T21-46-25-912Z`, grill-01 re-measured in `results/2026-09-19T22-07-19-458Z`)
@@ -49,3 +53,7 @@ case outside ±0.15 of the FOLLOWUPS confirming-run table; negatives 06/07 held 
   system") that has open design decisions but never says "grill me" or names a bug. The
   description's breadth between an explicit grill request (fires 3/3) and a bug report (0/3) is
   unmeasured in between.
+- The reworded `no-fact-questions` always passes a question on any of the four root decisions
+  (scope, dimension, language, authority). It cannot catch a grill that asks a root the project
+  has already answered — `skills/godot-grill/SKILL.md` §2 says to skip those, but no grader checks
+  it.
