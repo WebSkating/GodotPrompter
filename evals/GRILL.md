@@ -72,6 +72,14 @@ so the skill never fired for this prompt in either arm; the Δ is base-model run
   persistence). The base model already asks bounded questions or states its assumptions most of
   the time without the skill (`bounded-or-builds` passed unanimously in 5 of 6 runs), so the
   measured gap is in triggering, not in the base model's behaviour once it answers.
+- **The suite measures description-only routing, never the card.** Eval runs start in an empty
+  temp directory, so the SessionStart hook finds no `project.godot` and injects nothing: the agent
+  picks skills from their `description` frontmatter alone. In a real Godot project the card's gate
+  row ("New system, or the requirements are unclear") is what routes work to `godot-grill`, and no
+  eval can exercise it. Author decision (2026-09-20): keep routing as the card's job and leave the
+  description as it is — widening it to self-trigger would reach hook-less hosts but risks exactly
+  the over-triggering this release set out to avoid. The card path is covered by `TEST_PLAN`
+  Tests 6.1–6.3, which run inside a real project.
 - The reworded `no-fact-questions` always passes a question on any of the four root decisions
   (scope, dimension, language, authority). It cannot catch a grill that asks a root the project
   has already answered — `skills/godot-grill/SKILL.md` §2 says to skip those, but no grader checks
