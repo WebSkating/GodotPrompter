@@ -19,7 +19,7 @@ Do NOT jump straight to designing. Follow these steps:
 If the request has open design decisions (scope, dimension, authority, data home, …), invoke `godot-prompter:godot-grill` and let it run to its end. Skip it when a record in the project's decisions or ADR directory already covers this feature, or the user has stated the decisions. Either way, check what already exists (code, scenes, assets). Carry the record into Step 2 — approaches must respect its settled rows.
 
 ### Step 2: Propose 2-3 approaches
-Once you understand the request, propose architectural options with trade-offs. For example:
+With the decisions settled, propose architectural options with trade-offs. For example:
 - "Enum FSM vs Node FSM for your state machine — here's when each fits"
 - "EventBus vs direct signals for your systems — here's the trade-off"
 Lead with your recommendation and explain why.

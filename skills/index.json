@@ -1006,6 +1006,7 @@
       "description": "Bootstrap skill — establishes how to find and use GodotPrompter skills, with platform-specific tool mapping",
       "relatedSkills": [
         "godot-project-setup",
+        "godot-grill",
         "godot-brainstorming",
         "godot-code-review",
         "godot-debugging"

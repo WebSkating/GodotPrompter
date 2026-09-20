@@ -5,7 +5,7 @@ description: Bootstrap skill — establishes how to find and use GodotPrompter s
 
 # Using GodotPrompter
 
-> **Related skills:** **godot-project-setup** for scaffolding a new project, **godot-brainstorming** for design exploration, **godot-code-review** for reviewing finished code, **godot-debugging** for diagnosing runtime issues.
+> **Related skills:** **godot-project-setup** for scaffolding a new project, **godot-grill** for settling open design decisions first, **godot-brainstorming** for design exploration, **godot-code-review** for reviewing finished code, **godot-debugging** for diagnosing runtime issues.
 
 GodotPrompter provides Godot 4.x domain-specific skills for AI coding agents. Skills cover project setup, architecture patterns, gameplay systems, UI, multiplayer, testing, and deployment — for both GDScript and C#.
 
@@ -92,7 +92,7 @@ Applies to subagents writing Godot code too.
 | Editor tools, assets | `addon-development`, `assets-pipeline` |
 | GDScript / C# idioms | `gdscript-patterns`, `gdscript-advanced`, `csharp-godot`, `csharp-signals` |
 | Test, debug, profile, review | `godot-testing`, `godot-debugging`, `godot-optimization`, `godot-code-review` |
-| Setup, design, export | `godot-project-setup`, `godot-brainstorming`, `export-pipeline` |
+| Setup, design, export | `godot-project-setup`, `godot-grill`, `godot-brainstorming`, `export-pipeline` |
 | Teaching while building | `godot-mentor` |
 | Addons (if installed) | `limboai`, `beehave`, `popochiu`, `dialogue-manager`, `phantom-camera` |
 

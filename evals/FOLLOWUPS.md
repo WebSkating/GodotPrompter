@@ -63,6 +63,17 @@ Clean run (0 judge errors), mean **Δ +0.22**, $14.94. With-arm: 01 0.96, 02 **1
 - 03 `no-menu-paths` 2/3: one Verify beat said "Debug → Visible Collision Shapes" — a real menu
   item, but a top-menu path the card rules out. Watch; no change.
 
+### Post-grill regression run — 2026-09-20 (`results/2026-09-20T09-53-37-633Z`)
+
+Clean run (0 judge errors), mean **Δ +0.21**, $14.83. With-arm: 01 0.94, 02 1.00, 03 1.00, 04
+0.96, 05 1.00; negatives Δ 0. Run after the `godot-grill` card wiring landed, to confirm mentor
+mode was undisturbed by the new routing.
+
+- **Still open — 01 `beat-why` trending down**: 3/3 → 2/3 → 1/3, and this run failed `beat-why`
+  3/3 judge votes again in one with-arm run. The technique-vs-node/API question from the
+  confirming run is unresolved: should the grader accept a technique contrast, or should Beat 1
+  require a node/API contrast as the card says ("why this node/API")?
+
 ### Root causes (measured before editing)
 
 | # | Root cause | Change |

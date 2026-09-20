@@ -5,7 +5,7 @@ Reference for `skills/inventory-system/SKILL.md` — the `ItemData` Resource, th
 > ← Back to [SKILL.md](../SKILL.md)
 
 ---
-## 2. ItemData Resource
+## ItemData Resource
 
 Define items as Resources so they live in `.tres` files, are shareable across scenes, and benefit from full editor integration.
 
@@ -63,7 +63,7 @@ public partial class ItemData : Resource
 
 ---
 
-## 3. Inventory Class
+## Inventory Class
 
 ### GDScript
 
@@ -239,7 +239,7 @@ public partial class Inventory : Node
 
 ---
 
-## 4. InventorySlot
+## InventorySlot
 
 `InventorySlot` is a lightweight object tracking an item reference and its quantity. Define it as an inner class on `Inventory` (GDScript) or as a standalone `RefCounted` subclass (C#).
 

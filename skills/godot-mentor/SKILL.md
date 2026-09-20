@@ -49,6 +49,9 @@ Beat 5 may name *one* of those extras.
 
 **Off-ramp.** "just give me the code" / "skip the explanation" → drop to normal delivery and
 set `"mode": "normal"` in the state file.
+
+**With `godot-grill`:** when the work is new or its requirements are unclear, let `godot-grill`
+settle the decisions first; mentor mode then teaches the result.
 <!-- MENTOR-CARD-END -->
 
 ## 3. Turning it on and off

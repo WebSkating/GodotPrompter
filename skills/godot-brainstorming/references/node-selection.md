@@ -5,7 +5,7 @@ Reference for `skills/godot-brainstorming/SKILL.md` — the need-to-node lookup 
 > ← Back to [SKILL.md](../SKILL.md)
 
 ---
-## 3. Node Type Selection Guide
+## Node Type Selection Guide
 
 | Need | Node (2D) | Node (3D) | Notes |
 |---|---|---|---|
@@ -30,7 +30,7 @@ Reference for `skills/godot-brainstorming/SKILL.md` — the need-to-node lookup 
 
 ---
 
-## 4. 2D vs. 3D Decision
+## 2D vs. 3D Decision
 
 ### Choose 2D when
 
