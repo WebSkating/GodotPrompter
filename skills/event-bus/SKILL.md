@@ -1,6 +1,6 @@
 ---
 name: event-bus
-description: Use when implementing decoupled communication between nodes — global EventBus autoload with typed signals
+description: Use when implementing decoupled communication between nodes — global EventBus autoload with typed signals — 中文触发词：事件总线、EventBus、信号解耦、全局信号、单例通信。
 ---
 
 # Event Bus in Godot 4.3+

@@ -1,6 +1,6 @@
 ---
 name: godot-project-setup
-description: Use when creating a new Godot 4.x project — scaffolds recommended directory structure, project settings, autoloads, and .gitignore
+description: Use when creating a new Godot 4.x project — scaffolds recommended directory structure, project settings, autoloads, and .gitignore — 中文触发词：新建项目、项目结构、初始化项目、项目设置、目录结构。
 ---
 
 # Godot Project Setup

@@ -1,6 +1,6 @@
 ---
 name: limboai
-description: Use when using the LimboAI addon — behavior trees and hierarchical state machines (C++ GDExtension) with a visual editor, BTTask subclassing, and a blackboard
+description: Use when using the LimboAI addon — behavior trees and hierarchical state machines (C++ GDExtension) with a visual editor, BTTask subclassing, and a blackboard — 中文触发词：LimboAI 插件、行为树、分层状态机、黑板、AI 编辑器。
 ---
 
 # LimboAI

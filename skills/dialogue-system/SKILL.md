@@ -1,6 +1,6 @@
 ---
 name: dialogue-system
-description: Use when implementing dialogue — data structures for branching dialogue, conditions, and UI presentation
+description: Use when implementing dialogue — data structures for branching dialogue, conditions, and UI presentation — 中文触发词：对话系统、剧情对话、对话树、分支对话、对话界面。
 ---
 
 # Dialogue Systems in Godot 4.3+

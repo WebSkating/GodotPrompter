@@ -1,6 +1,6 @@
 ---
 name: dedicated-server
-description: Use when building dedicated servers — headless export, server architecture, lobby management, and deployment
+description: Use when building dedicated servers — headless export, server architecture, lobby management, and deployment — 中文触发词：专用服务器、无头导出、服务端、房间大厅、服务器部署。
 ---
 
 # Dedicated Server in Godot 4.3+

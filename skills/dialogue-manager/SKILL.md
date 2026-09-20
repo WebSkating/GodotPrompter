@@ -1,6 +1,6 @@
 ---
 name: dialogue-manager
-description: Use when using the Dialogue Manager addon — .dialogue files with titles, responses, conditions and mutations, runtime balloons, and C# support
+description: Use when using the Dialogue Manager addon — .dialogue files with titles, responses, conditions and mutations, runtime balloons, and C# support — 中文触发词：Dialogue Manager 插件、对话管理器、对话树、分支对话、对话气泡。
 ---
 
 # Dialogue Manager

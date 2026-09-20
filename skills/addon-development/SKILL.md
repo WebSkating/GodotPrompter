@@ -1,6 +1,6 @@
 ---
 name: addon-development
-description: Use when creating Godot editor plugins — EditorPlugin, @tool scripts, custom inspectors, and dock panels
+description: Use when creating Godot editor plugins — EditorPlugin, @tool scripts, custom inspectors, and dock panels — 中文触发词：编辑器插件、@tool、自定义检查器、插件面板、EditorPlugin。
 ---
 
 # Addon Development in Godot 4.3+

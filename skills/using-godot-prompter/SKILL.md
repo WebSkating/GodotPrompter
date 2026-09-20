@@ -1,6 +1,6 @@
 ---
 name: using-godot-prompter
-description: Bootstrap skill — establishes how to find and use GodotPrompter skills, with platform-specific tool mapping
+description: Bootstrap skill — establishes how to find and use GodotPrompter skills, with platform-specific tool mapping — 中文触发词：技能清单、有哪些技能、技能索引、怎么用技能。
 ---
 
 # Using GodotPrompter

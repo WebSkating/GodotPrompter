@@ -1,6 +1,6 @@
 ---
 name: ai-navigation
-description: Use when implementing AI movement — NavigationAgent2D/3D, steering behaviors, behavior trees, and patrol patterns
+description: Use when implementing AI movement — NavigationAgent2D/3D, steering behaviors, behavior trees, and patrol patterns — 中文触发词：敌人 AI、寻路、导航代理、巡逻、追逐、NavigationAgent。
 ---
 
 # AI Navigation in Godot 4.3+

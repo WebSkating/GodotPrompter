@@ -1,6 +1,6 @@
 ---
 name: localization
-description: Use when implementing localization (i18n/l10n) — TranslationServer, CSV/PO translation files, locale switching, RTL support, and pluralization in Godot 4.3+
+description: Use when implementing localization (i18n/l10n) — TranslationServer, CSV/PO translation files, locale switching, RTL support, and pluralization in Godot 4.3+ — 中文触发词：本地化、多语言、i18n、翻译、语言切换。
 ---
 
 # Localization in Godot 4.3+

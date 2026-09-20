@@ -1,6 +1,6 @@
 ---
 name: godot-ui
-description: Use when building user interfaces — Control nodes, themes, anchors, containers, and layout patterns
+description: Use when building user interfaces — Control nodes, themes, anchors, containers, and layout patterns — 中文触发词：UI、界面、Control 节点、主题、布局、容器。
 ---
 
 # Godot UI — Control Nodes, Themes & Layout

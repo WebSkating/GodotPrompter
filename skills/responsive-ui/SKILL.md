@@ -1,6 +1,6 @@
 ---
 name: responsive-ui
-description: Use when handling multiple resolutions — stretch modes, aspect ratios, DPI scaling, and mobile/desktop adaptation
+description: Use when handling multiple resolutions — stretch modes, aspect ratios, DPI scaling, and mobile/desktop adaptation — 中文触发词：分辨率适配、屏幕适配、拉伸模式、多分辨率、DPI。
 ---
 
 # Responsive UI in Godot 4.3+

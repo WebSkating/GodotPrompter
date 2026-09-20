@@ -1,6 +1,6 @@
 ---
 name: godot-testing
-description: Use when writing tests for Godot projects — TDD workflow with GUT and gdUnit4, covers both GDScript and C#
+description: Use when writing tests for Godot projects — TDD workflow with GUT and gdUnit4, covers both GDScript and C# — 中文触发词：单元测试、测试、TDD、GUT、gdUnit4、测试用例。
 ---
 
 # Godot Testing

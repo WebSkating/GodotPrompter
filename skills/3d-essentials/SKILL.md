@@ -1,6 +1,6 @@
 ---
 name: 3d-essentials
-description: Use when working with 3D-specific systems — materials, lighting, shadows, environment, global illumination, fog, LOD, occlusion culling, and decals in Godot 4.3+
+description: Use when working with 3D-specific systems — materials, lighting, shadows, environment, global illumination, fog, LOD, occlusion culling, and decals in Godot 4.3+ — 中文触发词：3D、材质、光照、阴影、环境、LOD。
 ---
 
 # 3D Essentials in Godot 4.3+

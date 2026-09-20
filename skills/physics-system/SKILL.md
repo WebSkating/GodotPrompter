@@ -1,6 +1,6 @@
 ---
 name: physics-system
-description: Use when working with physics bodies, collision shapes, raycasting, areas, rigid bodies, ragdolls, soft bodies, Jolt physics, and physics interpolation in Godot 4.3+
+description: Use when working with physics bodies, collision shapes, raycasting, areas, rigid bodies, ragdolls, soft bodies, Jolt physics, and physics interpolation in Godot 4.3+ — 中文触发词：物理、碰撞、刚体、射线检测、布娃娃、Jolt。
 ---
 
 # Physics System in Godot 4.3+

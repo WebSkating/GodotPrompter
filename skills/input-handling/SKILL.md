@@ -1,6 +1,6 @@
 ---
 name: input-handling
-description: Use when implementing input — InputEvent system, Input Map actions, controllers/gamepads, mouse/touch, action rebinding, and input architecture
+description: Use when implementing input — InputEvent system, Input Map actions, controllers/gamepads, mouse/touch, action rebinding, and input architecture — 中文触发词：输入、按键映射、手柄、鼠标触摸、按键重绑、输入映射。
 ---
 
 # Input Handling in Godot 4.3+

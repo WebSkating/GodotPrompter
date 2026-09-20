@@ -1,6 +1,6 @@
 ---
 name: camera-system
-description: Use when implementing cameras — smooth follow, screen shake, camera zones, and transitions for 2D and 3D
+description: Use when implementing cameras — smooth follow, screen shake, camera zones, and transitions for 2D and 3D — 中文触发词：摄像机、跟随镜头、震屏、镜头切换、镜头边界。
 ---
 
 # Camera Systems in Godot 4.3+

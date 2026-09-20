@@ -1,6 +1,6 @@
 ---
 name: godot-mentor
-description: Use when the user wants to learn Godot while building — teaching mode that explains the concept, the editor setup, and what to verify, instead of just delivering code. Triggers on "teach me", "explain as we go", "I'm learning Godot", "guide me", "walk me through", "help me understand".
+description: Use when the user wants to learn Godot while building — teaching mode that explains the concept, the editor setup, and what to verify instead of just delivering code — 中文触发词：教学、边做边学、带我入门、教我、teach me。
 ---
 
 # Godot Mentor Mode

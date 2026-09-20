@@ -1,6 +1,6 @@
 ---
 name: save-load
-description: Use when implementing save/load systems — ConfigFile, JSON, Resource serialization, save game architecture
+description: Use when implementing save/load systems — ConfigFile, JSON, Resource serialization, save game architecture — 中文触发词：存档、读档、保存进度、序列化、存读档系统。
 ---
 
 # Save / Load Systems in Godot 4.3+

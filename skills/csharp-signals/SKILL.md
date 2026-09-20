@@ -1,6 +1,6 @@
 ---
 name: csharp-signals
-description: Use when implementing signals in C# — [Signal] delegates, EmitSignal patterns, async signal awaiting, and event-driven architecture
+description: Use when implementing signals in C# — [Signal] delegates, EmitSignal patterns, async signal awaiting, and event-driven architecture — 中文触发词：C# 信号、EmitSignal、事件驱动、异步等待信号、Signal 委托。
 ---
 
 # Signals in C# (Godot 4.x)

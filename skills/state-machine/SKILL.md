@@ -1,6 +1,6 @@
 ---
 name: state-machine
-description: Use when implementing state machines in Godot — enum-based, node-based, and resource-based FSM patterns with trade-offs
+description: Use when implementing state machines in Godot — enum-based, node-based, and resource-based FSM patterns with trade-offs — 中文触发词：状态机、有限状态机、FSM、状态切换、状态管理。
 ---
 
 # State Machines in Godot 4.3+

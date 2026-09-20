@@ -1,6 +1,6 @@
 ---
 name: resource-pattern
-description: Use when creating data containers in Godot — custom Resources for configuration, items, stats, and editor integration
+description: Use when creating data containers in Godot — custom Resources for configuration, items, stats, and editor integration — 中文触发词：自定义资源、Resource、数据容器、配置资源、资源类。
 ---
 
 # Resource Pattern in Godot 4.3+

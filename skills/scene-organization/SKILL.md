@@ -1,6 +1,6 @@
 ---
 name: scene-organization
-description: Use when designing scene tree structure — composition vs inheritance, when to split scenes, node hierarchy patterns
+description: Use when designing scene tree structure — composition vs inheritance, when to split scenes, node hierarchy patterns — 中文触发词：场景树、场景结构、节点组织、组合与继承、场景拆分。
 ---
 
 # Scene Organization

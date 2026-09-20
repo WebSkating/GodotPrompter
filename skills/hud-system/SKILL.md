@@ -1,6 +1,6 @@
 ---
 name: hud-system
-description: Use when building in-game HUDs — health bars, score displays, minimap, notifications, and damage numbers
+description: Use when building in-game HUDs — health bars, score displays, minimap, notifications, and damage numbers — 中文触发词：HUD、血条、小地图、伤害数字、计分板、提示。
 ---
 
 # HUD Systems in Godot 4.3+

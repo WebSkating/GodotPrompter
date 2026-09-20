@@ -1,6 +1,6 @@
 ---
 name: godot-debugging
-description: Use when debugging Godot projects — remote debugger, print techniques, signal tracing, common error patterns and fixes
+description: Use when debugging Godot projects — remote debugger, print techniques, signal tracing, common error patterns and fixes — 中文触发词：调试、报错排查、断点、打印日志、信号追踪、崩溃。
 ---
 
 # Godot Debugging

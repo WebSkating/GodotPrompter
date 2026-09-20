@@ -9,7 +9,7 @@
     {
       "name": "2d-essentials",
       "title": "2D Essentials in Godot 4.3+",
-      "description": "Use when working with 2D-specific systems — TileMaps, parallax scrolling, 2D lights and shadows, canvas layers, particles 2D, custom drawing, and 2D meshes in Godot 4.3+",
+      "description": "Use when working with 2D-specific systems — TileMaps, parallax scrolling, 2D lights and shadows, canvas layers, 2D particles, custom drawing, and 2D meshes — 中文触发词：2D、瓦片地图、视差滚动、2D 光照、画布层、自定义绘制。",
       "relatedSkills": [
         "player-controller",
         "animation-system",
@@ -31,7 +31,7 @@
     {
       "name": "3d-essentials",
       "title": "3D Essentials in Godot 4.3+",
-      "description": "Use when working with 3D-specific systems — materials, lighting, shadows, environment, global illumination, fog, LOD, occlusion culling, and decals in Godot 4.3+",
+      "description": "Use when working with 3D-specific systems — materials, lighting, shadows, environment, global illumination, fog, LOD, occlusion culling, and decals in Godot 4.3+ — 中文触发词：3D、材质、光照、阴影、环境、LOD。",
       "relatedSkills": [
         "player-controller",
         "physics-system",
@@ -57,7 +57,7 @@
     {
       "name": "ability-system",
       "title": "Ability System",
-      "description": "Use when building character abilities — Resource-based abilities with cost/cooldown/cast, buffs/debuffs, stat modifiers, gameplay tags, and HUD binding",
+      "description": "Use when building character abilities — Resource-based abilities with cost/cooldown/cast, buffs/debuffs, stat modifiers, gameplay tags, and HUD binding — 中文触发词：技能系统、技能、冷却、Buff、属性加成、释放。",
       "relatedSkills": [
         "resource-pattern",
         "component-system",
@@ -76,7 +76,7 @@
     {
       "name": "addon-development",
       "title": "Addon Development in Godot 4.3+",
-      "description": "Use when creating Godot editor plugins — EditorPlugin, @tool scripts, custom inspectors, and dock panels",
+      "description": "Use when creating Godot editor plugins — EditorPlugin, @tool scripts, custom inspectors, and dock panels — 中文触发词：编辑器插件、@tool、自定义检查器、插件面板、EditorPlugin。",
       "relatedSkills": [
         "resource-pattern",
         "godot-ui",
@@ -94,7 +94,7 @@
     {
       "name": "ai-navigation",
       "title": "AI Navigation in Godot 4.3+",
-      "description": "Use when implementing AI movement — NavigationAgent2D/3D, steering behaviors, behavior trees, and patrol patterns",
+      "description": "Use when implementing AI movement — NavigationAgent2D/3D, steering behaviors, behavior trees, and patrol patterns — 中文触发词：敌人 AI、寻路、导航代理、巡逻、追逐、NavigationAgent。",
       "relatedSkills": [
         "state-machine",
         "component-system",
@@ -118,7 +118,7 @@
     {
       "name": "animation-system",
       "title": "Animation System in Godot 4.3+",
-      "description": "Use when implementing animations — AnimationPlayer, AnimationTree, blend trees, state machines, sprite animation, and code-driven animation",
+      "description": "Use when implementing animations — AnimationPlayer, AnimationTree, blend trees, state machines, sprite animation, and code-driven animation — 中文触发词：动画、AnimationPlayer、混合树、骨骼动画、帧动画、动画状态。",
       "relatedSkills": [
         "state-machine",
         "player-controller",
@@ -143,7 +143,7 @@
     {
       "name": "assets-pipeline",
       "title": "Assets Pipeline in Godot 4.3+",
-      "description": "Use when importing and managing assets — image compression, 3D scene import, audio formats, resource formats, and import configuration",
+      "description": "Use when importing and managing assets — image compression, 3D scene import, audio formats, resource formats, and import configuration — 中文触发词：资源导入、素材管理、图片压缩、模型导入、导入设置。",
       "relatedSkills": [
         "audio-system",
         "animation-system",
@@ -159,7 +159,7 @@
     {
       "name": "audio-system",
       "title": "Audio System in Godot 4.3+",
-      "description": "Use when implementing audio — audio buses, AudioStreamPlayer, spatial audio, music management, SFX pooling, and dynamic mixing",
+      "description": "Use when implementing audio — audio buses, AudioStreamPlayer, spatial audio, music management, SFX pooling, and dynamic mixing — 中文触发词：音频、音效、背景音乐、音频总线、3D 音效、音量混合。",
       "relatedSkills": [
         "event-bus",
         "save-load",
@@ -177,7 +177,7 @@
     {
       "name": "beehave",
       "title": "Beehave",
-      "description": "Use when using the Beehave addon — pure-GDScript behavior trees with composites, decorators, leaves, a blackboard, and a visual runtime debugger",
+      "description": "Use when using the Beehave addon — pure-GDScript behavior trees with composites, decorators, leaves, a blackboard, and a visual runtime debugger — 中文触发词：Beehave 插件、行为树、黑板、AI 行为、装饰器。",
       "relatedSkills": [
         "ai-navigation",
         "state-machine",
@@ -193,7 +193,7 @@
     {
       "name": "camera-system",
       "title": "Camera Systems in Godot 4.3+",
-      "description": "Use when implementing cameras — smooth follow, screen shake, camera zones, and transitions for 2D and 3D",
+      "description": "Use when implementing cameras — smooth follow, screen shake, camera zones, and transitions for 2D and 3D — 中文触发词：摄像机、跟随镜头、震屏、镜头切换、镜头边界。",
       "relatedSkills": [
         "player-controller",
         "state-machine",
@@ -215,7 +215,7 @@
     {
       "name": "component-system",
       "title": "Component System in Godot 4.3+",
-      "description": "Use when building reusable node components — composition patterns, component communication, and interface design",
+      "description": "Use when building reusable node components — composition patterns, component communication, and interface design — 中文触发词：组件化、组件、节点复用、组合模式、组件通信。",
       "relatedSkills": [
         "scene-organization",
         "event-bus",
@@ -230,7 +230,7 @@
     {
       "name": "csharp-godot",
       "title": "C# in Godot 4.3+",
-      "description": "Use when working with C# in Godot — conventions, GodotSharp API differences from GDScript, project setup, and interop",
+      "description": "Use when working with C# in Godot — conventions, GodotSharp API differences from GDScript, project setup, and interop — 中文触发词：C#、GodotSharp、C# 项目配置、GDScript 互操作、C# 写法。",
       "relatedSkills": [
         "csharp-signals",
         "godot-project-setup",
@@ -245,7 +245,7 @@
     {
       "name": "csharp-signals",
       "title": "Signals in C# (Godot 4.x)",
-      "description": "Use when implementing signals in C# — [Signal] delegates, EmitSignal patterns, async signal awaiting, and event-driven architecture",
+      "description": "Use when implementing signals in C# — [Signal] delegates, EmitSignal patterns, async signal awaiting, and event-driven architecture — 中文触发词：C# 信号、EmitSignal、事件驱动、异步等待信号、Signal 委托。",
       "relatedSkills": [
         "csharp-godot",
         "event-bus",
@@ -263,7 +263,7 @@
     {
       "name": "dedicated-server",
       "title": "Dedicated Server in Godot 4.3+",
-      "description": "Use when building dedicated servers — headless export, server architecture, lobby management, and deployment",
+      "description": "Use when building dedicated servers — headless export, server architecture, lobby management, and deployment — 中文触发词：专用服务器、无头导出、服务端、房间大厅、服务器部署。",
       "relatedSkills": [],
       "addon": null,
       "references": [
@@ -277,7 +277,7 @@
     {
       "name": "dependency-injection",
       "title": "Dependency Injection in Godot 4.3+",
-      "description": "Use when managing dependencies between systems — autoloads, service locators, @export injection, and scene injection patterns",
+      "description": "Use when managing dependencies between systems — autoloads, service locators, @export injection, and scene injection patterns — 中文触发词：依赖注入、自动加载、服务定位、单例注册、@export 注入。",
       "relatedSkills": [
         "godot-testing",
         "event-bus",
@@ -296,7 +296,7 @@
     {
       "name": "dialogue-manager",
       "title": "Dialogue Manager",
-      "description": "Use when using the Dialogue Manager addon — .dialogue files with titles, responses, conditions and mutations, runtime balloons, and C# support",
+      "description": "Use when using the Dialogue Manager addon — .dialogue files with titles, responses, conditions and mutations, runtime balloons, and C# support — 中文触发词：Dialogue Manager 插件、对话管理器、对话树、分支对话、对话气泡。",
       "relatedSkills": [
         "dialogue-system",
         "localization",
@@ -309,7 +309,7 @@
     {
       "name": "dialogue-system",
       "title": "Dialogue Systems in Godot 4.3+",
-      "description": "Use when implementing dialogue — data structures for branching dialogue, conditions, and UI presentation",
+      "description": "Use when implementing dialogue — data structures for branching dialogue, conditions, and UI presentation — 中文触发词：对话系统、剧情对话、对话树、分支对话、对话界面。",
       "relatedSkills": [
         "resource-pattern",
         "godot-ui",
@@ -331,7 +331,7 @@
     {
       "name": "event-bus",
       "title": "Event Bus in Godot 4.3+",
-      "description": "Use when implementing decoupled communication between nodes — global EventBus autoload with typed signals",
+      "description": "Use when implementing decoupled communication between nodes — global EventBus autoload with typed signals — 中文触发词：事件总线、EventBus、信号解耦、全局信号、单例通信。",
       "relatedSkills": [
         "component-system",
         "csharp-signals",
@@ -349,7 +349,7 @@
     {
       "name": "export-pipeline",
       "title": "Export Pipeline in Godot 4.3+",
-      "description": "Use when exporting and distributing Godot games — export presets, platform settings, CI/CD with GitHub Actions",
+      "description": "Use when exporting and distributing Godot games — export presets, platform settings, CI/CD with GitHub Actions — 中文触发词：导出、打包发布、导出预设、CI、GitHub Actions、发版。",
       "relatedSkills": [
         "godot-testing",
         "godot-optimization",
@@ -366,7 +366,7 @@
     {
       "name": "gdextension",
       "title": "GDExtension",
-      "description": "Use when building native extensions for Godot — godot-cpp (C++) or gdext (Rust), binding classes, building, and GDScript/C# interop",
+      "description": "Use when building native extensions for Godot — godot-cpp (C++) or gdext (Rust), binding classes, building, and GDScript/C# interop — 中文触发词：GDExtension、原生扩展、godot-cpp、Rust 绑定、C++ 绑定。",
       "relatedSkills": [
         "csharp-godot",
         "gdscript-advanced",
@@ -384,7 +384,7 @@
     {
       "name": "gdscript-advanced",
       "title": "GDScript Advanced",
-      "description": "Use when writing production-grade GDScript — performance idioms, metaprogramming, @tool lifecycle, async pitfalls, signal/Callable trade-offs, profiler-driven idioms, and common pitfalls",
+      "description": "Use when writing production-grade GDScript — performance idioms, metaprogramming, @tool lifecycle, async pitfalls, and signal/Callable trade-offs — 中文触发词：GDScript 进阶、元编程、性能写法、Callable、异步陷阱。",
       "relatedSkills": [
         "gdscript-patterns",
         "godot-optimization",
@@ -402,7 +402,7 @@
     {
       "name": "gdscript-patterns",
       "title": "GDScript Patterns in Godot 4.3+",
-      "description": "Use when writing GDScript — static typing, await/coroutines, lambdas, match patterns, export annotations, inner classes, and common idioms",
+      "description": "Use when writing GDScript — static typing, await/coroutines, lambdas, match patterns, export annotations, inner classes, and common idioms — 中文触发词：GDScript、静态类型、协程、lambda、写法规范、常用写法。",
       "relatedSkills": [
         "gdscript-advanced",
         "godot-code-review",
@@ -423,7 +423,7 @@
     {
       "name": "godot-brainstorming",
       "title": "Godot Brainstorming",
-      "description": "Use when designing a new Godot feature or system — guides scene tree planning, node type selection, and architectural decisions",
+      "description": "Use when designing a new Godot feature or system — guides scene tree planning, node type selection, and architectural decisions — 中文触发词：游戏设计、方案设计、系统设计、架构设计、场景树规划。",
       "relatedSkills": [
         "scene-organization",
         "component-system",
@@ -438,7 +438,7 @@
     {
       "name": "godot-code-review",
       "title": "Godot Code Review",
-      "description": "Use when reviewing GDScript or C# Godot code — checklist of best practices, common anti-patterns, and Godot-specific pitfalls",
+      "description": "Use when reviewing GDScript or C# Godot code — checklist of best practices, common anti-patterns, and Godot-specific pitfalls — 中文触发词：代码审查、代码评审、Code Review、重构建议、反模式。",
       "relatedSkills": [
         "godot-testing",
         "scene-organization",
@@ -451,7 +451,7 @@
     {
       "name": "godot-debugging",
       "title": "Godot Debugging",
-      "description": "Use when debugging Godot projects — remote debugger, print techniques, signal tracing, common error patterns and fixes",
+      "description": "Use when debugging Godot projects — remote debugger, print techniques, signal tracing, common error patterns and fixes — 中文触发词：调试、报错排查、断点、打印日志、信号追踪、崩溃。",
       "relatedSkills": [
         "godot-optimization",
         "godot-testing",
@@ -469,7 +469,7 @@
     {
       "name": "godot-mentor",
       "title": "Godot Mentor Mode",
-      "description": "Use when the user wants to learn Godot while building — teaching mode that explains the concept, the editor setup, and what to verify, instead of just delivering code. Triggers on \"teach me\", \"explain as we go\", \"I'm learning Godot\", \"guide me\", \"walk me through\", \"help me understand\".",
+      "description": "Use when the user wants to learn Godot while building — teaching mode that explains the concept, the editor setup, and what to verify instead of just delivering code — 中文触发词：教学、边做边学、带我入门、教我、teach me。",
       "relatedSkills": [
         "godot-brainstorming",
         "godot-project-setup",
@@ -483,7 +483,7 @@
     {
       "name": "godot-optimization",
       "title": "Godot Optimization",
-      "description": "Use when optimizing Godot games — profiler, draw calls, physics tuning, memory management, and common bottlenecks",
+      "description": "Use when optimizing Godot games — profiler, draw calls, physics tuning, memory management, and common bottlenecks — 中文触发词：性能优化、掉帧、卡顿、性能分析、内存优化、Draw Call。",
       "relatedSkills": [
         "godot-debugging",
         "godot-code-review",
@@ -504,7 +504,7 @@
     {
       "name": "godot-project-setup",
       "title": "Godot Project Setup",
-      "description": "Use when creating a new Godot 4.x project — scaffolds recommended directory structure, project settings, autoloads, and .gitignore",
+      "description": "Use when creating a new Godot 4.x project — scaffolds recommended directory structure, project settings, autoloads, and .gitignore — 中文触发词：新建项目、项目结构、初始化项目、项目设置、目录结构。",
       "relatedSkills": [
         "scene-organization",
         "event-bus",
@@ -517,7 +517,7 @@
     {
       "name": "godot-testing",
       "title": "Godot Testing",
-      "description": "Use when writing tests for Godot projects — TDD workflow with GUT and gdUnit4, covers both GDScript and C#",
+      "description": "Use when writing tests for Godot projects — TDD workflow with GUT and gdUnit4, covers both GDScript and C# — 中文触发词：单元测试、测试、TDD、GUT、gdUnit4、测试用例。",
       "relatedSkills": [
         "godot-code-review",
         "dependency-injection",
@@ -534,7 +534,7 @@
     {
       "name": "godot-ui",
       "title": "Godot UI — Control Nodes, Themes & Layout",
-      "description": "Use when building user interfaces — Control nodes, themes, anchors, containers, and layout patterns",
+      "description": "Use when building user interfaces — Control nodes, themes, anchors, containers, and layout patterns — 中文触发词：UI、界面、Control 节点、主题、布局、容器。",
       "relatedSkills": [
         "responsive-ui",
         "hud-system",
@@ -555,7 +555,7 @@
     {
       "name": "hud-system",
       "title": "HUD Systems in Godot 4.3+",
-      "description": "Use when building in-game HUDs — health bars, score displays, minimap, notifications, and damage numbers",
+      "description": "Use when building in-game HUDs — health bars, score displays, minimap, notifications, and damage numbers — 中文触发词：HUD、血条、小地图、伤害数字、计分板、提示。",
       "relatedSkills": [
         "godot-ui",
         "component-system",
@@ -575,7 +575,7 @@
     {
       "name": "input-handling",
       "title": "Input Handling in Godot 4.3+",
-      "description": "Use when implementing input — InputEvent system, Input Map actions, controllers/gamepads, mouse/touch, action rebinding, and input architecture",
+      "description": "Use when implementing input — InputEvent system, Input Map actions, controllers/gamepads, mouse/touch, action rebinding, and input architecture — 中文触发词：输入、按键映射、手柄、鼠标触摸、按键重绑、输入映射。",
       "relatedSkills": [
         "player-controller",
         "godot-ui",
@@ -598,7 +598,7 @@
     {
       "name": "inventory-system",
       "title": "Inventory Systems in Godot 4.3+",
-      "description": "Use when building inventory systems — Resource-based items, slot management, stacking, and UI binding",
+      "description": "Use when building inventory systems — Resource-based items, slot management, stacking, and UI binding — 中文触发词：背包、物品栏、装备栏、物品堆叠、格子、物品管理。",
       "relatedSkills": [
         "resource-pattern",
         "save-load",
@@ -617,7 +617,7 @@
     {
       "name": "limboai",
       "title": "LimboAI",
-      "description": "Use when using the LimboAI addon — behavior trees and hierarchical state machines (C++ GDExtension) with a visual editor, BTTask subclassing, and a blackboard",
+      "description": "Use when using the LimboAI addon — behavior trees and hierarchical state machines (C++ GDExtension) with a visual editor, BTTask subclassing, and a blackboard — 中文触发词：LimboAI 插件、行为树、分层状态机、黑板、AI 编辑器。",
       "relatedSkills": [
         "ai-navigation",
         "state-machine",
@@ -632,7 +632,7 @@
     {
       "name": "localization",
       "title": "Localization in Godot 4.3+",
-      "description": "Use when implementing localization (i18n/l10n) — TranslationServer, CSV/PO translation files, locale switching, RTL support, and pluralization in Godot 4.3+",
+      "description": "Use when implementing localization (i18n/l10n) — TranslationServer, CSV/PO translation files, locale switching, RTL support, and pluralization in Godot 4.3+ — 中文触发词：本地化、多语言、i18n、翻译、语言切换。",
       "relatedSkills": [
         "godot-ui",
         "save-load",
@@ -650,7 +650,7 @@
     {
       "name": "math-essentials",
       "title": "Game Math in Godot 4.3+",
-      "description": "Use when implementing game math — vectors, transforms, interpolation, curves, random number generation, and common geometric recipes",
+      "description": "Use when implementing game math — vectors, transforms, interpolation, curves, random number generation, and common geometric recipes — 中文触发词：游戏数学、向量、插值、曲线、随机数、变换。",
       "relatedSkills": [
         "player-controller",
         "ai-navigation",
@@ -669,7 +669,7 @@
     {
       "name": "mobile-development",
       "title": "Mobile Development",
-      "description": "Use when targeting Android/iOS — export and signing, permissions, plugins, in-app purchases, ads, app lifecycle, device features, and mobile performance",
+      "description": "Use when targeting Android/iOS — export and signing, permissions, plugins, in-app purchases, ads, app lifecycle, device features, and mobile performance — 中文触发词：安卓、iOS、手游、移动端、导出签名、内购。",
       "relatedSkills": [
         "export-pipeline",
         "responsive-ui",
@@ -688,7 +688,7 @@
     {
       "name": "multiplayer-basics",
       "title": "Multiplayer Basics in Godot 4.3+",
-      "description": "Use when implementing multiplayer — MultiplayerAPI, ENet/WebSocket peers, RPCs, and authority model",
+      "description": "Use when implementing multiplayer — MultiplayerAPI, ENet/WebSocket peers, RPCs, and authority model — 中文触发词：多人联机、联机、RPC、网络同步、主机权威、房间。",
       "relatedSkills": [],
       "addon": null,
       "references": [
@@ -702,7 +702,7 @@
     {
       "name": "multiplayer-sync",
       "title": "Multiplayer Synchronization in Godot 4.3+",
-      "description": "Use when synchronizing multiplayer state — MultiplayerSynchronizer, interpolation, prediction, and lag compensation",
+      "description": "Use when synchronizing multiplayer state — MultiplayerSynchronizer, interpolation, prediction, and lag compensation — 中文触发词：网络同步、状态同步、插值、预测、延迟补偿、联机同步。",
       "relatedSkills": [
         "multiplayer-basics",
         "dedicated-server",
@@ -720,7 +720,7 @@
     {
       "name": "multithreading",
       "title": "Multithreading",
-      "description": "Use when running work off the main thread — WorkerThreadPool, Thread/Mutex/Semaphore, call_deferred, thread-safe scene access, and threaded resource loading",
+      "description": "Use when running work off the main thread — WorkerThreadPool, Thread/Mutex/Semaphore, call_deferred, thread-safe scene access, and threaded resource loading — 中文触发词：多线程、线程、后台加载、线程安全、call_deferred。",
       "relatedSkills": [
         "godot-optimization",
         "assets-pipeline",
@@ -736,7 +736,7 @@
     {
       "name": "particles-vfx",
       "title": "Particle Systems in Godot 4.3+",
-      "description": "Use when implementing particle effects — GPUParticles2D/3D, ParticleProcessMaterial, emission shapes, subemitters, trails, attractors, collision, and common VFX recipes",
+      "description": "Use when implementing particle effects — GPUParticles2D/3D, ParticleProcessMaterial, emission shapes, subemitters, trails, attractors, collision, and common VFX recipes — 中文触发词：粒子特效、粒子、VFX、拖尾、爆炸效果、特效。",
       "relatedSkills": [
         "shader-basics",
         "tween-animation",
@@ -757,7 +757,7 @@
     {
       "name": "phantom-camera",
       "title": "Phantom Camera",
-      "description": "Use when using the Phantom Camera addon — PhantomCamera2D/3D with priority-based switching, follow and look-at modes, and tween transitions",
+      "description": "Use when using the Phantom Camera addon — PhantomCamera2D/3D with priority-based switching, follow and look-at modes, and tween transitions — 中文触发词：Phantom Camera 插件、动态摄像机、跟随镜头、镜头切换、镜头优先级。",
       "relatedSkills": [
         "camera-system",
         "tween-animation"
@@ -769,7 +769,7 @@
     {
       "name": "physics-system",
       "title": "Physics System in Godot 4.3+",
-      "description": "Use when working with physics bodies, collision shapes, raycasting, areas, rigid bodies, ragdolls, soft bodies, Jolt physics, and physics interpolation in Godot 4.3+",
+      "description": "Use when working with physics bodies, collision shapes, raycasting, areas, rigid bodies, ragdolls, soft bodies, Jolt physics, and physics interpolation in Godot 4.3+ — 中文触发词：物理、碰撞、刚体、射线检测、布娃娃、Jolt。",
       "relatedSkills": [
         "player-controller",
         "component-system",
@@ -797,7 +797,7 @@
     {
       "name": "player-controller",
       "title": "Player Controllers in Godot 4.3+",
-      "description": "Use when implementing player movement — CharacterBody2D/3D patterns, input handling, physics, common movement recipes",
+      "description": "Use when implementing player movement — CharacterBody2D/3D patterns, input handling, physics, common movement recipes — 中文触发词：玩家移动、角色控制、跳跃、移动手感、CharacterBody。",
       "relatedSkills": [
         "physics-system",
         "state-machine",
@@ -816,7 +816,7 @@
     {
       "name": "popochiu",
       "title": "Popochiu",
-      "description": "Use when using the Popochiu addon — point-and-click adventure framework with rooms, characters, props/hotspots, inventory, dialog trees, and a command-based GUI",
+      "description": "Use when using the Popochiu addon — point-and-click adventure framework with rooms, characters, props/hotspots, inventory, dialog trees, and a command-based GUI — 中文触发词：Popochiu 插件、点击式冒险、冒险游戏、房间、热点、对话树。",
       "relatedSkills": [
         "dialogue-system",
         "inventory-system",
@@ -834,7 +834,7 @@
     {
       "name": "procedural-generation",
       "title": "Procedural Generation in Godot 4.3+",
-      "description": "Use when implementing procedural generation — noise-based terrain, BSP dungeons, cellular automata caves, wave function collapse, and seeded randomness in Godot 4.3+",
+      "description": "Use when implementing procedural generation — noise-based terrain, BSP dungeons, cellular automata caves, wave function collapse, and seeded randomness in Godot 4.3+ — 中文触发词：程序化生成、噪声、随机地图、地牢生成、随机地形。",
       "relatedSkills": [
         "math-essentials",
         "godot-optimization"
@@ -851,7 +851,7 @@
     {
       "name": "resource-pattern",
       "title": "Resource Pattern in Godot 4.3+",
-      "description": "Use when creating data containers in Godot — custom Resources for configuration, items, stats, and editor integration",
+      "description": "Use when creating data containers in Godot — custom Resources for configuration, items, stats, and editor integration — 中文触发词：自定义资源、Resource、数据容器、配置资源、资源类。",
       "relatedSkills": [
         "inventory-system",
         "save-load",
@@ -871,7 +871,7 @@
     {
       "name": "responsive-ui",
       "title": "Responsive UI in Godot 4.3+",
-      "description": "Use when handling multiple resolutions — stretch modes, aspect ratios, DPI scaling, and mobile/desktop adaptation",
+      "description": "Use when handling multiple resolutions — stretch modes, aspect ratios, DPI scaling, and mobile/desktop adaptation — 中文触发词：分辨率适配、屏幕适配、拉伸模式、多分辨率、DPI。",
       "relatedSkills": [
         "godot-ui",
         "export-pipeline",
@@ -892,7 +892,7 @@
     {
       "name": "save-load",
       "title": "Save / Load Systems in Godot 4.3+",
-      "description": "Use when implementing save/load systems — ConfigFile, JSON, Resource serialization, save game architecture",
+      "description": "Use when implementing save/load systems — ConfigFile, JSON, Resource serialization, save game architecture — 中文触发词：存档、读档、保存进度、序列化、存读档系统。",
       "relatedSkills": [
         "resource-pattern",
         "inventory-system",
@@ -911,7 +911,7 @@
     {
       "name": "scene-organization",
       "title": "Scene Organization",
-      "description": "Use when designing scene tree structure — composition vs inheritance, when to split scenes, node hierarchy patterns",
+      "description": "Use when designing scene tree structure — composition vs inheritance, when to split scenes, node hierarchy patterns — 中文触发词：场景树、场景结构、节点组织、组合与继承、场景拆分。",
       "relatedSkills": [
         "component-system",
         "event-bus",
@@ -924,7 +924,7 @@
     {
       "name": "shader-basics",
       "title": "Shaders in Godot 4.3+",
-      "description": "Use when implementing shaders — Godot shader language, visual shaders, common visual recipes, and post-processing effects",
+      "description": "Use when implementing shaders — Godot shader language, visual shaders, common visual recipes, and post-processing effects — 中文触发词：着色器、Shader、视觉着色器、后期处理、屏幕效果。",
       "relatedSkills": [
         "animation-system",
         "godot-optimization",
@@ -946,7 +946,7 @@
     {
       "name": "state-machine",
       "title": "State Machines in Godot 4.3+",
-      "description": "Use when implementing state machines in Godot — enum-based, node-based, and resource-based FSM patterns with trade-offs",
+      "description": "Use when implementing state machines in Godot — enum-based, node-based, and resource-based FSM patterns with trade-offs — 中文触发词：状态机、有限状态机、FSM、状态切换、状态管理。",
       "relatedSkills": [
         "player-controller",
         "ai-navigation",
@@ -966,7 +966,7 @@
     {
       "name": "tween-animation",
       "title": "Tweens in Godot 4.3+",
-      "description": "Use when implementing tweens — property animation, method tweening, chaining, parallel sequences, easing, and common UI/gameplay motion recipes",
+      "description": "Use when implementing tweens — property animation, method tweening, chaining, parallel sequences, easing, and common UI/gameplay motion recipes — 中文触发词：补间动画、Tween、缓动、动画过渡、属性动画。",
       "relatedSkills": [
         "animation-system",
         "godot-ui",
@@ -987,7 +987,7 @@
     {
       "name": "using-godot-prompter",
       "title": "Using GodotPrompter",
-      "description": "Bootstrap skill — establishes how to find and use GodotPrompter skills, with platform-specific tool mapping",
+      "description": "Bootstrap skill — establishes how to find and use GodotPrompter skills, with platform-specific tool mapping — 中文触发词：技能清单、有哪些技能、技能索引、怎么用技能。",
       "relatedSkills": [
         "godot-project-setup",
         "godot-brainstorming",
@@ -1007,7 +1007,7 @@
     {
       "name": "xr-development",
       "title": "XR Development in Godot 4.3+",
-      "description": "Use when building VR/AR/XR applications — OpenXR setup, XROrigin3D, hand tracking, controllers, passthrough, and Meta Quest deployment in Godot 4.3+",
+      "description": "Use when building VR/AR/XR applications — OpenXR setup, XROrigin3D, hand tracking, controllers, passthrough, and Meta Quest deployment in Godot 4.3+ — 中文触发词：VR、AR、XR、虚拟现实、头显、Meta Quest。",
       "relatedSkills": [
         "physics-system",
         "input-handling",

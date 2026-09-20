@@ -1,6 +1,6 @@
 ---
 name: xr-development
-description: Use when building VR/AR/XR applications — OpenXR setup, XROrigin3D, hand tracking, controllers, passthrough, and Meta Quest deployment in Godot 4.3+
+description: Use when building VR/AR/XR applications — OpenXR setup, XROrigin3D, hand tracking, controllers, passthrough, and Meta Quest deployment in Godot 4.3+ — 中文触发词：VR、AR、XR、虚拟现实、头显、Meta Quest。
 ---
 
 # XR Development in Godot 4.3+

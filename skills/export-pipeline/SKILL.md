@@ -1,6 +1,6 @@
 ---
 name: export-pipeline
-description: Use when exporting and distributing Godot games — export presets, platform settings, CI/CD with GitHub Actions
+description: Use when exporting and distributing Godot games — export presets, platform settings, CI/CD with GitHub Actions — 中文触发词：导出、打包发布、导出预设、CI、GitHub Actions、发版。
 ---
 
 # Export Pipeline in Godot 4.3+

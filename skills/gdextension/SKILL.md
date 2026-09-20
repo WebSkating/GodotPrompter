@@ -1,6 +1,6 @@
 ---
 name: gdextension
-description: Use when building native extensions for Godot — godot-cpp (C++) or gdext (Rust), binding classes, building, and GDScript/C# interop
+description: Use when building native extensions for Godot — godot-cpp (C++) or gdext (Rust), binding classes, building, and GDScript/C# interop — 中文触发词：GDExtension、原生扩展、godot-cpp、Rust 绑定、C++ 绑定。
 ---
 
 # GDExtension

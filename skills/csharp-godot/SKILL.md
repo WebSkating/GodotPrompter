@@ -1,6 +1,6 @@
 ---
 name: csharp-godot
-description: Use when working with C# in Godot — conventions, GodotSharp API differences from GDScript, project setup, and interop
+description: Use when working with C# in Godot — conventions, GodotSharp API differences from GDScript, project setup, and interop — 中文触发词：C#、GodotSharp、C# 项目配置、GDScript 互操作、C# 写法。
 ---
 
 # C# in Godot 4.3+

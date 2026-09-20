@@ -1,6 +1,6 @@
 ---
 name: ability-system
-description: Use when building character abilities — Resource-based abilities with cost/cooldown/cast, buffs/debuffs, stat modifiers, gameplay tags, and HUD binding
+description: Use when building character abilities — Resource-based abilities with cost/cooldown/cast, buffs/debuffs, stat modifiers, gameplay tags, and HUD binding — 中文触发词：技能系统、技能、冷却、Buff、属性加成、释放。
 ---
 
 # Ability System

@@ -1,6 +1,6 @@
 ---
 name: inventory-system
-description: Use when building inventory systems — Resource-based items, slot management, stacking, and UI binding
+description: Use when building inventory systems — Resource-based items, slot management, stacking, and UI binding — 中文触发词：背包、物品栏、装备栏、物品堆叠、格子、物品管理。
 ---
 
 # Inventory Systems in Godot 4.3+

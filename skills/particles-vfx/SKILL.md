@@ -1,6 +1,6 @@
 ---
 name: particles-vfx
-description: Use when implementing particle effects — GPUParticles2D/3D, ParticleProcessMaterial, emission shapes, subemitters, trails, attractors, collision, and common VFX recipes
+description: Use when implementing particle effects — GPUParticles2D/3D, ParticleProcessMaterial, emission shapes, subemitters, trails, attractors, collision, and common VFX recipes — 中文触发词：粒子特效、粒子、VFX、拖尾、爆炸效果、特效。
 ---
 
 # Particle Systems in Godot 4.3+

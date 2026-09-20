@@ -1,6 +1,6 @@
 ---
 name: godot-brainstorming
-description: Use when designing a new Godot feature or system — guides scene tree planning, node type selection, and architectural decisions
+description: Use when designing a new Godot feature or system — guides scene tree planning, node type selection, and architectural decisions — 中文触发词：游戏设计、方案设计、系统设计、架构设计、场景树规划。
 ---
 
 # Godot Brainstorming

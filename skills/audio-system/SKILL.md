@@ -1,6 +1,6 @@
 ---
 name: audio-system
-description: Use when implementing audio — audio buses, AudioStreamPlayer, spatial audio, music management, SFX pooling, and dynamic mixing
+description: Use when implementing audio — audio buses, AudioStreamPlayer, spatial audio, music management, SFX pooling, and dynamic mixing — 中文触发词：音频、音效、背景音乐、音频总线、3D 音效、音量混合。
 ---
 
 # Audio System in Godot 4.3+

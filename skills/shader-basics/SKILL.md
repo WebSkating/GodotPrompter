@@ -1,6 +1,6 @@
 ---
 name: shader-basics
-description: Use when implementing shaders — Godot shader language, visual shaders, common visual recipes, and post-processing effects
+description: Use when implementing shaders — Godot shader language, visual shaders, common visual recipes, and post-processing effects — 中文触发词：着色器、Shader、视觉着色器、后期处理、屏幕效果。
 ---
 
 # Shaders in Godot 4.3+

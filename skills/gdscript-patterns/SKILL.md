@@ -1,6 +1,6 @@
 ---
 name: gdscript-patterns
-description: Use when writing GDScript — static typing, await/coroutines, lambdas, match patterns, export annotations, inner classes, and common idioms
+description: Use when writing GDScript — static typing, await/coroutines, lambdas, match patterns, export annotations, inner classes, and common idioms — 中文触发词：GDScript、静态类型、协程、lambda、写法规范、常用写法。
 ---
 
 # GDScript Patterns in Godot 4.3+

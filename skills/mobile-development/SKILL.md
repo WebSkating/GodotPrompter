@@ -1,6 +1,6 @@
 ---
 name: mobile-development
-description: Use when targeting Android/iOS — export and signing, permissions, plugins, in-app purchases, ads, app lifecycle, device features, and mobile performance
+description: Use when targeting Android/iOS — export and signing, permissions, plugins, in-app purchases, ads, app lifecycle, device features, and mobile performance — 中文触发词：安卓、iOS、手游、移动端、导出签名、内购。
 ---
 
 # Mobile Development

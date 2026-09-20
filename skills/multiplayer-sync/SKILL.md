@@ -1,6 +1,6 @@
 ---
 name: multiplayer-sync
-description: Use when synchronizing multiplayer state — MultiplayerSynchronizer, interpolation, prediction, and lag compensation
+description: Use when synchronizing multiplayer state — MultiplayerSynchronizer, interpolation, prediction, and lag compensation — 中文触发词：网络同步、状态同步、插值、预测、延迟补偿、联机同步。
 ---
 
 # Multiplayer Synchronization in Godot 4.3+

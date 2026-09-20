@@ -1,6 +1,6 @@
 ---
 name: godot-optimization
-description: Use when optimizing Godot games — profiler, draw calls, physics tuning, memory management, and common bottlenecks
+description: Use when optimizing Godot games — profiler, draw calls, physics tuning, memory management, and common bottlenecks — 中文触发词：性能优化、掉帧、卡顿、性能分析、内存优化、Draw Call。
 ---
 
 # Godot Optimization

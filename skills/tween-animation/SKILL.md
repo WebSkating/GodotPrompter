@@ -1,6 +1,6 @@
 ---
 name: tween-animation
-description: Use when implementing tweens — property animation, method tweening, chaining, parallel sequences, easing, and common UI/gameplay motion recipes
+description: Use when implementing tweens — property animation, method tweening, chaining, parallel sequences, easing, and common UI/gameplay motion recipes — 中文触发词：补间动画、Tween、缓动、动画过渡、属性动画。
 ---
 
 # Tweens in Godot 4.3+

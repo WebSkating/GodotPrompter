@@ -1,6 +1,6 @@
 ---
 name: procedural-generation
-description: Use when implementing procedural generation — noise-based terrain, BSP dungeons, cellular automata caves, wave function collapse, and seeded randomness in Godot 4.3+
+description: Use when implementing procedural generation — noise-based terrain, BSP dungeons, cellular automata caves, wave function collapse, and seeded randomness in Godot 4.3+ — 中文触发词：程序化生成、噪声、随机地图、地牢生成、随机地形。
 ---
 
 # Procedural Generation in Godot 4.3+

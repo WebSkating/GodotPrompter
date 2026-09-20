@@ -1,6 +1,6 @@
 ---
 name: assets-pipeline
-description: Use when importing and managing assets — image compression, 3D scene import, audio formats, resource formats, and import configuration
+description: Use when importing and managing assets — image compression, 3D scene import, audio formats, resource formats, and import configuration — 中文触发词：资源导入、素材管理、图片压缩、模型导入、导入设置。
 ---
 
 # Assets Pipeline in Godot 4.3+

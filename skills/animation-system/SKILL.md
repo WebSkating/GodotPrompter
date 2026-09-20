@@ -1,6 +1,6 @@
 ---
 name: animation-system
-description: Use when implementing animations — AnimationPlayer, AnimationTree, blend trees, state machines, sprite animation, and code-driven animation
+description: Use when implementing animations — AnimationPlayer, AnimationTree, blend trees, state machines, sprite animation, and code-driven animation — 中文触发词：动画、AnimationPlayer、混合树、骨骼动画、帧动画、动画状态。
 ---
 
 # Animation System in Godot 4.3+

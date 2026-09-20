@@ -1,6 +1,6 @@
 ---
 name: multiplayer-basics
-description: Use when implementing multiplayer — MultiplayerAPI, ENet/WebSocket peers, RPCs, and authority model
+description: Use when implementing multiplayer — MultiplayerAPI, ENet/WebSocket peers, RPCs, and authority model — 中文触发词：多人联机、联机、RPC、网络同步、主机权威、房间。
 ---
 
 # Multiplayer Basics in Godot 4.3+

@@ -1,6 +1,6 @@
 ---
 name: math-essentials
-description: Use when implementing game math — vectors, transforms, interpolation, curves, random number generation, and common geometric recipes
+description: Use when implementing game math — vectors, transforms, interpolation, curves, random number generation, and common geometric recipes — 中文触发词：游戏数学、向量、插值、曲线、随机数、变换。
 ---
 
 # Game Math in Godot 4.3+

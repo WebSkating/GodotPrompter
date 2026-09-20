@@ -1,6 +1,6 @@
 ---
 name: gdscript-advanced
-description: Use when writing production-grade GDScript — performance idioms, metaprogramming, @tool lifecycle, async pitfalls, signal/Callable trade-offs, profiler-driven idioms, and common pitfalls
+description: Use when writing production-grade GDScript — performance idioms, metaprogramming, @tool lifecycle, async pitfalls, and signal/Callable trade-offs — 中文触发词：GDScript 进阶、元编程、性能写法、Callable、异步陷阱。
 ---
 
 # GDScript Advanced

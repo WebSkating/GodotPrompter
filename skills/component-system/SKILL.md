@@ -1,6 +1,6 @@
 ---
 name: component-system
-description: Use when building reusable node components — composition patterns, component communication, and interface design
+description: Use when building reusable node components — composition patterns, component communication, and interface design — 中文触发词：组件化、组件、节点复用、组合模式、组件通信。
 ---
 
 # Component System in Godot 4.3+

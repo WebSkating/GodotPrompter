@@ -1,6 +1,6 @@
 ---
 name: popochiu
-description: Use when using the Popochiu addon — point-and-click adventure framework with rooms, characters, props/hotspots, inventory, dialog trees, and a command-based GUI
+description: Use when using the Popochiu addon — point-and-click adventure framework with rooms, characters, props/hotspots, inventory, dialog trees, and a command-based GUI — 中文触发词：Popochiu 插件、点击式冒险、冒险游戏、房间、热点、对话树。
 ---
 
 # Popochiu

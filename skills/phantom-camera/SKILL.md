@@ -1,6 +1,6 @@
 ---
 name: phantom-camera
-description: Use when using the Phantom Camera addon — PhantomCamera2D/3D with priority-based switching, follow and look-at modes, and tween transitions
+description: Use when using the Phantom Camera addon — PhantomCamera2D/3D with priority-based switching, follow and look-at modes, and tween transitions — 中文触发词：Phantom Camera 插件、动态摄像机、跟随镜头、镜头切换、镜头优先级。
 ---
 
 # Phantom Camera

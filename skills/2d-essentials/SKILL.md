@@ -1,6 +1,6 @@
 ---
 name: 2d-essentials
-description: Use when working with 2D-specific systems — TileMaps, parallax scrolling, 2D lights and shadows, canvas layers, particles 2D, custom drawing, and 2D meshes in Godot 4.3+
+description: Use when working with 2D-specific systems — TileMaps, parallax scrolling, 2D lights and shadows, canvas layers, 2D particles, custom drawing, and 2D meshes — 中文触发词：2D、瓦片地图、视差滚动、2D 光照、画布层、自定义绘制。
 ---
 
 # 2D Essentials in Godot 4.3+

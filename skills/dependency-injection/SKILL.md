@@ -1,6 +1,6 @@
 ---
 name: dependency-injection
-description: Use when managing dependencies between systems — autoloads, service locators, @export injection, and scene injection patterns
+description: Use when managing dependencies between systems — autoloads, service locators, @export injection, and scene injection patterns — 中文触发词：依赖注入、自动加载、服务定位、单例注册、@export 注入。
 ---
 
 # Dependency Injection in Godot 4.3+

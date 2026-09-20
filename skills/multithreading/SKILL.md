@@ -1,6 +1,6 @@
 ---
 name: multithreading
-description: Use when running work off the main thread — WorkerThreadPool, Thread/Mutex/Semaphore, call_deferred, thread-safe scene access, and threaded resource loading
+description: Use when running work off the main thread — WorkerThreadPool, Thread/Mutex/Semaphore, call_deferred, thread-safe scene access, and threaded resource loading — 中文触发词：多线程、线程、后台加载、线程安全、call_deferred。
 ---
 
 # Multithreading

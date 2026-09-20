@@ -1,6 +1,6 @@
 ---
 name: beehave
-description: Use when using the Beehave addon — pure-GDScript behavior trees with composites, decorators, leaves, a blackboard, and a visual runtime debugger
+description: Use when using the Beehave addon — pure-GDScript behavior trees with composites, decorators, leaves, a blackboard, and a visual runtime debugger — 中文触发词：Beehave 插件、行为树、黑板、AI 行为、装饰器。
 ---
 
 # Beehave
