@@ -58,6 +58,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Codex agent TOMLs no longer list the full-access sandbox mode.** A commented-out template line
   listed the sandbox modes, and the scanner flags the full-access mode name even inside a comment.
   No agent set it; the line is only shortened.
+- **`godot-mentor` delivers exactly what was asked.** Domain-recipe extras — tweens, extra
+  methods and signals a recipe includes but the user didn't ask for — are now stripped, and no
+  part of the request is deferred to a later teaching beat. When it cannot write its state file
+  it says so in one line at the end instead of spending a preamble on it. `level` is now treated
+  as the user's Godot baseline, not a ceiling: a concept they name as confusing gets beginner
+  depth even when their stated level is higher.
+- **`inventory-system` and `godot-brainstorming` moved recall content into `references/`.** Code
+  listings and lookup tables the model already knows how to reproduce no longer pay full
+  per-invocation token cost; the always-loaded part of each `SKILL.md` now carries the decisions,
+  and the code and tables load on demand.
+
+### Fixed
+
+- **The `player-controller` dash recipe could be chained forever.** It had no cooldown and no
+  per-airtime limit, and its GDScript and C# versions disagreed with each other — 600/0.2 vs.
+  800/0.15, different no-input fallbacks, and gravity handled in neither. Both versions now share
+  values and behavior: a cooldown that starts when the dash ends, one dash per airtime refilled on
+  landing, and gravity resuming after the dash.
 
 ## [1.13.3] - 2026-09-15
 
