@@ -463,3 +463,19 @@ questioning round.
 
 **Pass criteria:** the card's "Known change, explicit ask, bug fix" row wins; `godot-grill` is
 not invoked.
+
+---
+
+### Test 6.4: The card's gate row routes a plain request
+
+**Setup:** a real Godot project (so the SessionStart hook injects the card), mentor mode off, no
+existing decision record.
+
+**Prompt:** "Add a basic inventory system to my Godot 4 game."
+
+**Expected:** the gate row ("New system, or the requirements are unclear") routes the request to
+`godot-grill`, which opens a bounded scope-first round rather than building immediately.
+
+**Pass criteria:** the grill is invoked without the user naming it or asking to be grilled — this
+is the path eval case grill-04 cannot exercise, because eval runs start in an empty temp directory
+where the SessionStart hook finds no `project.godot` and injects nothing.
