@@ -160,7 +160,7 @@ When publishing a new version (e.g., v1.8.1):
    npm ci                                                     # installs the optional tokenizer deps from package-lock.json
    node scripts/count-tokens.mjs --tokenizer --markdown
    ```
-   Replace the contents between the `<!-- BEGIN-TOKEN-TABLE -->` / `<!-- END-TOKEN-TABLE -->` markers in `docs/token-budget.md` with the new output. Commit alongside the version bump.
+   Replace the contents between the `<!-- BEGIN-TOKEN-TABLE -->` / `<!-- END-TOKEN-TABLE -->` markers in `docs/token-budget.md` with the new output. Also update the skill/agent counts in the file's intro paragraph (e.g. "GodotPrompter ships **N skills** and **M agents**") — they sit above the markers, so replacing the table alone leaves them stale. Commit alongside the version bump.
 3. **Bump version across all manifests** using the helper script:
    ```bash
    node scripts/bump-version.mjs 1.8.1

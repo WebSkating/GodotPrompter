@@ -45,6 +45,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- **The SessionStart card gates on uncertainty, not topic.** A two-row table now sits ahead of the
+  routing table: a new system, or one whose requirements are unclear, starts with
+  `godot-brainstorming` (design first, then build), while a known change, an explicit ask, or a
+  bug fix still routes straight to the domain skill below. The card also adds a report-back
+  contract — name the pattern you picked, the alternative you rejected, and why, since the choice
+  is the developer's — and rewrites three red-flag rows ("the user wants a quick fix", "the skill
+  shows one pattern", "I'll explain it once it works") so invoking a skill includes reporting that
+  choice, not just building with it.
 - **The release workflow runs on Node 26 instead of Node 20.** Node 20 reached end of life on
   2026-04-30, and GitHub was already forcing the v4 actions onto Node 24 with a deprecation
   warning. `release.yml` now uses `actions/checkout` v7.0.1 and `actions/setup-node` v7.0.0, which

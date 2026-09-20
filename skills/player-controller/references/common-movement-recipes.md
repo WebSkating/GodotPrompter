@@ -30,6 +30,8 @@ func _physics_process(delta: float) -> void:
     if input_dir.x != 0.0:
         _facing = signf(input_dir.x)
 
+    # is_on_floor() here never decides the branch on its own: landing already set
+    # _can_air_dash true, so this reads as "can dash" — kept for readability.
     if Input.is_action_just_pressed("dash") and _cooldown_timer <= 0.0 \
             and (is_on_floor() or _can_air_dash):
         _dash_timer = dash_duration
@@ -78,6 +80,8 @@ public partial class Player : CharacterBody2D
         if (inputDir.X != 0.0f)
             _facing = Mathf.Sign(inputDir.X);
 
+        // IsOnFloor() here never decides the branch on its own: landing already set
+        // _canAirDash true, so this reads as "can dash" — kept for readability.
         if (Input.IsActionJustPressed("dash") && _cooldownTimer <= 0.0f
             && (IsOnFloor() || _canAirDash))
         {
