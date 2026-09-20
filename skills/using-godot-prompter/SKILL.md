@@ -11,8 +11,6 @@ GodotPrompter provides Godot 4.x domain-specific skills for AI coding agents. Sk
 
 ## How to Access Skills
 
-**Skill names:** invoke a skill by its bare name (`state-machine`, `player-controller`). Hosts that load GodotPrompter as a plugin namespace it — Claude Code uses `godot-prompter:state-machine`. On hosts that do not namespace skills (Copilot CLI, Codex, OpenCode, Trae), drop the prefix and use the bare name.
-
 **In Claude Code:** Use the `Skill` tool with the skill name (e.g., `Skill: "godot-prompter:state-machine"`).
 
 **In Copilot CLI:** Use the `skill` tool. Skills are auto-discovered from installed plugins.
@@ -69,7 +67,7 @@ See `references/antigravity-tools.md` for the full tool mapping and SKILL.md fro
 
 Workflow plugins decide *how you work*; GodotPrompter decides *what you build*. Both apply.
 
-**RULE: before implementing any Godot system, invoke the matching domain skill from the table below.**
+**RULE: before implementing any Godot system, invoke the matching `godot-prompter:*` skill.**
 Applies to subagents writing Godot code too.
 
 | Building… | Start with |
@@ -91,7 +89,7 @@ Applies to subagents writing Godot code too.
 | Teaching while building | `godot-mentor` |
 | Addons (if installed) | `limboai`, `beehave`, `popochiu`, `dialogue-manager`, `phantom-camera` |
 
-Full index: the "Available Skill Categories" section below.
+Full index: invoke `godot-prompter:using-godot-prompter`.
 
 **Red flags — you are rationalizing:**
 
@@ -109,7 +107,7 @@ Full index: the "Available Skill Categories" section below.
 GodotPrompter handles the full development workflow. No other plugins required.
 
 ### 1. Design Phase
-Load `godot-brainstorming` — it guides you through:
+Load `godot-prompter:godot-brainstorming` — it guides you through:
 - Asking clarifying questions about the game/system
 - Proposing architectural approaches with trade-offs
 - Designing scene trees, signal maps, and data flow
@@ -117,14 +115,14 @@ Load `godot-brainstorming` — it guides you through:
 
 ### 2. Implementation Phase
 For each task in the plan, load the relevant domain skill:
-- Building a player? Load `player-controller` and `state-machine`
-- Adding inventory? Load `inventory-system`
-- Need save/load? Load `save-load`
+- Building a player? Load `godot-prompter:player-controller` and `godot-prompter:state-machine`
+- Adding inventory? Load `godot-prompter:inventory-system`
+- Need save/load? Load `godot-prompter:save-load`
 
 Each skill provides complete code examples, Godot best practices, and a checklist.
 
 ### 3. Review Phase
-Load `godot-code-review` to review the code against Godot-specific checklists.
+Load `godot-prompter:godot-code-review` to review the code against Godot-specific checklists.
 
 ### Agents
 
@@ -237,5 +235,5 @@ Skills use Claude Code tool names as the canonical reference. Non-Claude platfor
 - [ ] Identified the matching domain skill via the table above before writing any system code
 - [ ] Invoked the identified skill with the `Skill` tool (or platform equivalent) before implementation
 - [ ] When a workflow plugin is also active (Superpowers, etc.), still invoked the relevant godot-prompter domain skill during implementation — they are complementary, not exclusive
-- [ ] After implementation, ran `godot-code-review` to validate against Godot best practices
+- [ ] After implementation, ran `godot-prompter:godot-code-review` to validate against Godot best practices
 - [ ] Logged any newly-discovered domain gap that no current skill covers, so it can become a future skill

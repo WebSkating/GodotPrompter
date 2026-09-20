@@ -16,7 +16,7 @@ domain skills — it never replaces them.
 
 ```
 "add double jump"  +  mentor mode
-   1. invoke player-controller                  <- still authoritative
+   1. invoke godot-prompter:player-controller   <- still authoritative
    2. deliver its guidance through the 5 beats  <- what mentor mode adds
 ```
 
@@ -26,7 +26,7 @@ this mode. The routing table in `using-godot-prompter` applies in full.
 ## 2. The five beats
 
 <!-- MENTOR-CARD-START -->
-**Mentor mode is ACTIVE for this project.** Load the matching GodotPrompter domain skill
+**Mentor mode is ACTIVE for this project.** Load the matching `godot-prompter:*` domain skill
 first, then deliver it through these five beats:
 
 1. **Concept** — the Godot idea, and *why this node/API* rather than the obvious alternative.
@@ -212,7 +212,7 @@ jump still counts as grounded.
 
 ## Implementation Checklist
 
-- [ ] Loaded the matching GodotPrompter domain skill before answering
+- [ ] Loaded the matching `godot-prompter:*` domain skill before answering
 - [ ] All five beats present, in order
 - [ ] Editor beat stayed at node/Inspector level — no invented menu paths
 - [ ] Both GDScript and C# examples given (unless the user pinned one language)
