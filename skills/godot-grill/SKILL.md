@@ -58,8 +58,10 @@ single-player answer never does. Skip any root the request or the project alread
 
 ## 3. Rounds
 
-**Before round 1**, read `docs/godot-prompter/decisions/` in the user's project. A recorded
-decision is a settled prerequisite: never re-ask it; start the frontier past it.
+**Before round 1**, read where the project keeps decision records, checking in order: the user's
+instructions or the project's agent instructions file (`CLAUDE.md`, `AGENTS.md`, …); then an
+existing decisions or ADR directory. A recorded decision is a settled prerequisite: never re-ask
+it; start the frontier past it.
 
 The **frontier** is every open decision whose prerequisites are settled. Ask the whole frontier
 in one message, numbered, each with a recommended answer:
@@ -97,9 +99,12 @@ message, and wait. Then hand off:
 
 ## 5. The decision record
 
-Write to `docs/godot-prompter/decisions/YYYY-MM-DD-<topic>.md` in the user's project — or the
-decisions folder the project's agent instructions name. The path must stay stable: the next grill
-reads it back.
+GodotPrompter has no decisions folder of its own. Write the record where this project keeps
+them, checking in order: the user's instructions or the project's agent instructions file
+(`CLAUDE.md`, `AGENTS.md`, …); then an existing decisions or ADR directory. If none applies, ask
+the user, suggesting `docs/decisions/`, or use `docs/decisions/` when you cannot ask (a subagent
+or non-interactive run). Name the file `YYYY-MM-DD-<topic>.md`. The path must stay stable: the
+next grill reads it back.
 
 ```markdown
 # <Topic> — decisions
@@ -126,7 +131,7 @@ message instead.
 | Asking a fact | Spends the user's attention on the model's job | Look it up, decide, record |
 | A question with no recommendation | The user answers in a vacuum; rounds slow down | Every question gets ➡️ |
 | Grilling a bug fix or an explicit ask | The over-correction this skill must not become | Route to the domain skill |
-| Re-asking a recorded decision | Feels like amnesia; wastes the record | Read `docs/godot-prompter/decisions/` first |
+| Re-asking a recorded decision | Feels like amnesia; wastes the record | Read where the project keeps decision records first |
 | Coding after the last answer | Skips the shared-understanding check | Confirm, then hand off |
 
 ## Checklist

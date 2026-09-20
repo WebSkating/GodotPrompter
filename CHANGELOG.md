@@ -29,10 +29,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - **`godot-grill` skill.** Settles a feature's open design decisions before anyone designs or
   codes: it asks every decision whose prerequisites are settled in one numbered round, each with a
-  recommended answer, scope first, and writes the answers to
-  `docs/godot-prompter/decisions/`. Later grills read the record, so settled decisions are never
-  re-asked. Node types and APIs are facts the skill looks up, never questions. The SessionStart
-  card now routes new-or-unclear work here, and `godot-brainstorming` Step 1 delegates to it.
+  recommended answer, scope first, and writes the answers to the decisions record — the project's
+  own convention takes precedence, the same order `using-godot-prompter` already uses for plans.
+  Later grills read the record, so settled decisions are never re-asked. Node types and APIs are
+  facts the skill looks up, never questions. The SessionStart card now routes new-or-unclear work
+  here, and `godot-brainstorming` Step 1 delegates to it.
 - **`scanner-risky-approval` validator rule.** An error, so it fails CI. The plugin scanner flags
   a full-access sandbox mode, a never-ask approval policy, or a bypass approval mode written out in
   any `.md`, `.json`, `.toml`, `.yml` or `.yaml` file, comments and prose included. That scan runs

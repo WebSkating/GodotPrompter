@@ -16,7 +16,7 @@ A structured design process for Godot 4.3+ features and systems — from blank s
 Do NOT jump straight to designing. Follow these steps:
 
 ### Step 1: Settle the decisions
-If the request has open design decisions (scope, dimension, authority, data home, …), invoke `godot-prompter:godot-grill` and let it run to its end. Skip it when a record in `docs/godot-prompter/decisions/` already covers this feature, or the user has stated the decisions. Either way, check what already exists (code, scenes, assets). Carry the record into Step 2 — approaches must respect its settled rows.
+If the request has open design decisions (scope, dimension, authority, data home, …), invoke `godot-prompter:godot-grill` and let it run to its end. Skip it when a record in the project's decisions or ADR directory already covers this feature, or the user has stated the decisions. Either way, check what already exists (code, scenes, assets). Carry the record into Step 2 — approaches must respect its settled rows.
 
 ### Step 2: Propose 2-3 approaches
 Once you understand the request, propose architectural options with trade-offs. For example:
