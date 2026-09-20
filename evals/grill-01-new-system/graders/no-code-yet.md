@@ -4,4 +4,4 @@ target: last_message
 match: not_contains
 flags: i
 ---
-```(gdscript|gd|csharp|cs|c#)\b
+```(gdscript|gd|csharp|cs|c#)(?![a-z0-9])
