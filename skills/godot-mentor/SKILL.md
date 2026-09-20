@@ -41,11 +41,17 @@ give menu paths, dock layouts, toolbar positions, or other version-specific UI c
 move between Godot versions and are the most-hallucinated part of any answer. If a click-path
 is genuinely required, name the panel it lives in and let the user find it.
 
-**Explanation, not scope.** Explain what was asked for. Do not add features in order to have
-more to teach.
+**Scope: exactly what was asked.** Deliver the requested feature complete and sound, including
+the limits that stop it breaking in play (a dash needs a cooldown or air limit). Never hold part
+of the ask back for Beat 5. Add nothing else: domain recipes are production-complete, so strip
+their extras (tweens, colour flashes, extra methods or signals) unless the user asked for them.
+Beat 5 may name *one* of those extras.
 
 **Off-ramp.** "just give me the code" / "skip the explanation" → drop to normal delivery and
 set `"mode": "normal"` in the state file.
+
+**With `godot-grill`:** when the work is new or its requirements are unclear, let `godot-grill`
+settle the decisions first; mentor mode then teaches the result.
 <!-- MENTOR-CARD-END -->
 
 ## 3. Turning it on and off
@@ -110,6 +116,10 @@ game repo. None of that arises in `$HOME`.
 Ask for `level` **once**, on activation, then remember it. Never re-ask each turn. Merge into an
 existing state file rather than clobbering unrelated keys.
 
+**If you cannot write the file** (no write or shell tool in this session), say so in **one line
+at the end of the answer** and carry on — mentor mode still applies for this conversation. Do
+not open with it, do not retry, and do not split it into a separate message.
+
 The SessionStart hook re-reads this file, so mentor mode survives `/clear` and compaction. It
 does **not** reach subagents — `SessionStart` does not fire on subagent dispatch; a
 `## GodotPrompter` section in the project's agent instructions file (`CLAUDE.md`, or `AGENTS.md` /
@@ -125,13 +135,18 @@ this skill still works; it just does not self-restore after a reset.
 
 `level` controls **how much** of each beat appears — never **whether** it appears.
 
+`level` is the user's Godot **baseline**, not a ceiling. When they name the concept they are stuck
+on ("intermediate, but signals confuse me"), give **that concept** beginner depth in Beat 1 —
+it is the reason they asked. Everything else, including Beat 2, stays at their level.
+
 ## 5. Anti-patterns
 
 | Anti-pattern | Why it is wrong | Instead |
 |---|---|---|
 | Answering without loading the domain skill | Loses verified, version-checked guidance | Invoke the skill, then teach it |
 | Inventing menu paths so Beat 2 feels complete | Godot's UI moved between 4.3 and 4.7; wrong click-paths are worse than none | Node/Inspector level only |
-| Growing the feature to create teaching material | The user asked for one thing | Explain that thing; put the rest in Beat 5 |
+| Growing the feature to create teaching material, or delivering a domain recipe's extras verbatim | The user asked for one thing | Deliver that thing, whole; name at most one extra in Beat 5 |
+| Deferring part of the ask to Beat 5 ("add a cooldown next") | Ships a feature that breaks in play | Beat 5 extends a finished feature; it never completes one |
 | Re-asking `level` every turn | Feels like the agent has amnesia | Read it from state |
 | Five "next steps" | Paralyses a learner | Exactly one |
 | Skipping the C# example because it is a teaching answer | C# parity is a repo-wide promise | GDScript first, then C# |
@@ -217,5 +232,6 @@ jump still counts as grounded.
 - [ ] Editor beat stayed at node/Inspector level — no invented menu paths
 - [ ] Both GDScript and C# examples given (unless the user pinned one language)
 - [ ] `level` read from state, not re-asked
-- [ ] Exactly one suggestion in Beat 5
+- [ ] The whole ask delivered and sound, nothing more — domain-recipe extras stripped
+- [ ] Exactly one suggestion in Beat 5, extending a finished feature
 - [ ] State written to `~/.godot-prompter/state/`, never into the user's game repo

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "generatedBy": "scripts/generate-skill-index.mjs",
   "summary": {
-    "skillCount": 55,
+    "skillCount": 56,
     "agentCount": 9
   },
   "skills": [
@@ -425,13 +425,15 @@
       "title": "Godot Brainstorming",
       "description": "Use when designing a new Godot feature or system — guides scene tree planning, node type selection, and architectural decisions",
       "relatedSkills": [
+        "godot-grill",
         "scene-organization",
         "component-system",
         "event-bus"
       ],
       "addon": null,
       "references": [
-        "skills/godot-brainstorming/references/example-chest.md"
+        "skills/godot-brainstorming/references/example-chest.md",
+        "skills/godot-brainstorming/references/node-selection.md"
       ],
       "source": "skills/godot-brainstorming/SKILL.md"
     },
@@ -465,6 +467,19 @@
         "skills/godot-debugging/references/systematic-method.md"
       ],
       "source": "skills/godot-debugging/SKILL.md"
+    },
+    {
+      "name": "godot-grill",
+      "title": "Godot Grill",
+      "description": "Use when a new Godot system or feature has open design decisions — interrogates them in batched rounds, scope first, each question with a recommended answer, and records the answers before any design or code. Triggers on \"grill me\", \"ask me first\", \"question me on the design\", \"what do I need to decide before building\". Not for choosing between nodes or APIs, and not for bug fixes.",
+      "relatedSkills": [
+        "godot-brainstorming",
+        "scene-organization",
+        "godot-mentor"
+      ],
+      "addon": null,
+      "references": [],
+      "source": "skills/godot-grill/SKILL.md"
     },
     {
       "name": "godot-mentor",
@@ -608,6 +623,7 @@
       ],
       "addon": null,
       "references": [
+        "skills/inventory-system/references/core-classes.md",
         "skills/inventory-system/references/equipment.md",
         "skills/inventory-system/references/serialization.md",
         "skills/inventory-system/references/ui-binding.md"
@@ -990,6 +1006,7 @@
       "description": "Bootstrap skill — establishes how to find and use GodotPrompter skills, with platform-specific tool mapping",
       "relatedSkills": [
         "godot-project-setup",
+        "godot-grill",
         "godot-brainstorming",
         "godot-code-review",
         "godot-debugging"
