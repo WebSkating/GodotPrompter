@@ -42,6 +42,22 @@ on its own (base-model variance), not the skill's doing.
 Mentor regression (`results/2026-09-20T09-53-37-633Z`): mean Δ +0.21, 0 errors/timeouts, $14.83; no
 case outside ±0.15 of the FOLLOWUPS confirming-run table; negatives 06/07 held at Δ 0.
 
+## grill-04-plain-request — 2026-09-20 (`results/2026-09-20T16-45-22-052Z`)
+
+An ordinary, un-grill-phrased feature request ("Add a basic inventory system to my Godot 4
+game."), to measure the gap between an explicit grill request (grill-01, fires 3/3) and a bug
+report (grill-03, fires 0/3).
+
+| Case | With | Without | Δ | Notes |
+|---|---|---|---|---|
+| grill-04-plain-request | 0.78 | 0.67 | +0.11 | trigger-grill 0/3 (Skill called 0x) in all three with-arm runs; `bounded-or-builds` 3/3 in 5 of 6 runs (one without-arm run unanimous FAIL); `no-fact-questions` failed in 2 of 3 with-arm runs and 1 of 3 without-arm runs |
+
+Clean run (0 errors/timeouts), 6 runs, $4.34, 949 s.
+
+Ruling: not a grill effect — `trigger-grill` reads "Skill called 0x" in all three with-arm runs,
+so the skill never fired for this prompt in either arm; the Δ is base-model run-to-run variance
+(one without-arm run failed both graders unanimously), not `godot-grill`'s doing.
+
 ## Limitations
 
 - **grill-02 exercises nothing about the skill.** `trigger-grill` reads "Skill called 0x" in both
@@ -49,10 +65,13 @@ case outside ±0.15 of the FOLLOWUPS confirming-run table; negatives 06/07 held 
   other reasons (base-model variance, grader wording), not because `godot-grill` did anything.
   The first-message off-ramp in the skill's §4 ("just build it" on the very first message) is
   therefore covered only by manual `TEST_PLAN` Test 6.1, not by this eval suite.
-- **No eval covers an ordinary, un-grill-phrased feature request** (e.g. "add a basic inventory
-  system") that has open design decisions but never says "grill me" or names a bug. The
-  description's breadth between an explicit grill request (fires 3/3) and a bug report (0/3) is
-  unmeasured in between.
+- **An ordinary, un-grill-phrased feature request does not trigger `godot-grill`.** grill-04
+  measured the gap between an explicit grill request (fires 3/3) and a bug report (0/3): a plain
+  "add a basic inventory system" request scored `trigger-grill` 0/3 (Skill called 0x) in all three
+  with-arm runs, despite the domain having real open decisions (grid vs. list, stacking,
+  persistence). The base model already asks bounded questions or states its assumptions most of
+  the time without the skill (`bounded-or-builds` passed unanimously in 5 of 6 runs), so the
+  measured gap is in triggering, not in the base model's behaviour once it answers.
 - The reworded `no-fact-questions` always passes a question on any of the four root decisions
   (scope, dimension, language, authority). It cannot catch a grill that asks a root the project
   has already answered — `skills/godot-grill/SKILL.md` §2 says to skip those, but no grader checks
