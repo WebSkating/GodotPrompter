@@ -662,7 +662,7 @@ git commit -m "test(evals): record godot-grill green run"
 ## Deviations from the spec
 
 - Card change is **+7 bytes** (2889 → 2896), not byte-neutral as the spec says — still well under 3072.
-- The decision-record path is fixed as the spec says, but a project's agent instructions may name another folder. A plain override, not the Plan Storage lookup order, because the next grill must find the records again. Superseded during the final review; see CHANGELOG.
+- The decision-record path is fixed as the spec says, but a project's agent instructions may name another folder. A plain override, not the Plan Storage lookup order, because the next grill must find the records again. Superseded during the final review; see the `godot-grill` Added entry under `[Unreleased]` in CHANGELOG.md, which states the project's own convention takes precedence.
 - Evals and `skills/index.json` did not exist when the spec was written; Tasks 1, 2, 3, 6 add them.
 
 ## Out of scope (from the spec, plus one found while planning)

@@ -1,10 +1,16 @@
 # godot-grill eval — baseline and results
 
-Suite: 3 cases (1 should-fire, 2 guards against over-triggering) for `godot-grill`.
+Suite: 4 cases for `godot-grill` — 1 should-fire, 2 guard against over-triggering, and grill-04
+measures an ordinary un-grill-phrased request (neither).
 
 ```
 claude plugin eval . --case "grill-*" --ablation with-without --judge-model sonnet --no-publish
 ```
+
+**`trigger-grill` is an unscored indicator.** It carries no weight in any case score (the harness
+marks it `scored: false`, with-arm only), so every Δ in every table below is computed *excluding*
+the only grader that measures whether the skill actually fired. That is why grill-02's -0.22 and
+grill-04's +0.11 are base-model noise rather than a grill effect — see the Rulings below.
 
 ## Red — before the skill exists (`results/2026-09-19T20-45-02-487Z`)
 
@@ -14,9 +20,11 @@ claude plugin eval . --case "grill-*" --ablation with-without --judge-model sonn
 | grill-02-skip-questions | 1.00 | 0.56 | +0.44 | trigger-grill 0/3 (Skill called 0x); numbers are from the re-measured run `results/2026-09-19T21-26-50-189Z`, not this heading's run — see below |
 | grill-03-neg-bugfix | 1.00 | 1.00 | 0.00 | trigger-grill 0/3 (Skill called 0x) — desired direction, must not fire |
 
-grill-01's row was graded under the pre-reword `no-fact-questions` (it failed asking the tree's
-Dimension and Language roots) and is not directly comparable to the Green row's `no-fact-questions`
-figure below — the Δ itself is unaffected, since both arms of a run share a grader.
+grill-01's row was graded under the pre-reword `no-fact-questions` (failed under the pre-reword
+grader) and is not directly comparable to the Green row's `no-fact-questions` figure below — the
+reword affects the Δ too: the with arm passed `no-fact-questions` 2/3 and the without arm 0/3, so a
+reword that flips failures moves the two arms at different rates. The red row is pre-reword only
+and is not comparable to the green row.
 
 grill-02 re-measured in `results/2026-09-19T21-26-50-189Z` after its prompt was narrowed to a design and its timeout raised to 600 s — the first run (`results/2026-09-19T20-45-02-487Z`) timed out 4/6 and graded interim messages, scoring grill-02 1.00 / 0.67 / +0.33 there.
 
@@ -34,6 +42,13 @@ roots, which the spec makes the user's to state, not the assistant's. Under the 
 (distinguishing the four root decisions and feature choices, always the user's, from implementation
 choices like a node/class/API/storage tech, which the assistant should decide) the re-run scored
 `no-fact-questions` 3/3 and every grader 3/3.
+
+The Green table's `no-code-yet` (grill-01) and `assumptions-stated` (grill-02) pass counts were
+also measured before their graders were later edited without a re-run — `no-code-yet` was widened
+from blocking only ```` ```gdscript ```` to also blocking a C# code dump, and `assumptions-stated`
+was reworded from "implicit in the code" to "implicit in the design prose". Like the
+`no-fact-questions` figures above, treat those pass counts as historical, not comparable to a
+future run.
 
 Ruling: grill-02's -0.22 is not a grill regression — `trigger-grill` reads "Skill called 0x" in all
 three with-arm runs, so the skill never fired; the score drop is one with-arm run asking a question
@@ -69,9 +84,12 @@ so the skill never fired for this prompt in either arm; the Δ is base-model run
   measured the gap between an explicit grill request (fires 3/3) and a bug report (0/3): a plain
   "add a basic inventory system" request scored `trigger-grill` 0/3 (Skill called 0x) in all three
   with-arm runs, despite the domain having real open decisions (grid vs. list, stacking,
-  persistence). The base model already asks bounded questions or states its assumptions most of
-  the time without the skill (`bounded-or-builds` passed unanimously in 5 of 6 runs), so the
-  measured gap is in triggering, not in the base model's behaviour once it answers.
+  persistence). The base model already reliably does one of two things without the skill — asks a
+  bounded question or builds while stating its assumptions (`bounded-or-builds` passed unanimously
+  in 5 of 6 runs) — but the grader passes on either behaviour and does not distinguish "already
+  grills" from "already builds confidently with stated assumptions," which is the behaviour
+  `godot-grill` exists to replace. This measurement says nothing about whether the base model
+  already grills.
 - **The suite measures description-only routing, never the card.** Eval runs start in an empty
   temp directory, so the SessionStart hook finds no `project.godot` and injects nothing: the agent
   picks skills from their `description` frontmatter alone. In a real Godot project the card's gate

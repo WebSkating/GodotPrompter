@@ -122,7 +122,4 @@ mode was undisturbed by the new routing.
 - `beat-why` (case 01) was reworded to accept a technique contrast, not only a node/resource/API
   one — see the Post-grill regression run entry above. Figures from before the reword are not
   comparable to figures after it.
-
-## Known eval limitations
-
 - `evals/results/` holds run output and is gitignored; record baselines in this file.
