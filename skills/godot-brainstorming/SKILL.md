@@ -39,10 +39,10 @@ After the design is approved:
 
 2. **Create implementation plan** — If a planning skill is available (e.g., `superpowers:writing-plans`), use it; if not, break the design into ordered tasks yourself. Either way the project decides where the plan is saved: the user's instructions or the project's agent instructions file; then the planning skill's convention; then an existing plans directory. If none applies, ask the user, suggesting `docs/plans/`, or use `docs/plans/` when you cannot ask.
 
-3. **Annotate each task with skills** — Every task in the plan that involves a Godot system MUST list which `godot-prompter:*` skill(s) to invoke during implementation. Example:
+3. **Annotate each task with skills** — Every task in the plan that involves a Godot system MUST list which GodotPrompter skill(s) to invoke during implementation. Example:
 
    - [ ] **Task 3: Player movement** — Create CharacterBody3D with walk, sprint, jump.
-     Skills: `godot-prompter:player-controller`, `godot-prompter:input-handling`
+     Skills: `player-controller`, `input-handling`
 
    This ensures that even when another plugin executes the plan, the implementing agent knows which GodotPrompter skills to load.
 
@@ -241,7 +241,7 @@ See [references/example-chest.md](references/example-chest.md) for a fully worke
 
 When preparing for implementation (Step 4), add the following section to the file this project uses for agent instructions. Check for an existing `## GodotPrompter` heading in **all** of `CLAUDE.md`, `CLAUDE.local.md`, `.claude/CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.github/copilot-instructions.md`, and the `.claude/rules/` and `.cursor/rules/` directories — if it is present anywhere, skip.
 
-A previous refusal counts as an answer. The SessionStart hook records one as `"section_offer": "declined"` in this project's `~/.godot-prompter/state/<hash>.json` (`godot-prompter:godot-mentor` documents the file and how the hash is computed) — if that key is set, do not ask again. Record a refusal there yourself, merged into any existing keys, when the user declines here.
+A previous refusal counts as an answer. The SessionStart hook records one as `"section_offer": "declined"` in this project's `~/.godot-prompter/state/<hash>.json` (`godot-mentor` documents the file and how the hash is computed) — if that key is set, do not ask again. Record a refusal there yourself, merged into any existing keys, when the user declines here.
 
 Write it to the file the project already maintains, not to a second one:
 
@@ -251,8 +251,8 @@ Write it to the file the project already maintains, not to a second one:
 
 > ## GodotPrompter
 >
-> This is a Godot project with GodotPrompter skills available. Before implementing any game system, you MUST check for a matching `godot-prompter:*` skill and invoke it. This applies to all agents, subagents, and sessions working in this repository.
+> This is a Godot project with GodotPrompter skills available. Before implementing any game system, you MUST check for a matching domain skill and invoke it. This applies to all agents, subagents, and sessions working in this repository.
 >
 > Key skills: `player-controller`, `state-machine`, `event-bus`, `scene-organization`, `component-system`, `resource-pattern`, `godot-ui`, `hud-system`, `ai-navigation`, `camera-system`, `audio-system`, `save-load`, `inventory-system`, `godot-testing`.
 >
-> For the full skill list, invoke `godot-prompter:using-godot-prompter`.
+> For the full skill list, invoke `using-godot-prompter`.
