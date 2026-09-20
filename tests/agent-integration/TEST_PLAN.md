@@ -423,14 +423,17 @@ reported as Forward Plus, **not** "C#".
 
 ### Test 6.1: Off-ramp mid-grill
 
-**Setup:** Godot project, no `docs/godot-prompter/decisions/`.
+**Setup:** Godot project with no existing decisions or ADR directory, and no project
+instructions (`CLAUDE.md`, `AGENTS.md`, …) naming one.
 
 **Prompt:** "grill me on an inventory system" — answer round 1, then reply "just build it".
 
 **Expected:**
 - Round 1 asks scope first, numbered, each question with a ➡️ recommendation
-- After "just build it": no further questions; assumptions for the open decisions are listed;
-  `docs/godot-prompter/decisions/<date>-inventory.md` exists with the settled rows and the
+- After "just build it": no further questions; assumptions for the open decisions are listed; a
+  decision record exists — in an existing decisions/ADR directory if the project has one,
+  otherwise wherever the agent asked to put it (suggesting `docs/decisions/`), or at
+  `docs/decisions/<date>-inventory.md` if it could not ask — with the settled rows and the
   assumptions under **Open / deferred**, marked **assumed**
 
 **Pass criteria:** no question asked after the off-ramp, and every open decision appears as a
