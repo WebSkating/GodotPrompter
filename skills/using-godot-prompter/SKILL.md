@@ -5,7 +5,7 @@ description: Bootstrap skill — establishes how to find and use GodotPrompter s
 
 # Using GodotPrompter
 
-> **Related skills:** **godot-project-setup** for scaffolding a new project, **godot-brainstorming** for design exploration, **godot-code-review** for reviewing finished code, **godot-debugging** for diagnosing runtime issues.
+> **Related skills:** **godot-project-setup** for scaffolding a new project, **godot-grill** for settling open design decisions first, **godot-brainstorming** for design exploration, **godot-code-review** for reviewing finished code, **godot-debugging** for diagnosing runtime issues.
 
 GodotPrompter provides Godot 4.x domain-specific skills for AI coding agents. Skills cover project setup, architecture patterns, gameplay systems, UI, multiplayer, testing, and deployment — for both GDScript and C#.
 
@@ -72,6 +72,13 @@ Workflow plugins decide *how you work*; GodotPrompter decides *what you build*. 
 **RULE: before implementing any Godot system, invoke the matching domain skill from the table below.**
 Applies to subagents writing Godot code too.
 
+| Situation | Start with |
+|---|---|
+| New system, or the requirements are unclear | `godot-grill` — settle decisions, then design and build |
+| Known change, explicit ask, bug fix | the domain skill below — build |
+
+**Then report before you build:** name the pattern you picked, the alternative you rejected, and why. Skills carry trade-offs — surface them. The choice is the developer's.
+
 | Building… | Start with |
 |---|---|
 | Movement, input, cameras | `player-controller`, `input-handling`, `camera-system` |
@@ -87,7 +94,7 @@ Applies to subagents writing Godot code too.
 | Editor tools, assets | `addon-development`, `assets-pipeline` |
 | GDScript / C# idioms | `gdscript-patterns`, `gdscript-advanced`, `csharp-godot`, `csharp-signals` |
 | Test, debug, profile, review | `godot-testing`, `godot-debugging`, `godot-optimization`, `godot-code-review` |
-| Setup, design, export | `godot-project-setup`, `godot-brainstorming`, `export-pipeline` |
+| Setup, design, export | `godot-project-setup`, `godot-grill`, `godot-brainstorming`, `export-pipeline` |
 | Teaching while building | `godot-mentor` |
 | Addons (if installed) | `limboai`, `beehave`, `popochiu`, `dialogue-manager`, `phantom-camera` |
 
@@ -101,7 +108,9 @@ Full index: the "Available Skill Categories" section below.
 | "It's a two-line script" | Two-line scripts still pick node types. Invoke. |
 | "The plan says what to build" | The plan says what. The skill says how. Invoke. |
 | "I loaded a Godot skill already" | Different system, different skill. |
-| "The user wants a quick fix" | Quick fixes set architecture. Invoke. |
+| "The user wants a quick fix" | Quick fixes set architecture. Invoke — then say what you picked. |
+| "The skill shows one pattern, so it's settled" | Skills carry trade-offs. Surface them; don't decide alone. |
+| "I'll explain it once it works" | A choice reported after the code is a fait accompli, not a choice. |
 <!-- SESSION-CARD-END -->
 
 ## Workflow: From Idea to Working Game
@@ -157,6 +166,7 @@ Skills use Claude Code tool names as the canonical reference. Non-Claude platfor
 - `using-godot-prompter` — This skill (bootstrap)
 - `godot-project-setup` — Scaffold new projects
 - `godot-brainstorming` — Godot-specific design exploration
+- `godot-grill` — Settle open design decisions in rounds, scope first, and record them
 - `godot-code-review` — GDScript/C# review against Godot best practices
 - `godot-debugging` — Godot-specific debugging techniques
 - `godot-testing` — TDD with GUT and gdUnit4

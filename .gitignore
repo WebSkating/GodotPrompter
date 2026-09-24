@@ -25,3 +25,7 @@ node_modules/
 !/.claude/
 !/.claude/settings.json
 /.claude/settings.local.json
+
+# Plugin eval run output (large, embeds local absolute paths).
+# Baseline numbers live in evals/FOLLOWUPS.md.
+evals/results/

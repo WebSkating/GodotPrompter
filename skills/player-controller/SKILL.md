@@ -359,7 +359,7 @@ public partial class FPSController : CharacterBody3D
 
 ## 5. Common Movement Recipes
 
-Beyond the basic locomotion patterns above, two recipes come up so often that they deserve their own block: **Dash** (timer-based velocity override for a short burst) and **Wall Jump** (vertical wall slide + bounce off `GetWallNormal()` when jump is pressed). Both apply to a `CharacterBody2D` and slot into the standard `_physics_process` loop alongside gravity and horizontal movement.
+Beyond the basic locomotion patterns above, two recipes come up so often that they deserve their own block: **Dash** (timer-based velocity override for a short burst, with a cooldown and one dash per airtime) and **Wall Jump** (vertical wall slide + bounce off `GetWallNormal()` when jump is pressed). Both apply to a `CharacterBody2D` and slot into the standard `_physics_process` loop alongside gravity and horizontal movement.
 
 See [references/common-movement-recipes.md](references/common-movement-recipes.md) for full GDScript and C# implementations of both recipes.
 
