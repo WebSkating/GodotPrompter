@@ -416,3 +416,66 @@ them; the instructions file is the mechanism.
 reported as Forward Plus, **not** "C#".
 
 **Pass criteria:** guards the token-position parsing bug — see `tests/hooks/`.
+
+---
+
+## Category 6: Decision-first design (v1.14.0)
+
+### Test 6.1: Off-ramp mid-grill
+
+**Setup:** Godot project with no existing decisions or ADR directory, and no project
+instructions (`CLAUDE.md`, `AGENTS.md`, …) naming one.
+
+**Prompt:** "grill me on an inventory system" — answer round 1, then reply "just build it".
+
+**Expected:**
+- Round 1 asks scope first, numbered, each question with a ➡️ recommendation
+- After "just build it": no further questions; assumptions for the open decisions are listed; a
+  decision record exists — in an existing decisions/ADR directory if the project has one,
+  otherwise wherever the agent asked to put it (suggesting `docs/decisions/`), or at
+  `docs/decisions/<date>-inventory.md` if it could not ask — with the settled rows and the
+  assumptions under **Open / deferred**, marked **assumed**
+
+**Pass criteria:** no question asked after the off-ramp, and every open decision appears as a
+listed assumption.
+
+---
+
+### Test 6.2: The record shortens the grill
+
+**Setup:** the project from 6.1, with its decision record committed.
+
+**Prompt:** "grill me on adding equipment slots to the inventory"
+
+**Expected:** no question re-asks a row in the existing record (scope, item data home, bag
+model); round 1 starts at equipment-specific decisions.
+
+**Pass criteria:** zero re-asked recorded decisions. Re-asking any one is a FAIL.
+
+---
+
+### Test 6.3: No grill for a bug fix
+
+**Prompt:** "I ported my player to Godot 4 and `velocity = move_and_slide(velocity)` now errors"
+
+**Expected:** a direct diagnosis — `move_and_slide()` takes no arguments in Godot 4 — with no
+questioning round.
+
+**Pass criteria:** the card's "Known change, explicit ask, bug fix" row wins; `godot-grill` is
+not invoked.
+
+---
+
+### Test 6.4: The card's gate row routes a plain request
+
+**Setup:** a real Godot project (so the SessionStart hook injects the card), mentor mode off, no
+existing decision record.
+
+**Prompt:** "Add a basic inventory system to my Godot 4 game."
+
+**Expected:** the gate row ("New system, or the requirements are unclear") routes the request to
+`godot-grill`, which opens a bounded scope-first round rather than building immediately.
+
+**Pass criteria:** the grill is invoked without the user naming it or asking to be grilled — this
+is the path eval case grill-04 cannot exercise, because eval runs start in an empty temp directory
+where the SessionStart hook finds no `project.godot` and injects nothing.

@@ -52,3 +52,6 @@ Before merging skill changes:
 `node scripts/validate-skills.mjs` already enforces frontmatter, cross-references, the size budget, and C# parity — run it rather than checking those by hand. For parity exemptions (`csharp-parity: n/a` markers) see **authoring-godot-prompter-skills**.
 
 Run `npm test` (hooks + validator + generated-metadata checks) after touching `scripts/validate-skills.mjs` — `tests/validator/` covers the parity marker, including the error path that can fail a release tag.
+
+`evals/` holds `claude plugin eval` suites — mentor cases `0*`, grill cases `grill-*`; `--case` selects one. A full mentor run is ~50 min and ~$15; the judge must stay `--judge-model sonnet` because the agent runs on Opus and must never self-judge.
+`evals/results/` is gitignored, so baselines and results live in `evals/FOLLOWUPS.md` and `evals/GRILL.md` instead.
