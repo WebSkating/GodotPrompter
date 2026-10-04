@@ -16,11 +16,17 @@ Full command sequence lives in `CONTRIBUTING.md`.
    `.cursor-plugin/plugin.json`), both version fields in the committed
    `package-lock.json`, plus sibling marketplaces if present; also syncs the live
    skill count into the "N domain-specific skills" text of each manifest description.
-2. Update `CHANGELOG.md` with the new section.
-3. Commit, tag (`v<version>`), push with tags — `.github/workflows/release.yml`
+2. Do the two things the bump script does **not** touch:
+   - regenerate the table in `docs/token-budget.md`
+     (`npm ci && node scripts/count-tokens.mjs --tokenizer --markdown`, pasted between the
+     `TOKEN-TABLE` markers) and fix the skill/agent counts in the intro above them;
+   - set the Grok "pin to a release" example in `README.md` to the new tag — it sat at
+     v1.11.0 through three releases.
+3. Update `CHANGELOG.md` with the new section.
+4. Commit, tag (`v<version>`), push with tags — `.github/workflows/release.yml`
    then validates, creates the GitHub release, and opens marketplace PRs
    (when `MARKETPLACE_TOKEN` is configured).
-4. If the workflow's marketplace step is skipped, manually bump
+5. If the workflow's marketplace step is skipped, manually bump
    `skillsmith/.claude-plugin/marketplace.json` (primary) and the legacy
    `godot-prompter-marketplace/.claude-plugin/marketplace.json`.
 

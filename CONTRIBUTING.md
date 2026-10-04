@@ -178,7 +178,8 @@ When publishing a new version (e.g., v1.8.1):
    It also attempts to bump sibling marketplaces when present at known relative paths:
    - `../skillsmith/.claude-plugin/marketplace.json` (or `../../AI/skillsmith/.claude-plugin/marketplace.json`)
    - `../godot-prompter-marketplace/.claude-plugin/marketplace.json`
-4. **Update `CHANGELOG.md`** by adding a `## [1.8.1]` section.
+4. **Update `CHANGELOG.md`** by adding a `## [1.8.1]` section, and set the Grok "pin to a release"
+   example in `README.md` to the new tag — the bump script does not touch it.
 5. **Validate skills and hooks** — both run in CI on the release tag, so failing here fails the release:
    ```bash
    node scripts/validate-skills.mjs   # must report 0 errors
