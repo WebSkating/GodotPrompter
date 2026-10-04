@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - **Plugin icon.** `.claude-plugin/icon.png`, a 1024 px square PNG, for the Claude plugin
   directory listing.
+- **Directory listing fields in `.claude-plugin/plugin.json`.** `displayName`, `icon`,
+  `documentationUrl`, `supportUrl`, `privacyPolicyUrl`, and `author.url`. Anthropic's directory
+  reads them for the listing; Claude Code ignores all but `displayName` at load time.
 
 ### Changed
 
