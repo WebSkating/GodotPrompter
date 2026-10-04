@@ -12,7 +12,7 @@ description: |
   - Runtime gameplay code that uses the editor at all → use `godot-game-dev`
   - Shaders applied during editing → use `godot-shader-author`
   - Performance diagnosis of the editor itself → use `godot-performance-profiler`
-  - C++ GDExtension authoring → out of scope; deferred to v1.8 (or use `godot-csharp-engineer` if a C# alternative works)
+  - C++ GDExtension authoring → out of scope; load the `gdextension` skill (or use `godot-csharp-engineer` if a C# alternative works)
 model: inherit
 ---
 

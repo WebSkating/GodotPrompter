@@ -26,8 +26,11 @@
     "skills",
     "claude-code",
     "copilot",
-    "gemini",
-    "cursor"
+    "antigravity",
+    "cursor",
+    "codex",
+    "opencode",
+    "grok"
   ],
   "repository": {
     "type": "git",
