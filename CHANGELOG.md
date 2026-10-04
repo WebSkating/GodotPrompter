@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- **Plugin icon.** `.claude-plugin/icon.png`, a 1024 px square PNG, for the Claude plugin
+  directory listing.
+
 ### Changed
 
 - **Installing the plugin no longer runs a package install.** `package.json` sat beside
