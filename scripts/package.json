@@ -1,0 +1,10 @@
+{
+  "name": "godot-prompter-scripts",
+  "private": true,
+  "description": "Tokenizers for count-tokens.mjs --tokenizer. Kept out of the plugin root so installing the plugin never runs a package install.",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/tokenizer": "^0.0.4",
+    "js-tiktoken": "^1.0.20"
+  }
+}

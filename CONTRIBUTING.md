@@ -157,7 +157,7 @@ When publishing a new version (e.g., v1.8.1):
 1. **Make changes** in the GodotPrompter repo.
 2. **Regenerate the token-budget docs page** (added in v1.7.0):
    ```bash
-   npm ci                                                     # installs the optional tokenizer deps from package-lock.json
+   npm ci --prefix scripts                                    # installs the tokenizer deps from scripts/package-lock.json
    node scripts/count-tokens.mjs --tokenizer --markdown
    ```
    Replace the contents between the `<!-- BEGIN-TOKEN-TABLE -->` / `<!-- END-TOKEN-TABLE -->` markers in `docs/token-budget.md` with the new output. Also update the skill/agent counts in the file's intro paragraph (e.g. "GodotPrompter ships **N skills** and **M agents**") — they sit above the markers, so replacing the table alone leaves them stale. Commit alongside the version bump.
@@ -172,8 +172,7 @@ When publishing a new version (e.g., v1.8.1):
    - `.cursor-plugin/plugin.json`
    - `plugin.json` (at root, for Antigravity CLI)
 
-   It also updates both version fields in `package-lock.json`, and refuses to bump if any of these
-   files disagree.
+   It refuses to bump if any of these files disagree.
 
    It also attempts to bump sibling marketplaces when present at known relative paths:
    - `../skillsmith/.claude-plugin/marketplace.json` (or `../../AI/skillsmith/.claude-plugin/marketplace.json`)
