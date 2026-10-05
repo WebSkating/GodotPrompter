@@ -240,7 +240,9 @@
         "multithreading"
       ],
       "addon": null,
-      "references": [],
+      "references": [
+        "skills/csharp-godot/references/gdscript-interop.md"
+      ],
       "source": "skills/csharp-godot/SKILL.md"
     },
     {
