@@ -91,3 +91,7 @@ These sections have GDScript code but no C# block. Each entry notes what kind of
 ## Accepted (intentional GDScript-only — not debt)
 
 - `skills/gdscript-patterns/SKILL.md` — all sections (9 warnings, sections 1-6, 8, 12, 13) — this skill is GDScript-by-design and explicitly documents GDScript-specific language features (`@export`, `await`, `match`, `class_name`, lambdas, annotations, `...args` variadic, `@abstract`). Adding C# to this skill would undermine its purpose. Documented in the skill itself with an intent note added in v1.5.0.
+
+## Android plugins (closed 2026-10-06, v1.15.0)
+
+- ~~`skills/mobile-development/references/plugins.md` — Sections "Android v2 plugins (Godot 4.2+)" and "JavaClassWrapper & AndroidRuntime (Godot 4.4+)"~~ **(closed in v1.15.0, 2026-10-06)** — C# written from the documented API (godot-docs 4.3, 4.4, 4.7 class references), **not run on a device** (no Android toolchain); each of the three blocks carries a "Not device-tested" note directly above it in the file.
