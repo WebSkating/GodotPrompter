@@ -603,9 +603,11 @@ test('writes nothing into the user project', () => {
 });
 
 // Follow-ups §3: the Cursor command was a bare relative path nobody had checked. It cannot be
-// run here (no Cursor in CI), so this pins the only shapes the research allows: a relative path
-// with no variable in it (nothing to break on a space), or one double-quoted variable path,
-// optionally behind PowerShell's call operator. The whole string is matched, so nothing can be
+// run here (no Cursor in CI), so this pins two space-safe shapes. The first (a relative path with
+// no variable in it) is the current command. The second (one double-quoted variable path,
+// optionally behind PowerShell's call operator) is the only other form that would be space-safe
+// if Cursor documents a plugin-root variable for hook commands; the research found Cursor
+// documents neither shape. The whole string is matched, so nothing can be
 // chained before or after it.
 const CURSOR_COMMAND_SHAPES = [
   /^\.\/hooks\/run-hook\.cmd session-start$/,

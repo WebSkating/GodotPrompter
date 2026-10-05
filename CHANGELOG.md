@@ -32,7 +32,7 @@ against the engine source. Not verified in a running editor, in Cursor, or on a 
   `gdscript-patterns` (lambdas; sections renumbered so the checklist is last), `csharp-godot`
   (GDScript interop). No content was removed.
 - **The `no-menu-paths` mentor eval grader** is now an `llm` grader that fails invented paths
-  instead of every path. Earlier figures for it are not comparable.
+  instead of every path. Earlier figures for it are not comparable. The mentor eval was not re-run in this release.
 - **The Cursor hook command's shape is pinned by a test.** The hook itself is unchanged and was
   not run in Cursor; Cursor's docs do not say whether `CURSOR_PLUGIN_ROOT` is exported to plugin
   hooks, and if it is not the card may be dropped under Cursor.

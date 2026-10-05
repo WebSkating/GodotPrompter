@@ -91,6 +91,7 @@ These sections have GDScript code but no C# block. Each entry notes what kind of
 ## Accepted (intentional GDScript-only — not debt)
 
 - `skills/gdscript-patterns/SKILL.md` — all sections (9 warnings, sections 1-6, 8, 12, 13) — this skill is GDScript-by-design and explicitly documents GDScript-specific language features (`@export`, `await`, `match`, `class_name`, lambdas, annotations, `...args` variadic, `@abstract`). Adding C# to this skill would undermine its purpose. Documented in the skill itself with an intent note added in v1.5.0.
+  - Note (2026-10-06, v1.15.0): the section numbers above are historical. This release renumbered Variadic Functions and Abstract Classes to 11 and 12 (the checklist is 13) and moved section 3's code to `references/lambda-functions.md`.
 
 ## Android plugins (closed 2026-10-06, v1.15.0)
 

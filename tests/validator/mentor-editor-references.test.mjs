@@ -111,6 +111,8 @@ test('mentor card points at both references and keeps the refusal', () => {
   assert.match(c, /references\/editor-recipes\.md/);
   assert.match(c, /references\/editor-navigation\.md/);
   assert.match(c, /name the panel and stop/i, 'Review Focus 2: no fallback for uncovered paths');
+  assert.match(c, /never from memory/, 'the prohibition itself is gone');
+  assert.match(c, /anything they click or read on\s+screen/, 'the gate no longer covers every on-screen label');
   assert.doesNotMatch(c, /Editor beat boundary \(v1\.13\.0\)/, 'old boundary paragraph still present');
   assert.ok(Buffer.byteLength(c, 'utf8') < 3072, 'card over the 3 KB cap');
 });

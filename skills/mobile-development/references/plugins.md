@@ -65,6 +65,7 @@ class MyAndroidExportPlugin extends EditorExportPlugin:
 #if TOOLS
 using Godot;
 
+// MyAndroidPlugin.cs — Godot C# needs the file name to match the class.
 [Tool]
 public partial class MyAndroidPlugin : EditorPlugin
 {
@@ -83,6 +84,7 @@ public partial class MyAndroidPlugin : EditorPlugin
     }
 }
 
+// MyAndroidExportPlugin.cs
 [Tool]
 public partial class MyAndroidExportPlugin : EditorExportPlugin
 {

@@ -123,7 +123,7 @@ as a game-state or event-bus singleton.
    sub-tab. This location is the same on every version.
 2. Add the script or scene:
    - **4.3-4.6:** In the **Path:** field, type the file's path (for example res://global.gd) or use the browse button. Set the name in the **Node Name:** field, then press **Add**.
-   - **4.7:** Click **Select Script/Scene** and pick the file. It is added immediately, named after the file's base name; there are no **Path:** or **Node Name:** fields and no **Add** button. The name column's tooltip reads **Name of the autoload. Double-click to rename.** The docs for this version still say "Press Add".
+   - **4.7:** Click **Select Script/Scene** and pick the file. It is added immediately, named after the file name converted to PascalCase (game_state.gd becomes GameState; a name that matches a built-in class gets Global appended, so timer.gd becomes TimerGlobal); there are no **Path:** or **Node Name:** fields and no **Add** button. The name column's tooltip reads **Name of the autoload. Double-click to rename.** The docs for this version still say "Press Add".
 3. Leave **Enable** checked in the **Global Variable** column (it is checked by default) so
    GDScript can reach the autoload by its name. That column has no effect in C# code.
 
@@ -380,8 +380,8 @@ translations are added and removed project-wide.
 2. Find the add-on and use its **Download** button. The research did not record the install
    dialog that follows, so do not quote its options or its confirm button.
 3. If the add-on came as a ZIP instead: extract it and move the addons/ folder it contains into
-   the project folder. If the project already has an addons/ folder, move the add-on's folder
-   into the project folder to merge the two.
+   the project folder. If the project already has an addons/ folder, move the plugin's addons/
+   folder into the project folder to merge the two.
 4. An add-on with a plugin.cfg file in its folder under addons/ is an editor plugin and must be
    enabled; a scripts-only add-on needs no enabling. Open **Project > Project Settings...** and
    click the **Plugins** tab.
@@ -407,7 +407,7 @@ immediately; there is no need to restart the editor.
    **Manage Export Templates** link. **Editor > Manage Export Templates...** opens the window
    titled **Export Template Manager**. Install the templates there:
    - **4.3-4.6:** Click **Download and Install**. There is also an **Install from File** button.
-   - **4.7:** Check the box for the platform and architecture you want, then click **Install Selected Templates**. There is also an **Install All Templates** button.
+   - **4.7:** Check the box for the platform and architecture you want, then click **Install Selected Templates**. With no box checked the same button reads **Install All Templates**.
 5. The buttons at the bottom of the **Export** window are **Export All...**,
    **Export Project...**, **Export PCK/ZIP...** and **Close**. The research did not record the
    per-platform options, the export path field, or the dialog after **Export Project...**, so

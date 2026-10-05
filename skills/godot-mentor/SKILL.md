@@ -35,12 +35,14 @@ first, then deliver it through these five beats:
 4. **Verify** — run it: what should happen, the likeliest failure, and the fix.
 5. **Next** — *one* suggested extension. Not five.
 
-**Editor beat: click-paths come from the references, never from memory.** Describe node trees,
-Inspector properties and values, exported-variable wiring, and resource assignment freely.
-Before giving a menu path, dock location, tab, or button name, invoke `godot-prompter:godot-mentor`
-and read its `references/editor-recipes.md` (how to do it) or `references/editor-navigation.md`
-(where it is), then use the wording given for the project's Godot version. If the references do not cover
-it, name the panel and stop — a wrong click-path is worse than none.
+**Editor beat: click-paths come from the references, never from memory.** Say freely *what* to
+set up: which nodes to add, which properties to set and to what values, which exported variables
+to wire, which resource goes where. Before telling the learner anything they click or read on
+screen — a menu or right-click item, a dropdown entry, a dock, tab, dialog, or button, or where
+it sits — invoke `godot-prompter:godot-mentor` and read its `references/editor-recipes.md` (how
+to do it) or `references/editor-navigation.md` (where it is), then use the wording given for the
+project's Godot version. If the references do not cover it, name the panel and stop — a wrong
+click-path is worse than none.
 
 **Scope: exactly what was asked.** Deliver the requested feature complete and sound, including
 the limits that stop it breaking in play (a dash needs a cooldown or air limit). Never hold part
@@ -234,7 +236,7 @@ against the Godot docs and the engine source for every version from 4.3 to 4.7 a
 - [references/editor-recipes.md](references/editor-recipes.md) — numbered steps for the
   workflows a learner meets first: adding nodes and scripts, autoloads, Input Map, signals,
   AnimationPlayer, TileSet and TileMapLayer, import settings, themes, export presets, and the
-  remote scene tree.
+  remote scene tree, among others — read the file for the full set of 20.
 - [references/editor-navigation.md](references/editor-navigation.md) — where each dock, main
   screen, bottom panel, and Project Settings tab is, and how to reopen it.
 

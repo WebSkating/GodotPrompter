@@ -35,7 +35,7 @@ public partial class VersionLabel : Label
 
 ### Auto-Versioning from Git Tags
 
-Tag your release commit, then inject the version at export time. The CI workflow above does this via `sed`, but you can also run a pre-export GDScript tool (EditorScript) if you prefer to keep it in-engine:
+Tag your release commit, then inject the version at export time. The CI workflow in [ci-cd-github-actions.md](ci-cd-github-actions.md) does this via `sed`, but you can also run a pre-export GDScript tool (EditorScript) if you prefer to keep it in-engine:
 
 ```gdscript
 # tools/inject_version.gd  — run with: godot --headless --script tools/inject_version.gd

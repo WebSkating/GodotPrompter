@@ -28,7 +28,7 @@ Columns:
 
 | Kind | Name | Bytes | KB | Est. tokens | Claude | GPT | Status |
 |---|---|---:|---:|---:|---:|---:|---|
-| reference | godot-mentor/editor-recipes.md | 27402 | 26.8 | 6851 | 6957 | 6728 | — |
+| reference | godot-mentor/editor-recipes.md | 27571 | 26.9 | 6893 | 6992 | 6760 | — |
 | reference | ability-system/tags-and-conditions.md | 18225 | 17.8 | 4556 | 5015 | 4411 | — |
 | reference | godot-mentor/editor-navigation.md | 17011 | 16.6 | 4253 | 4560 | 4427 | — |
 | reference | ability-system/stat-modifiers.md | 15567 | 15.2 | 3892 | 4266 | 3756 | — |
@@ -65,9 +65,9 @@ Columns:
 | skill | resource-pattern | 12545 | 12.3 | 3136 | 3373 | 3046 | ✓ under budget |
 | skill | multiplayer-basics | 12352 | 12.1 | 3088 | 3348 | 2901 | ✓ under budget |
 | skill | godot-debugging | 12259 | 12.0 | 3065 | 3140 | 2835 | ✓ under budget |
+| skill | godot-mentor | 12209 | 11.9 | 3052 | 3274 | 3084 | ✓ under budget |
 | skill | ability-system | 12161 | 11.9 | 3040 | 3112 | 2792 | ✓ under budget |
 | skill | particles-vfx | 12134 | 11.8 | 3034 | 3481 | 3155 | ✓ under budget |
-| skill | godot-mentor | 12007 | 11.7 | 3002 | 3222 | 3024 | ✓ under budget |
 | skill | godot-optimization | 11865 | 11.6 | 2966 | 3097 | 2801 | ✓ under budget |
 | skill | dedicated-server | 11715 | 11.4 | 2929 | 3000 | 2669 | ✓ under budget |
 | reference | godot-ui/ui-patterns.md | 11670 | 11.4 | 2918 | 3318 | 2853 | — |
@@ -115,10 +115,10 @@ Columns:
 | reference | ai-navigation/behavior-trees.md | 6266 | 6.1 | 1567 | 1774 | 1528 | — |
 | reference | input-handling/action-rebinding.md | 6180 | 6.0 | 1545 | 1637 | 1428 | — |
 | reference | ai-navigation/steering-behaviors.md | 6086 | 5.9 | 1522 | 1304 | 1166 | — |
+| reference | mobile-development/plugins.md | 5958 | 5.8 | 1490 | 1608 | 1421 | — |
 | reference | godot-testing/tdd-workflow.md | 5945 | 5.8 | 1486 | 1702 | 1476 | — |
 | agent | godot-tools-engineer | 5939 | 5.8 | 1485 | 1605 | 1470 | — |
 | reference | physics-system/rigidbody-recipes.md | 5891 | 5.8 | 1473 | 1719 | 1512 | — |
-| reference | mobile-development/plugins.md | 5855 | 5.7 | 1464 | 1579 | 1395 | — |
 | reference | beehave/custom-nodes.md | 5747 | 5.6 | 1437 | 1585 | 1403 | — |
 | reference | tween-animation/common-recipes.md | 5726 | 5.6 | 1432 | 2013 | 1657 | — |
 | agent | godot-csharp-engineer | 5722 | 5.6 | 1431 | 1583 | 1456 | — |
@@ -244,8 +244,8 @@ Columns:
 | reference | gdscript-patterns/lambda-functions.md | 2294 | 2.2 | 574 | 726 | 661 | — |
 | reference | physics-system/area-recipes.md | 2233 | 2.2 | 558 | 670 | 568 | — |
 | reference | 3d-essentials/common-pitfalls.md | 2221 | 2.2 | 555 | 439 | 393 | — |
+| reference | export-pipeline/versioning.md | 2207 | 2.2 | 552 | 623 | 553 | — |
 | reference | animation-system/sprite-animation.md | 2195 | 2.1 | 549 | 573 | 509 | — |
-| reference | export-pipeline/versioning.md | 2159 | 2.1 | 540 | 602 | 536 | — |
 | reference | gdextension/debugging-native.md | 2132 | 2.1 | 533 | 559 | 497 | — |
 | reference | resource-pattern/sharing-vs-unique.md | 2122 | 2.1 | 531 | 540 | 492 | — |
 | reference | addon-development/dock-panels.md | 2086 | 2.0 | 522 | 663 | 560 | — |
@@ -294,7 +294,6 @@ Columns:
 | reference | using-godot-prompter/copilot-tools.md | 712 | 0.7 | 178 | 226 | 209 | — |
 | reference | using-godot-prompter/codex-tools.md | 688 | 0.7 | 172 | 199 | 178 | — |
 | reference | physics-system/jolt-differences.md | 606 | 0.6 | 152 | 170 | 150 | — |
-
 <!-- END-TOKEN-TABLE -->
 
 ## How to read this
