@@ -360,7 +360,8 @@
       "addon": null,
       "references": [
         "skills/export-pipeline/references/ci-cd-github-actions.md",
-        "skills/export-pipeline/references/distribution-itch-steam.md"
+        "skills/export-pipeline/references/distribution-itch-steam.md",
+        "skills/export-pipeline/references/versioning.md"
       ],
       "source": "skills/export-pipeline/SKILL.md"
     },
