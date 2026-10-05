@@ -4,10 +4,14 @@ All notable changes to GodotPrompter will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [Unreleased]
+## [1.14.1] - 2026-10-05
+
+A maintenance release for the Claude plugin directory listing. No skill or agent content changed.
 
 ### Added
 
+- **Marketplace description.** `.claude-plugin/marketplace.json` had none, which
+  `claude plugin validate` reported as a warning.
 - **Plugin icon.** `.claude-plugin/icon.png`, a 1024 px square PNG, for the Claude plugin
   directory listing.
 - **Directory listing fields in `.claude-plugin/plugin.json`.** `displayName`, `icon`,
@@ -22,6 +26,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `scripts/package.json` with their own lockfile (same pinned versions), installed by maintainers
   with `npm ci --prefix scripts`. The root `package.json` has no dependencies, and
   `bump-version.mjs` no longer touches a lockfile.
+
+### Fixed
+
+- **Token counts no longer depend on the checkout's line endings.** `count-tokens.mjs` normalized
+  CRLF before measuring bytes but tokenized the raw text, so a table generated on a Windows
+  checkout over-reported the Claude and GPT columns by about 2%. `docs/token-budget.md` is
+  regenerated from LF text; the byte columns are unchanged.
 
 ## [1.14.0] - 2026-09-20
 
