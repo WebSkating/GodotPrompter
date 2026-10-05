@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a **documentation/skills repository**. There is no application build/lint, but `node scripts/validate-skills.mjs` checks SKILL.md frontmatter, cross-references, and structure — `validate.yml` runs it plus `npm test` on every PR and push to `master`, and `release.yml` again on the tag. Otherwise, changes are validated by reading skills, verifying code examples in Godot 4.3+, and running the agent integration tests in `tests/agent-integration/TEST_PLAN.md`.
+This is a **documentation/skills repository**. There is no application build/lint, but `node scripts/validate-skills.mjs` checks SKILL.md frontmatter, cross-references, and structure — `validate.yml` runs it plus `npm test` on every PR and push to `master` (the hook tests also run on Windows), and `release.yml` again on the tag. Otherwise, changes are validated by reading skills, verifying code examples in Godot 4.3+, and running the agent integration tests in `tests/agent-integration/TEST_PLAN.md`.
 
 ## Supported Platforms
 
@@ -35,7 +35,7 @@ The layout is self-evident from `ls`; these constraints are not:
 - **Two files are generated — never hand-edit them.** `.codex/agents/godot-prompter/*.toml` comes from `agents/*.md` (`npm run sync:codex-agents`); `skills/index.json` comes from skill/agent frontmatter and Related-skills lines (`npm run build:skill-index`). `npm test` fails if either is stale.
 - **`.github/workflows/release.yml`** is tag-triggered: it validates, creates the GitHub release, and opens marketplace PRs.
 - **`.github/workflows/plugin-scan.yml`** runs the HOL plugin-scanner (the awesome-ai-plugins listing check) on every push to `master` and every PR, and fails below 80/100 or on any high finding. It flags a full-access sandbox mode, a never-ask approval policy, or a bypass approval mode written literally in any `.md`/`.json`/`.toml`/`.yml`/`.yaml` file, comments and this file included (patterns: `RISKY_APPROVAL_PATTERNS` in hol-guard's `checks/security.py`), so describe them rather than quoting them. The validator's `scanner-risky-approval` error catches the same text before a push. Every `uses:` must be pinned to a full commit SHA — Dependabot keeps the pins current.
-- **`docs/superpowers/notes/`** holds per-release research notes, the C# parity debt list, and the open follow-ups carried between releases (`2026-07-28-v1.13.0-followups.md`).
+- **`docs/superpowers/notes/`** holds per-release research notes, the C# parity debt list, and the open follow-ups carried between releases (`2026-10-05-v1.15.0-followups.md`).
 
 ## File formats and releases
 
