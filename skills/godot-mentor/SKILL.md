@@ -230,6 +230,10 @@ jump still counts as grounded.
 Where things are and how to do them in the editor, checked against the Godot docs for every
 version from 4.3 to 4.7, with every difference flagged.
 
+- [references/editor-recipes.md](references/editor-recipes.md) — numbered steps for the
+  workflows a learner meets first: adding nodes and scripts, autoloads, Input Map, signals,
+  AnimationPlayer, TileSet and TileMapLayer, import settings, themes, export presets, and the
+  remote scene tree.
 - [references/editor-navigation.md](references/editor-navigation.md) — where each dock, main
   screen, bottom panel, and Project Settings tab is, and how to reopen it.
 

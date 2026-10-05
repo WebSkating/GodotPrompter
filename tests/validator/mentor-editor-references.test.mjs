@@ -24,3 +24,73 @@ test('editor-navigation.md has every required section', () => {
 test('editor-navigation.md contains no code fences', () => {
   assert.doesNotMatch(read(NAV), /^```/m);
 });
+
+const RECIPES = join(REFS, 'editor-recipes.md');
+const DIGEST = join(ROOT, 'docs', 'superpowers', 'notes', '2026-10-05-godot-editor-research.md');
+
+const recipeSections = () => read(RECIPES).split(/^## /m).slice(1)
+  .map((s) => ({ title: s.split('\n')[0].trim(), body: s }));
+
+test('editor-recipes.md has at least 15 recipes, each with steps and an outcome', () => {
+  assert.ok(existsSync(RECIPES), 'editor-recipes.md is missing');
+  const sections = recipeSections();
+  assert.ok(sections.length >= 15, `only ${sections.length} recipes`);
+  for (const { title, body } of sections) {
+    assert.match(body, /^1\. /m, `"${title}" has no numbered steps`);
+    assert.match(body, /^\*\*You should see:\*\*/m, `"${title}" has no outcome line`);
+  }
+  assert.ok(sections.some((s) => s.title === 'Register an autoload'),
+    'the autoload recipe is required by the mentor card and TEST_PLAN 5.2');
+});
+
+test('editor-recipes.md contains no code fences', () => {
+  assert.doesNotMatch(read(RECIPES), /^```/m);
+});
+
+// Review Focus 1: a flagged step must cover 4.3-4.7 with no gap, or a learner on the
+// uncovered version gets no instruction at all. A flag is a line starting "- **4.x".
+const VERSIONS = ['4.3', '4.4', '4.5', '4.6', '4.7'];
+function covered(flag) {
+  const range = flag.match(/^(4\.\d)(?:\s*[-–]\s*(4\.\d)|(\+))?$/);
+  assert.ok(range, `unparseable version flag "${flag}"`);
+  const from = VERSIONS.indexOf(range[1]);
+  const to = range[3] ? VERSIONS.length - 1 : range[2] ? VERSIONS.indexOf(range[2]) : from;
+  return VERSIONS.slice(from, to + 1);
+}
+const FLAG_LINE = /^ {0,6}- \*\*(4\.\d[^*:]*):\*\* \S.*$/;
+test('version-flagged alternatives cover 4.3 to 4.7 with no gap or overlap', () => {
+  for (const { title, body } of recipeSections()) {
+    // Consecutive flag lines form one group of alternatives; any other line ends the group.
+    const groups = [];
+    let current = null;
+    for (const line of body.split('\n')) {
+      const m = line.match(FLAG_LINE);
+      if (!m) { current = null; continue; }
+      if (!current) groups.push(current = []);
+      current.push(m[1].trim());
+    }
+    for (const g of groups) {
+      assert.deepEqual(g.flatMap(covered).sort(), VERSIONS,
+        `"${title}": flags ${JSON.stringify(g)} do not cover 4.3-4.7 exactly once`);
+    }
+  }
+});
+
+// The coverage test only sees flags written in the one agreed layout. A flag written any other
+// way (inline, on the numbered step, wrapped, a `*` bullet) would slip past it with its gap
+// undetected, so every bold version in the file must be the start of a flag line.
+test('every bold version flag uses the one checked layout', () => {
+  for (const line of read(RECIPES).split('\n')) {
+    if (!/\*\*4\.\d/.test(line)) continue;
+    assert.match(line, FLAG_LINE, `off-format version flag: "${line.trim()}"`);
+    assert.equal(line.match(/\*\*4\.\d/g).length, 1, `two flags on one line: "${line.trim()}"`);
+  }
+});
+
+// Every recipe must trace to the digest, so the next author can see what was verified.
+test('every recipe title appears in the research digest', () => {
+  const digest = read(DIGEST);
+  for (const { title } of recipeSections()) {
+    assert.ok(digest.includes(title), `digest does not mention recipe "${title}"`);
+  }
+});

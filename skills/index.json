@@ -493,7 +493,8 @@
       ],
       "addon": null,
       "references": [
-        "skills/godot-mentor/references/editor-navigation.md"
+        "skills/godot-mentor/references/editor-navigation.md",
+        "skills/godot-mentor/references/editor-recipes.md"
       ],
       "source": "skills/godot-mentor/SKILL.md"
     },

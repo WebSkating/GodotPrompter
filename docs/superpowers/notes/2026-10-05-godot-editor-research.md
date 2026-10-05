@@ -69,7 +69,7 @@ Reading the tables:
 
 ### Nodes, scenes, scripts
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Add a node and attach a script; Instance a scene
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -110,7 +110,7 @@ Reading the tables:
 
 ### Signals, groups
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Connect a signal from the Node dock; Add a node to a group
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -138,7 +138,7 @@ Reading the tables:
 
 ### Resources
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Create a custom Resource and assign it
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -158,7 +158,7 @@ Reading the tables:
 
 ### Autoload
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Register an autoload
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -175,7 +175,7 @@ Reading the tables:
 
 ### Input Map
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Add an Input Map action
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -190,7 +190,7 @@ Reading the tables:
 
 ### Main scene, window, stretch
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Set the main scene; Set window size and stretch mode
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -214,7 +214,7 @@ Reading the tables:
 
 ### Physics layer names
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Name physics layers
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -225,7 +225,7 @@ Reading the tables:
 
 ### AnimationPlayer
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Animate a property with AnimationPlayer
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -248,7 +248,7 @@ Reading the tables:
 
 ### SpriteFrames
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Create SpriteFrames for AnimatedSprite2D
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -266,7 +266,7 @@ Reading the tables:
 
 ### TileSet, TileMapLayer
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Create a TileSet and paint a TileMapLayer
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -291,7 +291,7 @@ Reading the tables:
 
 ### Import
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Change import settings and reimport
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -309,7 +309,7 @@ Reading the tables:
 
 ### Theme
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Create a Theme and assign it
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -328,7 +328,7 @@ Reading the tables:
 
 ### Translations
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Add a translation file
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -346,7 +346,7 @@ Reading the tables:
 
 ### Addons
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Install and enable an addon
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -360,7 +360,7 @@ Reading the tables:
 
 ### Export
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Create an export preset
 
 | Claim | Versions | Source |
 |---|---|---|
@@ -380,7 +380,7 @@ Reading the tables:
 
 ### Remote tree, collision shapes, profiler
 
-**Recipes:** (added by Task 3)
+**Recipes** (in `editor-recipes.md`): Inspect the remote scene tree; Show collision shapes and use the profiler
 
 | Claim | Versions | Source |
 |---|---|---|
