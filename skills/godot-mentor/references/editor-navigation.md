@@ -96,11 +96,11 @@ of these has not lost it; they need to select the right node or resource first. 
 
 | Area | What it is for | Reopen it if closed | Versions |
 |---|---|---|---|
-| **Output** | Shows text printed by the running project (the docs from 4.4 add: and by the editor) | Click **Output** at the bottom of the editor | |
-| **Debugger** | Holds the tabs **Stack Trace**, **Errors**, **Profiler**, **Visual Profiler**, **Video RAM** and **Misc** (the docs also describe "Network Profiler" and "Monitors" tabs) | Click **Debugger** at the bottom of the editor | 4.3 |
-| **Debugger** | Same tabs as above, plus **Evaluator** | Click **Debugger** at the bottom of the editor | 4.4+ |
-| **Audio** | — | Click **Audio** at the bottom of the editor | |
-| **Animation** | The animation editor for an AnimationPlayer node | Click **Animation** at the bottom of the editor; clicking an AnimationPlayer node also opens it | |
+| **Output** | Shows text printed by the running project (the docs from 4.4 add: and by the editor) | Click the **Output** button (4.3-4.5) or tab (4.6+) at the bottom of the editor | |
+| **Debugger** | Holds the tabs **Stack Trace**, **Errors**, **Profiler**, **Visual Profiler**, **Video RAM** and **Misc** (the docs also describe "Network Profiler" and "Monitors" tabs) | Click the **Debugger** button at the bottom of the editor | 4.3 |
+| **Debugger** | Same tabs as above, plus **Evaluator** | Click the **Debugger** button (4.4-4.5) or tab (4.6+) at the bottom of the editor | 4.4+ |
+| **Audio** | — | Click the **Audio** button (4.3-4.5) or tab (4.6+) at the bottom of the editor | |
+| **Animation** | The animation editor for an AnimationPlayer node | Click the **Animation** button (4.3-4.5) or tab (4.6+) at the bottom of the editor; clicking an AnimationPlayer node also opens it | |
 | **AnimationTree** | — | Context only; what brings it up was not researched | |
 | **Shader Editor** | — | — | 4.3-4.5 |
 | **Shader Editor** | — | **Editor > Editor Docks > Shader Editor** | 4.6+ |
