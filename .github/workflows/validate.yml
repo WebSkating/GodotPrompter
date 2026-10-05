@@ -28,7 +28,7 @@ jobs:
           package-manager-cache: false
 
       # No install step: the scripts and tests are stdlib-only. The tokenizers in
-      # optionalDependencies are needed by count-tokens.mjs alone, which does not run here.
+      # scripts/package.json are needed by count-tokens.mjs alone, which does not run here.
 
       - name: Run skill validator
         run: node scripts/validate-skills.mjs

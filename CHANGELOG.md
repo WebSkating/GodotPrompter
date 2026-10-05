@@ -4,6 +4,25 @@ All notable changes to GodotPrompter will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Added
+
+- **Plugin icon.** `.claude-plugin/icon.png`, a 1024 px square PNG, for the Claude plugin
+  directory listing.
+- **Directory listing fields in `.claude-plugin/plugin.json`.** `displayName`, `icon`,
+  `documentationUrl`, `supportUrl`, `privacyPolicyUrl`, and `author.url`. Anthropic's directory
+  reads them for the listing; Claude Code ignores all but `displayName` at load time.
+
+### Changed
+
+- **Installing the plugin no longer runs a package install.** `package.json` sat beside
+  `package-lock.json` in the plugin root, so Claude Code ran `npm ci` on every install — for two
+  tokenizer packages only `count-tokens.mjs --tokenizer` uses. They now live in
+  `scripts/package.json` with their own lockfile (same pinned versions), installed by maintainers
+  with `npm ci --prefix scripts`. The root `package.json` has no dependencies, and
+  `bump-version.mjs` no longer touches a lockfile.
+
 ## [1.14.0] - 2026-09-20
 
 ### Security

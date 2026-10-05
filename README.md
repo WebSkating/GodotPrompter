@@ -56,7 +56,7 @@ grok plugin enable godot-prompter
 Pin to a release:
 
 ```bash
-grok plugin install jame581/GodotPrompter@v1.11.0 --trust
+grok plugin install jame581/GodotPrompter@v1.14.0 --trust
 grok plugin enable godot-prompter
 ```
 
@@ -360,6 +360,7 @@ Hook behaviour is covered separately by `npm run test:hooks` (50 cases), which a
 Token cost reporting:
 
 ```bash
+npm ci --prefix scripts   # once: the tokenizers live in scripts/, not the plugin root
 node scripts/count-tokens.mjs --tokenizer --markdown
 ```
 
