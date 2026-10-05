@@ -94,3 +94,38 @@ test('every recipe title appears in the research digest', () => {
     assert.ok(digest.includes(title), `digest does not mention recipe "${title}"`);
   }
 });
+
+const SKILL = join(ROOT, 'skills', 'godot-mentor', 'SKILL.md');
+const card = () => {
+  const t = read(SKILL);
+  return t.slice(t.indexOf('<!-- MENTOR-CARD-START -->'), t.indexOf('<!-- MENTOR-CARD-END -->'));
+};
+
+// The hook injects the card alone, without the SKILL.md body. Whatever the agent needs in
+// order to find the references and to refuse an uncovered path has to be inside the card.
+test('mentor card points at both references and keeps the refusal', () => {
+  const c = card();
+  // After /clear the agent holds the card but not the skill's directory, so a bare relative path
+  // is unresolvable. The card must say which skill to invoke to reach the references.
+  assert.match(c, /invoke `godot-prompter:godot-mentor`/);
+  assert.match(c, /references\/editor-recipes\.md/);
+  assert.match(c, /references\/editor-navigation\.md/);
+  assert.match(c, /name the panel and stop/i, 'Review Focus 2: no fallback for uncovered paths');
+  assert.doesNotMatch(c, /Editor beat boundary \(v1\.13\.0\)/, 'old boundary paragraph still present');
+  assert.ok(Buffer.byteLength(c, 'utf8') < 3072, 'card over the 3 KB cap');
+});
+
+test('SKILL.md section 7 says click-paths are allowed only from the references', () => {
+  const t = read(SKILL);
+  assert.match(t, /\]\(references\/editor-recipes\.md\)/);
+  assert.match(t, /\]\(references\/editor-navigation\.md\)/);
+  assert.match(t, /only ones copied from these two files/);
+});
+
+test('no-menu-paths graders are identical across the five mentor cases', () => {
+  const dirs = ['01-teach-double-dash', '02-guide-health-bar', '03-understand-signals',
+                '04-learning-3d-pickup', '05-csharp-learner-save'];
+  const bodies = dirs.map((d) => read(join(ROOT, 'evals', d, 'graders', 'no-menu-paths.md')));
+  for (const b of bodies) assert.equal(b, bodies[0]);
+  assert.match(bodies[0], /^type: llm$/m, 'grader is still the blanket regex');
+});

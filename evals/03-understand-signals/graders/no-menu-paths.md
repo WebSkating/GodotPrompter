@@ -1,7 +1,6 @@
 ---
-type: regex
-target: last_message
-match: not_contains
-flags: i
+type: llm
+focus: last_message
+weight: 0.5
 ---
-\b(Project|Editor|Scene|Debug)\s*(→|->|>|›|»)\s*[A-Z]
+Pass if the answer gives no editor click-path at all, or if every click-path it gives is one a Godot 4.3-4.7 user could follow as written: a real top menu (Scene, Project, Debug, Editor, Help), a real main screen (2D, 3D, Script, Game, AssetLib, Asset Store), a real Project Settings tab (General, Input Map, Localization, Globals, Plugins, GDExtension, Import Defaults, and the sub-tabs Translations, Remaps, POT Generation, Template Generation, Autoload, Shader Globals, Groups), a real dock (Scene, FileSystem, Inspector, Node, Signals, Groups, Import, History, reopened under Editor > Editor Docks), or a real bottom panel (Output, Debugger, Audio, Animation, AnimationTree, Shader Editor, ShaderFile, SpriteFrames, Theme, TileSet, TileMap, ResourcePreloader, Search Results, Version Control, Polygon, MeshLibrary), with item names that exist under it. Names differ by version, so accept a name that exists in any version from 4.3 to 4.7 (for example the Node dock on 4.3-4.5 and the separate Signals and Groups docks on 4.6+). Fail if the answer states a toolbar position, a dock coordinate ("top-left corner", "third icon"), a keyboard shortcut presented as the only way, or a menu item that does not exist under the menu it names. Naming a panel without a path ("in the Autoload tab of Project Settings") always passes.
