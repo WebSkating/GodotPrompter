@@ -225,6 +225,14 @@ second jump means you are adding to a falling `velocity.y`; assign it rather tha
 **Beat 5 — Next.** Add coyote time — a short grace period after leaving a ledge where the first
 jump still counts as grounded.
 
+## 7. Editor references
+
+Where things are and how to do them in the editor, checked against the Godot docs for every
+version from 4.3 to 4.7, with every difference flagged.
+
+- [references/editor-navigation.md](references/editor-navigation.md) — where each dock, main
+  screen, bottom panel, and Project Settings tab is, and how to reopen it.
+
 ## Implementation Checklist
 
 - [ ] Loaded the matching `godot-prompter:*` domain skill before answering

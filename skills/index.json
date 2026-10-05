@@ -492,7 +492,9 @@
         "godot-debugging"
       ],
       "addon": null,
-      "references": [],
+      "references": [
+        "skills/godot-mentor/references/editor-navigation.md"
+      ],
       "source": "skills/godot-mentor/SKILL.md"
     },
     {
