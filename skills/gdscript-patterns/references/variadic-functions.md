@@ -5,7 +5,7 @@ Reference for `skills/gdscript-patterns/SKILL.md` — the `...args` syntax for t
 > ← Back to [SKILL.md](../SKILL.md)
 
 ---
-## 12. Variadic Functions (Godot 4.5+)
+## 11. Variadic Functions (Godot 4.5+)
 
 Godot 4.5 adds variadic function support to GDScript. Append `...` before the last parameter name to collect all trailing arguments passed at the call site into an `Array`. This replaces patterns that required callers to pass an explicit array literal.
 

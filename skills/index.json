@@ -417,6 +417,7 @@
         "skills/gdscript-patterns/references/abstract-classes.md",
         "skills/gdscript-patterns/references/common-idioms.md",
         "skills/gdscript-patterns/references/export-annotations.md",
+        "skills/gdscript-patterns/references/lambda-functions.md",
         "skills/gdscript-patterns/references/super-in-virtual-methods.md",
         "skills/gdscript-patterns/references/variadic-functions.md"
       ],
