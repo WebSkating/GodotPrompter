@@ -2,7 +2,7 @@
 // Counts byte size and (optionally) real tokens for skills, references, and agents.
 // Modes:
 //   default                 byte count + bytes/4 estimate
-//   --tokenizer             include real Claude + GPT token counts (requires optionalDependencies)
+//   --tokenizer             include real Claude + GPT token counts (requires `npm ci --prefix scripts`)
 //   --markdown              output a Markdown table (for docs/token-budget.md)
 //   --json                  output JSON
 // Usage: node scripts/count-tokens.mjs [--tokenizer] [--markdown|--json]
@@ -34,8 +34,8 @@ if (useTokenizer) {
     const gptEnc = tiktokenMod.encodingForModel('gpt-4');
     countGpt = (text) => gptEnc.encode(text).length;
   } catch (err) {
-    console.error('Tokenizer mode requires optional dependencies:');
-    console.error('  npm ci');
+    console.error('Tokenizer mode requires the packages in scripts/package.json:');
+    console.error('  npm ci --prefix scripts');
     console.error('Falling back to byte-count estimates.');
     countClaude = null;
     countGpt = null;

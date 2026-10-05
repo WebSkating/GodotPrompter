@@ -325,7 +325,7 @@ invocation is a FAIL — that is the primary anti-pattern.
 **Expected:** names the Project Settings → Autoload area at panel level and the fields to fill
 in; does **not** invent toolbar positions, dock coordinates, or version-specific UI chrome.
 
-**Pass criteria:** no fabricated click-path. Must keep passing after v1.14.0 relaxes the
+**Pass criteria:** no fabricated click-path. Must keep passing after v1.15.0 relaxes the
 constraint — answers get fuller, never fabricated.
 
 ---

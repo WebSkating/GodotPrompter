@@ -37,10 +37,11 @@ body:
       options:
         - Claude Code
         - GitHub Copilot CLI
-        - Gemini CLI
+        - Antigravity
         - Cursor
         - Codex
         - OpenCode
+        - Grok Build
         - Other
     validations:
       required: true

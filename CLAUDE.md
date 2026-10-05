@@ -17,7 +17,7 @@ This is a **documentation/skills repository**. There is no application build/lin
 ## Conventions
 
 - Skills use Claude Code tool names as the canonical reference
-- Each platform has a tool mapping file in `skills/using-godot-prompter/references/`
+- Tool mapping files live in `skills/using-godot-prompter/references/` (Antigravity, Codex, Copilot, Cursor); OpenCode's is in `.opencode/`, Grok Build has none
 - GDScript follows the [Godot style guide](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html) — snake_case functions/variables, PascalCase classes
 - C# follows [Godot C# conventions](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_style_guide.html) — PascalCase methods matching the Godot API
 - Target Godot 4.3+ minimum — no deprecated methods
@@ -34,8 +34,8 @@ The layout is self-evident from `ls`; these constraints are not:
 - **`AGENTS.md` / `GEMINI.md`** are root @-imports that re-export `using-godot-prompter` for Codex and Antigravity — edit the skill, not these.
 - **Two files are generated — never hand-edit them.** `.codex/agents/godot-prompter/*.toml` comes from `agents/*.md` (`npm run sync:codex-agents`); `skills/index.json` comes from skill/agent frontmatter and Related-skills lines (`npm run build:skill-index`). `npm test` fails if either is stale.
 - **`.github/workflows/release.yml`** is tag-triggered: it validates, creates the GitHub release, and opens marketplace PRs.
-- **`.github/workflows/plugin-scan.yml`** runs the HOL plugin-scanner (the awesome-ai-plugins listing check) on every push to `master` and every PR, and fails below 80/100. It flags a full-access sandbox mode, a never-ask approval policy, or a bypass approval mode written literally in any `.md`/`.json`/`.toml`/`.yml`/`.yaml` file, comments and this file included (patterns: `RISKY_APPROVAL_PATTERNS` in hol-guard's `checks/security.py`), so describe them rather than quoting them. The validator's `scanner-risky-approval` error catches the same text before a push. Every `uses:` must be pinned to a full commit SHA — Dependabot keeps the pins current.
-- **`docs/superpowers/notes/`** holds per-release research notes and the C# parity debt list.
+- **`.github/workflows/plugin-scan.yml`** runs the HOL plugin-scanner (the awesome-ai-plugins listing check) on every push to `master` and every PR, and fails below 80/100 or on any high finding. It flags a full-access sandbox mode, a never-ask approval policy, or a bypass approval mode written literally in any `.md`/`.json`/`.toml`/`.yml`/`.yaml` file, comments and this file included (patterns: `RISKY_APPROVAL_PATTERNS` in hol-guard's `checks/security.py`), so describe them rather than quoting them. The validator's `scanner-risky-approval` error catches the same text before a push. Every `uses:` must be pinned to a full commit SHA — Dependabot keeps the pins current.
+- **`docs/superpowers/notes/`** holds per-release research notes, the C# parity debt list, and the open follow-ups carried between releases (`2026-07-28-v1.13.0-followups.md`).
 
 ## File formats and releases
 
