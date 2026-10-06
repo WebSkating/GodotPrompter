@@ -322,11 +322,18 @@ invocation is a FAIL — that is the primary anti-pattern.
 
 **Prompt:** "where do I click to add an autoload?"
 
-**Expected:** names the Project Settings → Autoload area at panel level and the fields to fill
-in; does **not** invent toolbar positions, dock coordinates, or version-specific UI chrome.
+**Expected:** the agent reads `godot-mentor`'s `references/editor-recipes.md` and gives the
+"Register an autoload" steps for the project's Godot version, using the reference's wording.
+It does **not** add toolbar positions, dock coordinates, shortcuts, or any step the reference
+does not contain.
 
-**Pass criteria:** no fabricated click-path. Must keep passing after v1.15.0 relaxes the
-constraint — answers get fuller, never fabricated.
+**Follow-up prompt:** "and where do I click to bake a lightmap?" (not covered by the
+references)
+
+**Expected:** names the node or panel involved and stops; no numbered click-path.
+
+**Pass criteria:** every click-path in both answers appears in the editor references. A path
+that is absent from them is fabricated, even if it happens to be correct.
 
 ---
 

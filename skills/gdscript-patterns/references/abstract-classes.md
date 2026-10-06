@@ -5,7 +5,7 @@ Reference for `skills/gdscript-patterns/SKILL.md` — `@abstract` annotation, ab
 > ← Back to [SKILL.md](../SKILL.md)
 
 ---
-## 13. Abstract Classes and Methods (Godot 4.5+)
+## 12. Abstract Classes and Methods (Godot 4.5+)
 
 The `@abstract` annotation prevents a class from being instantiated directly and forces subclasses to implement any method annotated with `@abstract`. This is the GDScript equivalent of C#'s `abstract` keyword.
 

@@ -4,6 +4,41 @@ All notable changes to GodotPrompter will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.15.0] - 2026-10-06
+
+"Editor Beat". Mentor mode can now tell a learner where to click, from references checked
+against the Godot docs for every version from 4.3 to 4.7 and, where the docs lag the editor,
+against the engine source. Not verified in a running editor, in Cursor, or on a device.
+
+### Added
+
+- **`godot-mentor` editor references.** `references/editor-recipes.md` (20 numbered
+  workflows) and `references/editor-navigation.md` (docks, main screens, bottom panels, Project
+  Settings tabs). Steps that differ between Godot versions list each version range. Checked
+  against the docs and the engine source, not a running editor. The research digest is
+  `docs/superpowers/notes/2026-10-05-godot-editor-research.md`.
+- **C# for Android v2 plugins and `JavaClassWrapper`** in `mobile-development`. Written from
+  the documented API and labelled as not device-tested.
+- **Hook tests on Windows in CI.** `validate.yml` runs `npm run test:hooks` on
+  `windows-latest`.
+
+### Changed
+
+- **Mentor mode's Editor beat gives click-paths, but only from the references.** For anything
+  the references do not cover it names the panel only if `editor-navigation.md` lists it, says
+  the rest is not covered, and stops. The "no menu paths" rule
+  from v1.13.0 is replaced.
+- **Five skills moved a section to `references/`** to regain byte headroom: `phantom-camera`
+  (follow modes), `ai-navigation` (NavigationAgent3D), `export-pipeline` (versioning),
+  `gdscript-patterns` (lambdas; sections renumbered so the checklist is last), `csharp-godot`
+  (GDScript interop). No content was removed.
+- **The `no-menu-paths` mentor eval grader** is now an `llm` grader that fails invented paths
+  instead of every path. Earlier figures for it are not comparable. The mentor eval was not re-run in this release.
+- **The Cursor hook command's shape is pinned by a test.** The hook itself is unchanged and was
+  not run in Cursor; Cursor's docs do not say whether `CURSOR_PLUGIN_ROOT` is exported to plugin
+  hooks, and if it is not the card may be dropped under Cursor.
+- **Autoload paths name the Globals tab.** `event-bus`, `godot-project-setup`, `dependency-injection` and `dialogue-system` said Project Settings → Autoload; the Autoload list is a sub-tab of Globals on every supported version.
+
 ## [1.14.1] - 2026-10-05
 
 A maintenance release for the Claude plugin directory listing. No skill or agent content changed.

@@ -59,7 +59,7 @@ NodeA emits the signal. NodeB and NodeC each connected to EventBus independently
 
 ## 3. Basic EventBus
 
-Create `res://autoloads/event_bus.gd` (or `EventBus.cs`), then register it in **Project → Project Settings → Autoload** with the name `EventBus`.
+Create `res://autoloads/event_bus.gd` (or `EventBus.cs`), then register it in **Project → Project Settings → Globals → Autoload** with the name `EventBus`.
 
 ### GDScript (`autoloads/event_bus.gd`)
 
@@ -306,7 +306,7 @@ See [references/testing.md](references/testing.md) for full producer-side and co
 
 ## 9. Checklist
 
-- [ ] `EventBus` autoload is registered in **Project → Project Settings → Autoload**
+- [ ] `EventBus` autoload is registered in **Project → Project Settings → Globals → Autoload**
 - [ ] All signals use typed parameters (`signal foo(bar: int)`) — no untyped signals
 - [ ] Every consumer connects in `_ready()` and disconnects in `_exit_tree()` (mandatory in C#)
 - [ ] Producers emit through `EventBus`, not by calling consumer methods directly
