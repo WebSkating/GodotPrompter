@@ -82,7 +82,7 @@ public partial class Enemy : CharacterBody3D
 
 ## 3. Autoloads as Singletons
 
-Register a script in **Project Settings → Autoload** for global access (`AudioManager.play_sfx(...)`, `GameState.score = 100`). Best for cross-cutting concerns: audio, save state, event bus, settings. Resist autoloading domain-specific systems (those should be scene-injected).
+Register a script in **Project Settings → Globals → Autoload** for global access (`AudioManager.play_sfx(...)`, `GameState.score = 100`). Best for cross-cutting concerns: audio, save state, event bus, settings. Resist autoloading domain-specific systems (those should be scene-injected).
 
 > See [references/autoloads.md](references/autoloads.md) for the full AudioManager example (SFX + crossfade music) in GDScript + C#.
 

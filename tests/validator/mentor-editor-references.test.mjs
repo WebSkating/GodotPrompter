@@ -31,10 +31,10 @@ const DIGEST = join(ROOT, 'docs', 'superpowers', 'notes', '2026-10-05-godot-edit
 const recipeSections = () => read(RECIPES).split(/^## /m).slice(1)
   .map((s) => ({ title: s.split('\n')[0].trim(), body: s }));
 
-test('editor-recipes.md has at least 15 recipes, each with steps and an outcome', () => {
+test('editor-recipes.md has exactly 20 recipes, each with steps and an outcome', () => {
   assert.ok(existsSync(RECIPES), 'editor-recipes.md is missing');
   const sections = recipeSections();
-  assert.ok(sections.length >= 15, `only ${sections.length} recipes`);
+  assert.equal(sections.length, 20, `expected 20 recipes, found ${sections.length}`);
   for (const { title, body } of sections) {
     assert.match(body, /^1\. /m, `"${title}" has no numbered steps`);
     assert.match(body, /^\*\*You should see:\*\*/m, `"${title}" has no outcome line`);
@@ -110,11 +110,26 @@ test('mentor card points at both references and keeps the refusal', () => {
   assert.match(c, /invoke `godot-prompter:godot-mentor`/);
   assert.match(c, /references\/editor-recipes\.md/);
   assert.match(c, /references\/editor-navigation\.md/);
-  assert.match(c, /name the panel and stop/i, 'Review Focus 2: no fallback for uncovered paths');
+  assert.match(c, /name the panel only if `editor-navigation\.md` lists it/, 'Review Focus 2: no fallback for uncovered paths');
+  assert.match(c, /not\s+covered, and stop/);
   assert.match(c, /never from memory/, 'the prohibition itself is gone');
-  assert.match(c, /anything they click or read on\s+screen/, 'the gate no longer covers every on-screen label');
+  assert.match(c, /anything they\s+click, press, or read on screen/, 'the gate no longer covers every on-screen label');
+  assert.match(c, /keyboard shortcut/);
   assert.doesNotMatch(c, /Editor beat boundary \(v1\.13\.0\)/, 'old boundary paragraph still present');
   assert.ok(Buffer.byteLength(c, 'utf8') < 3072, 'card over the 3 KB cap');
+});
+
+// The two references link to each other and back to SKILL.md; a renamed or moved file would
+// leave a learner-facing pointer aimed at nothing.
+test('relative Markdown links in both references resolve to existing files', () => {
+  for (const file of [NAV, RECIPES]) {
+    const targets = [...read(file).matchAll(/\]\(([^)#\s]+\.md)(?:#[^)]*)?\)/g)].map((m) => m[1])
+      .filter((t) => !/^[a-z][a-z0-9+.-]*:/i.test(t));
+    assert.ok(targets.length > 0, `${file} has no relative links to check`);
+    for (const t of targets) {
+      assert.ok(existsSync(resolve(dirname(file), t)), `${file}: link target "${t}" does not exist`);
+    }
+  }
 });
 
 test('SKILL.md section 7 says click-paths are allowed only from the references', () => {

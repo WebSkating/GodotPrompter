@@ -9,7 +9,7 @@ Reference for `skills/dialogue-system/SKILL.md` — full DialogueManager impleme
 ---
 ## 4. DialogueManager
 
-`DialogueManager` drives the state machine. Register it as an **Autoload** (`Project > Project Settings > Autoload`) so any scene can call `DialogueManager.start_dialogue(data)`.
+`DialogueManager` drives the state machine. Register it as an **Autoload** (`Project > Project Settings > Globals > Autoload`) so any scene can call `DialogueManager.start_dialogue(data)`.
 
 ### GDScript
 

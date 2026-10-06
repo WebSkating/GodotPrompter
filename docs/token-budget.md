@@ -28,9 +28,9 @@ Columns:
 
 | Kind | Name | Bytes | KB | Est. tokens | Claude | GPT | Status |
 |---|---|---:|---:|---:|---:|---:|---|
-| reference | godot-mentor/editor-recipes.md | 27571 | 26.9 | 6893 | 6992 | 6760 | — |
+| reference | godot-mentor/editor-recipes.md | 28478 | 27.8 | 7120 | 7192 | 6953 | — |
 | reference | ability-system/tags-and-conditions.md | 18225 | 17.8 | 4556 | 5015 | 4411 | — |
-| reference | godot-mentor/editor-navigation.md | 17011 | 16.6 | 4253 | 4560 | 4427 | — |
+| reference | godot-mentor/editor-navigation.md | 17798 | 17.4 | 4450 | 4779 | 4650 | — |
 | reference | ability-system/stat-modifiers.md | 15567 | 15.2 | 3892 | 4266 | 3756 | — |
 | skill | animation-system | 15493 | 15.1 | 3873 | 4234 | 3771 | ✓ under budget |
 | skill | input-handling | 15268 | 14.9 | 3817 | 4178 | 3638 | ✓ under budget |
@@ -53,7 +53,7 @@ Columns:
 | skill | gdscript-advanced | 13688 | 13.4 | 3422 | 3706 | 3343 | ✓ under budget |
 | skill | dialogue-manager | 13469 | 13.2 | 3367 | 3756 | 3315 | ✓ under budget |
 | skill | math-essentials | 13411 | 13.1 | 3353 | 3764 | 3322 | ✓ under budget |
-| skill | godot-project-setup | 13302 | 13.0 | 3326 | 3855 | 3312 | ✓ under budget |
+| skill | godot-project-setup | 13312 | 13.0 | 3328 | 3858 | 3314 | ✓ under budget |
 | skill | addon-development | 13212 | 12.9 | 3303 | 3515 | 3109 | ✓ under budget |
 | skill | mobile-development | 13118 | 12.8 | 3280 | 3595 | 3175 | ✓ under budget |
 | skill | limboai | 13042 | 12.7 | 3261 | 3885 | 3432 | ✓ under budget |
@@ -62,18 +62,18 @@ Columns:
 | skill | godot-brainstorming | 12950 | 12.6 | 3238 | 3306 | 3086 | ✓ under budget |
 | skill | godot-ui | 12853 | 12.6 | 3213 | 3632 | 3234 | ✓ under budget |
 | reference | save-load/json-saves.md | 12833 | 12.5 | 3208 | 3197 | 2704 | — |
+| skill | godot-mentor | 12735 | 12.4 | 3184 | 3412 | 3217 | ✓ under budget |
 | skill | resource-pattern | 12545 | 12.3 | 3136 | 3373 | 3046 | ✓ under budget |
 | skill | multiplayer-basics | 12352 | 12.1 | 3088 | 3348 | 2901 | ✓ under budget |
 | skill | godot-debugging | 12259 | 12.0 | 3065 | 3140 | 2835 | ✓ under budget |
-| skill | godot-mentor | 12209 | 11.9 | 3052 | 3274 | 3084 | ✓ under budget |
 | skill | ability-system | 12161 | 11.9 | 3040 | 3112 | 2792 | ✓ under budget |
 | skill | particles-vfx | 12134 | 11.8 | 3034 | 3481 | 3155 | ✓ under budget |
 | skill | godot-optimization | 11865 | 11.6 | 2966 | 3097 | 2801 | ✓ under budget |
 | skill | dedicated-server | 11715 | 11.4 | 2929 | 3000 | 2669 | ✓ under budget |
 | reference | godot-ui/ui-patterns.md | 11670 | 11.4 | 2918 | 3318 | 2853 | — |
-| skill | event-bus | 11638 | 11.4 | 2910 | 2902 | 2536 | ✓ under budget |
+| skill | event-bus | 11662 | 11.4 | 2916 | 2908 | 2540 | ✓ under budget |
 | skill | hud-system | 11548 | 11.3 | 2887 | 3153 | 2743 | ✓ under budget |
-| skill | dependency-injection | 11334 | 11.1 | 2834 | 2860 | 2522 | ✓ under budget |
+| skill | dependency-injection | 11346 | 11.1 | 2837 | 2863 | 2524 | ✓ under budget |
 | skill | beehave | 11153 | 10.9 | 2788 | 2993 | 2738 | ✓ under budget |
 | skill | camera-system | 11095 | 10.8 | 2774 | 3197 | 2924 | ✓ under budget |
 | skill | multithreading | 11020 | 10.8 | 2755 | 3007 | 2583 | ✓ under budget |
@@ -96,7 +96,7 @@ Columns:
 | reference | ai-navigation/chase-attack.md | 8531 | 8.3 | 2133 | 2189 | 1934 | — |
 | reference | dialogue-system/ui-presentation.md | 8498 | 8.3 | 2125 | 1943 | 1703 | — |
 | reference | inventory-system/core-classes.md | 8365 | 8.2 | 2091 | 2171 | 1952 | — |
-| reference | dialogue-system/dialogue-manager.md | 7812 | 7.6 | 1953 | 2020 | 1725 | — |
+| reference | dialogue-system/dialogue-manager.md | 7822 | 7.6 | 1956 | 2023 | 1727 | — |
 | skill | godot-grill | 7455 | 7.3 | 1864 | 1877 | 1785 | ✓ under budget |
 | reference | addon-development/gizmos-deep-dive.md | 7405 | 7.2 | 1851 | 2323 | 2059 | — |
 | reference | procedural-generation/wave-function-collapse.md | 7334 | 7.2 | 1834 | 1954 | 1780 | — |

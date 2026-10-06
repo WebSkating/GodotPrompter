@@ -25,7 +25,8 @@ against the engine source. Not verified in a running editor, in Cursor, or on a 
 ### Changed
 
 - **Mentor mode's Editor beat gives click-paths, but only from the references.** For anything
-  the references do not cover it still names the panel and stops. The "no menu paths" rule
+  the references do not cover it names the panel only if `editor-navigation.md` lists it, says
+  the rest is not covered, and stops. The "no menu paths" rule
   from v1.13.0 is replaced.
 - **Five skills moved a section to `references/`** to regain byte headroom: `phantom-camera`
   (follow modes), `ai-navigation` (NavigationAgent3D), `export-pipeline` (versioning),
@@ -36,6 +37,7 @@ against the engine source. Not verified in a running editor, in Cursor, or on a 
 - **The Cursor hook command's shape is pinned by a test.** The hook itself is unchanged and was
   not run in Cursor; Cursor's docs do not say whether `CURSOR_PLUGIN_ROOT` is exported to plugin
   hooks, and if it is not the card may be dropped under Cursor.
+- **Autoload paths name the Globals tab.** `event-bus`, `godot-project-setup`, `dependency-injection` and `dialogue-system` said Project Settings → Autoload; the Autoload list is a sub-tab of Globals on every supported version.
 
 ## [1.14.1] - 2026-10-05
 

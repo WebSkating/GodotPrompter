@@ -16,7 +16,8 @@ How to read the tables:
 - An empty Versions cell means the row is the same on every version from 4.3 to 4.7. A flagged
   row uses a range: 4.3-4.5 means 4.3, 4.4 and 4.5; 4.6+ means 4.6 and 4.7.
 - A cell holding only "—" means the research did not establish that fact. Say so to the learner
-  rather than filling it in.
+  rather than filling it in. In a row marked as not existing on that version, "—" means not
+  applicable.
 - **Bold** text is text the editor displays. A tooltip is always introduced as a tooltip, because
   the learner sees it only on hover. Where the Godot docs use a different word for the same
   thing, the docs' word is given in quotes.
@@ -96,11 +97,11 @@ of these has not lost it; they need to select the right node or resource first. 
 
 | Area | What it is for | Reopen it if closed | Versions |
 |---|---|---|---|
-| **Output** | Shows text printed by the running project (the docs from 4.4 add: and by the editor) | Click the **Output** button (4.3-4.5) or tab (4.6+) at the bottom of the editor | |
+| **Output** | Shows text printed by the running project (the docs from 4.4 add: and by the editor) | Click the **Output** button (4.3-4.5) or tab (4.6+) at the bottom of the editor; on 4.6+ also **Editor > Editor Docks > Output** | |
 | **Debugger** | Holds the tabs **Stack Trace**, **Errors**, **Profiler**, **Visual Profiler**, **Video RAM** and **Misc** (the docs also describe "Network Profiler" and "Monitors" tabs) | Click the **Debugger** button at the bottom of the editor | 4.3 |
-| **Debugger** | Same tabs as above, plus **Evaluator** | Click the **Debugger** button (4.4-4.5) or tab (4.6+) at the bottom of the editor | 4.4+ |
-| **Audio** | — | Click the **Audio** button (4.3-4.5) or tab (4.6+) at the bottom of the editor | |
-| **Animation** | The animation editor for an AnimationPlayer node | Click the **Animation** button (4.3-4.5) or tab (4.6+) at the bottom of the editor; clicking an AnimationPlayer node also opens it | |
+| **Debugger** | Same tabs as above, plus **Evaluator** | Click the **Debugger** button (4.4-4.5) or tab (4.6+) at the bottom of the editor; on 4.7 also **Editor > Editor Docks > Debugger** | 4.4+ |
+| **Audio** | — | Click the **Audio** button (4.3-4.5) or tab (4.6+) at the bottom of the editor; on 4.6+ also **Editor > Editor Docks > Audio** | |
+| **Animation** | The animation editor for an AnimationPlayer node | Click the **Animation** button (4.3-4.5) or tab (4.6+) at the bottom of the editor; on 4.6+ also **Editor > Editor Docks > Animation**; clicking an AnimationPlayer node also opens it | |
 | **AnimationTree** | — | Context only; what brings it up was not researched | |
 | **Shader Editor** | — | — | 4.3-4.5 |
 | **Shader Editor** | — | **Editor > Editor Docks > Shader Editor** | 4.6+ |
@@ -116,6 +117,10 @@ of these has not lost it; they need to select the right node or resource first. 
 | **Polygon** | — | Context only; what brings it up was not researched | 4.4+ |
 | **MeshLibrary** | Does not exist | — | 4.3-4.6 |
 | **MeshLibrary** | — | — | 4.7 |
+| **Replication** | — | Context only: select a MultiplayerSynchronizer node and the panel appears at the bottom of the editor | |
+| **GridMap** | Does not exist as a bottom panel | — | 4.3 |
+| **GridMap** | — | Context only: select a GridMap node and the panel appears at the bottom of the editor | 4.4+ |
+| **MSBuild** | — | Only in .NET builds of the editor, and only once the project has a C# project file; then click **MSBuild** at the bottom of the editor | |
 
 ## Project Settings tabs
 
@@ -199,7 +204,7 @@ version; these notes give the change, and say where the Godot docs lag the edito
 - 4.6 turned the bottom panel's named buttons into named tabs; from 4.6 each bottom panel is a
   dock whose default slot is the bottom. 4.7 defines two bottom slots; how that looks by default
   was not established.
-- 4.4 added **Polygon**; 4.7 added **MeshLibrary**.
+- 4.4 added **Polygon** and made **GridMap** a bottom panel; 4.7 added **MeshLibrary**.
 
 **Project Settings**
 

@@ -13,6 +13,11 @@ in the GodotPrompter repository. For where a dock or panel is, see
 
 ---
 
+How to read these recipes: **bold** text is a label as the editor shows it, and a tooltip is
+always introduced as a tooltip. Sentences about what the research did not record, and
+instructions such as "do not name it", are notes for the agent, not steps: tell the learner
+plainly that this part is not covered rather than reading the note out.
+
 ## Add a node and attach a script
 
 **When:** the scene needs a new node, and that node needs its own script.
@@ -65,14 +70,14 @@ from it and used by a node.
 5. Double-click the resource file in the **FileSystem** dock to open it for editing, and set its
    properties in the **Inspector**. To save, click the save icon at the top of the **Inspector**
    (its tooltip reads **Save the currently edited resource.**) and choose **Save**.
-6. Select the node that should use the resource, then drag and drop the resource file onto the
-   **Inspector**. The research did not record the exact clicks on an exported property's slot
-   beyond this.
+6. Select the node that should use the resource, then drag and drop the resource file onto that
+   property's slot in the **Inspector**. The research did not record the exact clicks on an
+   exported property's slot beyond this.
 
 **You should see:** the resource on the node's property in the **Inspector**; clicking the
 resource preview there shows the resource's properties.
 
-## Connect a signal from the Node dock
+## Connect a signal
 
 **When:** a node's signal (a button's "pressed", an area's "body_entered") should call a method
 in a script. From Godot 4.6 the dock is named Signals, not Node.
@@ -86,9 +91,8 @@ in a script. From Godot 4.6 the dock is named Signals, not Node.
 4. Pick the node that should receive the signal. The simple view only lists nodes that have a
    script attached; the editor generates the receiver method's name for you, by convention
    "_on_node_name_signal_name". To connect to any node or to a built-in function, turn on
-   **Advanced**:
-   - **4.3-4.6:** The docs place the **Advanced** button at the window's bottom-right.
-   - **4.7:** The docs place the **Advanced** button at the window's bottom-left.
+   **Advanced**. The **Advanced** toggle is at the bottom-left of the window on every version
+   (the docs up to 4.6 say bottom-right).
 5. Click **Connect**.
 
 **You should see:** the editor jumps to the **Script** workspace and shows the new method with a
@@ -167,7 +171,8 @@ Each event under an action has buttons whose tooltips read **Edit Event** and **
 3. In the file dialog titled **Pick a Main Scene**, double-click the scene file.
 
 To set or change it at any time, right-click a scene file in the **FileSystem** dock and choose
-**Set as Main Scene**.
+**Set as Main Scene**. The item is absent from the menu of the scene that already is the main
+scene.
 
 The setting can also be changed in **Project > Project Settings...**; the popup says it is under
 the 'application' category. The research did not record the label that the **General** tab
@@ -207,11 +212,10 @@ base size and decide how it stretches.
 is no longer readable.
 
 1. Open **Project > Project Settings...**.
-2. Go to the layer names:
-   - **4.3:** Go to **Layer Names**. The docs for this version stop at that name, so the research does not record the entry below it.
-   - **4.4+:** Go to **Layer Names > 2D Physics**.
-3. Type a name for each layer you use. The research did not record the field labels there, the
-   3D counterpart, or whether the **Advanced Settings** toggle is needed, so do not quote any.
+2. In the **General** tab's category list, go to **Layer Names > 2D Physics** (or
+   **Layer Names > 3D Physics** for 3D). This is the same on every version.
+3. Type a name for each layer you use. The research did not record the field labels there or
+   whether the **Advanced Settings** toggle is needed, so do not quote any.
 4. On each physics node, set the property the docs call "Layer" to the layer the node is on, and
    the property the docs call "Mask" to the layers it should interact with.
 
@@ -320,13 +324,14 @@ with.
    **Scene**; see [editor-navigation.md](editor-navigation.md) if it is closed.
 3. Change the import parameters. The research did not record the individual options for any
    resource type, so name an option only if the learner reads it out.
-4. Click **Reimport**. Do it before selecting another file in the **FileSystem** dock, or the
-   changes are discarded.
+4. Click **Reimport**; once a parameter has been changed the button reads **Reimport (*)**. Do
+   it before selecting another file in the **FileSystem** dock, or the changes are discarded.
 
 To change several assets at once, select them together in the **FileSystem** dock; a checkbox
 then appears to the left of every import parameter. The **Preset** button has
-**Set as Default for '<type>'**, **Load Default** and **Clear Default for '<type>'**, and
-project-wide defaults are on the **Import Defaults** tab of the Project Settings.
+**Set as Default for '<type>'**; **Load Default** and **Clear Default for '<type>'** are listed
+there only once a default exists for that type. Project-wide defaults are on the
+**Import Defaults** tab of the Project Settings.
 
 **You should see:** the **Import** dock listing the selected asset's parameters instead of the
 message "Select a resource file in the filesystem or in the inspector to adjust import
@@ -366,6 +371,13 @@ path for assigning an existing theme file to a Control, so do not invent one.
 3. Click **Add...**.
 4. The research did not record the file dialog that follows or the file types it shows, so the
    recipe stops here: tell the learner to pick their translation file in that dialog.
+
+A CSV file is not itself what the game loads: the editor imports it and generates one or more
+translation resource files next to it, named after the CSV with the locale and the extension
+.translation (strings.csv with an "en" column gives strings.en.translation). The docs add that
+importing also adds the translation to the list; the research did not confirm that in the
+engine, nor which files the dialog after **Add...** offers for a CSV, so say that this part is
+not covered.
 
 **You should see:** the translation listed in the **Translations** sub-tab, which is where
 translations are added and removed project-wide.
