@@ -113,8 +113,13 @@ mode was undisturbed by the new routing.
 
 ## Known grader caveats
 
-- `no-menu-paths` only catches top-menu paths (`Project → Project Settings`); panel→tab forms such
-  as `Project Settings → Autoload` are allowed by author decision.
+- `no-menu-paths` changed from a regex to an `llm` grader on 2026-10-05 (v1.15.0), when the
+  Editor beat was relaxed to allow click-paths taken from `godot-mentor`'s editor references.
+  The regex failed any `Project → X` path; the new grader fails only positions, coordinates,
+  and menu items that do not exist. It cannot read the reference files, so it judges against
+  the menu, dock, and panel names listed in its own prompt, not against the references
+  themselves; a wrong item under a real menu can pass. Positions pass when attached to a named control, because the editor references themselves give such positions. Figures for this grader before and after
+  are not comparable. **Pending:** a full mentor run to re-baseline it — not run during v1.15.0.
 - Graders read `last_message`; if the answer is split across messages (follow-up 4) the run scores
   low even though the user saw the lesson. Do NOT switch to `trace` — regexes would match the
   SKILL.md text itself.

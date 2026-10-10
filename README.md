@@ -56,7 +56,7 @@ grok plugin enable godot-prompter
 Pin to a release:
 
 ```bash
-grok plugin install jame581/GodotPrompter@v1.14.0 --trust
+grok plugin install jame581/GodotPrompter@v1.15.0 --trust
 grok plugin enable godot-prompter
 ```
 

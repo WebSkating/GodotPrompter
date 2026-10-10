@@ -282,7 +282,7 @@ public void LoadBindings()
 
 ## Autoloads
 
-Register autoloads in `Project > Project Settings > Autoload`. Autoloads are singleton nodes available globally via their registered name.
+Register autoloads in `Project > Project Settings > Globals > Autoload`. Autoloads are singleton nodes available globally via their registered name.
 
 ### Common Autoloads
 
