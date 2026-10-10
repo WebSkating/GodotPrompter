@@ -601,3 +601,21 @@ test('writes nothing into the user project', () => {
   assert.equal(existsSync(join(base, '.godot-prompter')), false, 'hook must not write into the game repo');
   rmSync(base, { recursive: true, force: true });
 });
+
+// Follow-ups §3: the Cursor command was a bare relative path nobody had checked. It cannot be
+// run here (no Cursor in CI), so this pins two space-safe shapes. The first (a relative path with
+// no variable in it) is the current command. The second (one double-quoted variable path,
+// optionally behind PowerShell's call operator) is the only other form that would be space-safe
+// if Cursor documents a plugin-root variable for hook commands; the research found Cursor
+// documents neither shape. The whole string is matched, so nothing can be
+// chained before or after it.
+const CURSOR_COMMAND_SHAPES = [
+  /^\.\/hooks\/run-hook\.cmd session-start$/,
+  /^(?:& )?"\$\{[A-Z_]+\}\/hooks\/run-hook\.cmd" session-start$/,
+];
+test('Cursor hook command is space-safe', () => {
+  const cfg = JSON.parse(readFileSync(join(ROOT, 'hooks', 'hooks-cursor.json'), 'utf8'));
+  const cmds = cfg.hooks.sessionStart.map((h) => h.command);
+  assert.equal(cmds.length, 1);
+  assert.ok(CURSOR_COMMAND_SHAPES.some((re) => re.test(cmds[0])), `unexpected shape: ${cmds[0]}`);
+});

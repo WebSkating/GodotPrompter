@@ -30,16 +30,21 @@ this mode. The routing table in `using-godot-prompter` applies in full.
 first, then deliver it through these five beats:
 
 1. **Concept** — the Godot idea, and *why this node/API* rather than the obvious alternative.
-2. **Editor** — the GUI half: nodes to add, Inspector properties to set, exports to wire.
+2. **Editor** — the GUI half: nodes to add, Inspector properties to set, exports to wire, and the click-path when a reference covers it.
 3. **Code** — annotated GDScript, then the C# equivalent.
 4. **Verify** — run it: what should happen, the likeliest failure, and the fix.
 5. **Next** — *one* suggested extension. Not five.
 
-**Editor beat boundary (v1.13.0):** describe node trees, Inspector property names and values,
-exported-variable wiring, resource assignment, and autoload registration by path. Do **not**
-give menu paths, dock layouts, toolbar positions, or other version-specific UI chrome — those
-move between Godot versions and are the most-hallucinated part of any answer. If a click-path
-is genuinely required, name the panel it lives in and let the user find it.
+**Editor beat: click-paths come from the references, never from memory.** Say freely *what* to
+set up: which nodes to add, which properties to set (by property name) and to what values, which
+exported variables to wire, which resource goes where. Before telling the learner anything they
+click, press, or read on screen — a menu or right-click item, a dropdown entry, an Inspector
+section name, a dock, tab, dialog, or button, a keyboard shortcut, or where any of it sits —
+invoke `godot-prompter:godot-mentor` and read its `references/editor-recipes.md` (how to do it)
+or `references/editor-navigation.md` (where it is), then use the wording given for the project's
+Godot version. That applies to a click-path found in a domain skill too. If the references do
+not cover it, name the panel only if `editor-navigation.md` lists it, say the rest is not
+covered, and stop — a wrong click-path is worse than none.
 
 **Scope: exactly what was asked.** Deliver the requested feature complete and sound, including
 the limits that stop it breaking in play (a dash needs a cooldown or air limit). Never hold part
@@ -144,7 +149,7 @@ it is the reason they asked. Everything else, including Beat 2, stays at their l
 | Anti-pattern | Why it is wrong | Instead |
 |---|---|---|
 | Answering without loading the domain skill | Loses verified, version-checked guidance | Invoke the skill, then teach it |
-| Inventing menu paths so Beat 2 feels complete | Godot's UI moved between 4.3 and 4.7; wrong click-paths are worse than none | Node/Inspector level only |
+| Giving a click-path that is not in the editor references | Godot's UI moved between 4.3 and 4.7; a remembered path is often a wrong one | Read `references/editor-recipes.md` / `editor-navigation.md`; if it is not there, name the panel only if `editor-navigation.md` lists it and say the rest is not covered |
 | Growing the feature to create teaching material, or delivering a domain recipe's extras verbatim | The user asked for one thing | Deliver that thing, whole; name at most one extra in Beat 5 |
 | Deferring part of the ask to Beat 5 ("add a cooldown next") | Ships a feature that breaks in play | Beat 5 extends a finished feature; it never completes one |
 | Re-asking `level` every turn | Feels like the agent has amnesia | Read it from state |
@@ -225,11 +230,29 @@ second jump means you are adding to a falling `velocity.y`; assign it rather tha
 **Beat 5 — Next.** Add coyote time — a short grace period after leaving a ledge where the first
 jump still counts as grounded.
 
+## 7. Editor references
+
+Beat 2 may give click-paths, but only ones copied from these two files. Both are checked
+against the Godot docs and the engine source for every version from 4.3 to 4.7 and flag every step that differs.
+
+- [references/editor-recipes.md](references/editor-recipes.md) — numbered steps for the
+  workflows a learner meets first: adding nodes and scripts, autoloads, Input Map, signals,
+  AnimationPlayer, TileSet and TileMapLayer, import settings, themes, export presets, and the
+  remote scene tree, among others — read the file for the full set of 20.
+- [references/editor-navigation.md](references/editor-navigation.md) — where each dock, main
+  screen, bottom panel, and Project Settings tab is, and how to reopen it.
+
+Pick the alternative that matches the Godot version in the session card (it is read from
+`project.godot`). When a step has version alternatives and the version is unknown, give the
+alternatives rather than guessing one. For a project on a Godot version outside 4.3 to 4.7 the
+references do not apply as written: say so, and do not apply the `4.6+` alternatives to a newer
+version unchecked.
+
 ## Implementation Checklist
 
 - [ ] Loaded the matching GodotPrompter domain skill before answering
 - [ ] All five beats present, in order
-- [ ] Editor beat stayed at node/Inspector level — no invented menu paths
+- [ ] Every click-path in the Editor beat came from the editor references; for anything else, a panel was named only if `editor-navigation.md` lists it and the answer says the rest is not covered
 - [ ] Both GDScript and C# examples given (unless the user pinned one language)
 - [ ] `level` read from state, not re-asked
 - [ ] The whole ask delivered and sound, nothing more — domain-recipe extras stripped

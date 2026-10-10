@@ -14,6 +14,18 @@ if Engine.has_singleton("MyPlugin"):
     print(s.myPluginFunction("World"))
 ```
 
+> Not device-tested: this C# was written from the documented API and has not been run on an Android build.
+
+```csharp
+if (Engine.HasSingleton("MyPlugin"))
+{
+    GodotObject plugin = Engine.GetSingleton("MyPlugin");
+    // C# has no dynamic member dispatch, so plugin methods go through Call().
+    // The name must match the @UsedByGodot method exactly.
+    GD.Print(plugin.Call("myPluginFunction", "World"));
+}
+```
+
 Packaging uses the standard `EditorExportPlugin` format — a `@tool extends EditorPlugin` script plus `plugin.cfg` — implementing `_get_android_libraries`, `_get_android_dependencies`, and manifest-contents hooks:
 
 ```gdscript
@@ -47,6 +59,49 @@ class MyAndroidExportPlugin extends EditorExportPlugin:
         return "MyPlugin"
 ```
 
+> Not device-tested: this C# was written from the documented API and has not been run on an Android build.
+
+```csharp
+#if TOOLS
+using Godot;
+
+// MyAndroidPlugin.cs — Godot C# needs the file name to match the class.
+[Tool]
+public partial class MyAndroidPlugin : EditorPlugin
+{
+    private MyAndroidExportPlugin _exportPlugin;
+
+    public override void _EnterTree()
+    {
+        _exportPlugin = new MyAndroidExportPlugin();
+        AddExportPlugin(_exportPlugin);
+    }
+
+    public override void _ExitTree()
+    {
+        RemoveExportPlugin(_exportPlugin);
+        _exportPlugin = null;
+    }
+}
+
+// MyAndroidExportPlugin.cs
+[Tool]
+public partial class MyAndroidExportPlugin : EditorExportPlugin
+{
+    public override bool _SupportsPlatform(EditorExportPlatform platform)
+        => platform is EditorExportPlatformAndroid;
+
+    public override string[] _GetAndroidLibraries(EditorExportPlatform platform, bool debug)
+        => new[] { "MyPlugin/MyPlugin.aar" };
+
+    public override string[] _GetAndroidDependencies(EditorExportPlatform platform, bool debug)
+        => System.Array.Empty<string>(); // MavenCentral coordinates, if any.
+
+    public override string _GetName() => "MyPlugin";
+}
+#endif
+```
+
 **GDExtension Android plugin:** a `plugin.gdextension` file with `android_aar_plugin = true` ships native code as an Android plugin.
 
 Starter templates: `m4gr3d/Godot-Android-Plugin-Template`, `m4gr3d/GDExtension-Android-Plugin-Template`.
@@ -60,6 +115,17 @@ Starter templates: `m4gr3d/Godot-Android-Plugin-Template`, `m4gr3d/GDExtension-A
 ```gdscript
 var LocalDateTime = JavaClassWrapper.wrap("java.time.LocalDateTime")
 var datetime = LocalDateTime.now()
+```
+
+> Not device-tested: this C# was written from the documented API and has not been run on an Android build.
+
+```csharp
+// Java members are resolved at runtime, so every Java call is a string-named Call().
+JavaClass localDateTime = JavaClassWrapper.Wrap("java.time.LocalDateTime");
+Variant datetime = localDateTime.Call("now");
+
+GodotObject androidRuntime = Engine.GetSingleton("AndroidRuntime");
+Variant activity = androidRuntime.Call("getActivity");
 ```
 
 `AndroidRuntime` singleton (`Engine.get_singleton("AndroidRuntime")`) exposes:

@@ -66,8 +66,9 @@ function listFiles() {
 
 const rows = [];
 for (const f of listFiles()) {
-  const text = readFileSync(f.path, 'utf8');
-  const bytes = Buffer.byteLength(text.replace(/\r\n/g, '\n'), 'utf8');
+  // LF-normalize once: a CRLF checkout must not inflate the byte count or the token counts.
+  const text = readFileSync(f.path, 'utf8').replace(/\r\n/g, '\n');
+  const bytes = Buffer.byteLength(text, 'utf8');
   const estTokens = Math.round(bytes / 4);
   const claude = countClaude ? countClaude(text) : null;
   const gpt = countGpt ? countGpt(text) : null;
